@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Showing and hiding hidden files in OS X
+title: Showing and hiding hidden files in OS&nbsp;X
 tags: bash osx
 ---
 

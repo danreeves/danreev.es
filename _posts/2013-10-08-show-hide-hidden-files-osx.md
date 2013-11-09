@@ -4,6 +4,16 @@ title: Showing and hiding hidden files in OS&nbsp;X
 tags: bash osx
 ---
 
+**EDIT: 2013-11-09**
+
+I recently realised one of my favourite apps for the mac, [BetterTouchTools](http://www.boastr.de/), comes with the ability to create a custom gesture or keyboard shortcut which does this very thing so now I can hide or show dotfiles by simply pretting `Command + Caps Lock`. Incidentally, I've also remapped my caps lock key to F19 using [PCKeyboardHack](https://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html.en) so that I can then use it in custom keyboard shortcuts defines in BetterTouchTools.
+
+If you haven't already remapped Caps Lock you might want to look into it. Also if you aren't already using BetterTouchTools, I strongly recommend it!
+
+This kinda makes the rest of the post redundant but if you're still interested in some command line tips keep reading.
+
+___
+
 If you work on the web chances are you'll be using `.htaccess` files. By default these are hidden in the finder on OS X which is a pain. Luckily making these hidden files visible is pretty easy. Simply open the terminal (or your favourite CLI) and enter:
 
     defaults write com.apple.Finder AppleShowAllFiles TRUE && killall Finder

@@ -116,8 +116,13 @@ h6 {
     margin: 1em 0;
 }
 
-.post {
-    padding-bottom: 39px;
+hr {
+    border: none;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    width: 100%;
+    margin-top: 2.5em;
     border-bottom: 1px solid #eaeaea;
 }
 
@@ -194,6 +199,8 @@ pre code {
     padding-top: 1em;
     text-align: center;
 }
+
+
 /* Media Queries
 ************************************/
 @media only screen and (max-width: 1280px) {

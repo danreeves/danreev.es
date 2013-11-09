@@ -1,0 +1,21 @@
+{% include html/header.html %}
+<main>
+    <div class="content">
+    {{ content }}
+    {% for post in paginator.posts %}
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <h2 itemprop="name headline"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <p class="meta">Posted on <time datetime="{{ post.date }}" itemprop="datePublished">{{ post.date | date_to_long_string }}</time> &mdash; {{ post.content | number_of_words }} words about {{ post.tags | array_to_sentence_string }}.</p>
+            <div itemprop="articleBody">
+                {{ post.content }}
+            </div>
+            <div class="article-footer">
+                <a href="https://twitter.com/intent/tweet?text=%40heydanreeves+RE:+{{ post.title|url_encode }}:"><i class="icon icon-twitter"></i>Continue the conversation</a>
+                <a href="{{ post.url }}"><i class="icon icon-link"></i>Permalink</a>
+            </div>
+        </article>
+    {% endfor %}
+    {% include html/paginate.html %}
+    </div>
+</main>
+{% include html/footer.html %}

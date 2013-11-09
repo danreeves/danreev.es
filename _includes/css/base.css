@@ -1,0 +1,66 @@
+/*
+* base.css
+* Copyright 2013, Dan Reeves
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+*/
+
+/* #Basic Styles
+================================================== */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+ }
+
+body {
+    background:transparent;
+    color: #444;
+    font-size: 1em;
+    line-height: 1.5em;
+
+    font-family: "omnes-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+}
+code, var, kbd, samp, tt, dir, listing, plaintext, xmp, abbr, acronym, blockquote, q {
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    -o-hyphens: none;
+    hyphens: none;
+}
+
+/* #Links
+================================================== */
+a, a:visited {
+    color: #4b0082;
+    text-decoration: underline;
+}
+a:hover, a:focus {
+    color: #8447b2;
+    text-decoration: none;
+    outline: none;
+}
+
+
+/* #Misc
+================================================== */
+.amp {
+    font-style:italic;
+    font-weight:100;
+    font-family:'Baskerville','Goudy Old Style','Palatino','Book Antiqua','Palatino Linotype',
+                'Constantia','LMRomanUnsl10','URW Palladio L','URW Chancery L', sans-serif;
+    /* Use for beautiful &amp;s in your titles! */
+    /* Should cover Windows XP, Vista, 7, Mac OS X, and Linux */
+    /* Not so good on Android, and iOS needs testing */
+}
+.copy {
+    font-family: sans-serif !important;
+    /* In case a browser has trouble rendering this glyph in a web font */
+    /* I started using it because of Android browsers */
+}

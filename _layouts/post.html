@@ -1,0 +1,17 @@
+{% include html/header.html %}
+    <main>
+        <div class="content">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <h2 itemprop="name headline">{{ page.title }}</h2>
+            <p class="meta">Posted on <time datetime="{{ page.date }}" itemprop="datePublished">{{ page.date | date_to_long_string }}</time> &mdash; {{ page.content | number_of_words }} words about {{ page.tags | array_to_sentence_string }}.</p>
+            <div itemprop="articleBody">
+                {{ content }}
+            </div>
+            <div class="article-footer">
+                <a href="https://twitter.com/intent/tweet?text=%40heydanreeves+RE:+{{ page.title|url_encode }}:"><i class="icon icon-twitter"></i>Continue the conversation</a>
+                <a href="{{ page.url }}"><i class="icon icon-link"></i>Permalink</a>
+            </div>
+        </article>
+        </div>
+    </main>
+{% include html/footer.html %}

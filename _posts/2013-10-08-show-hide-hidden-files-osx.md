@@ -6,7 +6,7 @@ tags: bash osx
 
 **EDIT: 2013-11-09**
 
-I recently realised one of my favourite apps for the mac, [BetterTouchTools](http://www.boastr.de/), comes with the ability to create a custom gesture or keyboard shortcut which does this very thing so now I can hide or show dotfiles by simply pretting `Command + Caps Lock`. Incidentally, I've also remapped my caps lock key to F19 using [PCKeyboardHack](https://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html.en) so that I can then use it in custom keyboard shortcuts defines in BetterTouchTools.
+I recently realised one of my favourite apps for the mac, [BetterTouchTools](http://www.boastr.de/), comes with the ability to create a custom gesture or keyboard shortcut which does this very thing so now I can hide or show dotfiles by simply pressing `Command + Caps Lock`. Incidentally, I've also remapped my caps lock key to F19 using [PCKeyboardHack](https://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html.en) so that I can then use it in custom keyboard shortcuts defines in BetterTouchTools.
 
 If you haven't already remapped Caps Lock you might want to look into it. Also if you aren't already using BetterTouchTools, I strongly recommend it!
 
@@ -47,7 +47,7 @@ Now you can always type `shf` to show hidden files and `hhf` to hide them again.
 
 This is great, but you might not always have a CLI open and you may not want to open one.
 
-OS X has a great feature called Spotlight which is easily opened with `Cmd + Space`. The great thing about this is it can open files, run applications, and even execuables.
+OS X has a great feature called Spotlight which is easily opened with `Cmd + Space`. The great thing about this is it can open files, run applications, and even executables.
 
 Create the following two files.
 

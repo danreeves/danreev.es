@@ -1,5 +1,5 @@
     <footer>
-        <div class="content">
+        <div class="footer">
             <span class="copyright">Copyright&nbsp;&copy;&nbsp;2013&nbsp;Dan&nbsp;Reeves.</span>
         </div>
     </footer>
@@ -7,9 +7,8 @@
 <script src="/all.js"></script>
 {% raw %}
 <script>
-    window.fitText( document.getElementById('h1'), 2, {maxFontSize: 48, minFontSize: 32} );
     hljs.initHighlightingOnLoad();
-    $('#search-label').append('<input type="search" id="search"><i class="icon icon-search"></i>Search');
+    $('#search-label').append('<input type="search" id="search"><i class="icon icon-search"></i>');
     var search = $('#search').typeahead({
         prefetch: '/search.json',
         template: [
@@ -24,7 +23,7 @@
     $.ajax({
         url: 'https://api.github.com/zen',
         success: function (data) {
-            $('footer .content').append('<span class="zen">' + data + '</span>');
+            $('.footer').append('<span class="zen">' + data + '</span>');
         }
     });
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

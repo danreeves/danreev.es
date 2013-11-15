@@ -39,6 +39,10 @@ code, var, kbd, samp, tt, dir, listing, plaintext, xmp, abbr, acronym, blockquot
     font-weight: 400;
 }
 
+b, strong {
+font-weight: 900;
+}
+
 /* #Links
 ================================================== */
 a, a:visited {

@@ -30,6 +30,7 @@ footer {
 .content {
     border-top: none;
     border-bottom: none;
+    padding-top: 0;
 }
 .footer {
     border-top: none;
@@ -213,6 +214,16 @@ pre code {
 .pagination {
     padding-top: 1em;
     text-align: center;
+}
+
+.post-list {
+    list-style-type: none;
+}
+.post-list p {
+    margin: 0;
+}
+.post-list li {
+    margin-bottom: 1em;
 }
 
 /* Search / Typeahead

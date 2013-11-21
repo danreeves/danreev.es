@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: apps simplicity
+tags: photoshop simplicity
 ---
 
 I think it took the advent of the smart phone to help us realise that simple, single purpose apps are really good. It probably came from how limited the smartphone was, limited screen real estate; limited memory both in terms of storage and ram, but it had stuck around as phones and tablets became more powerful and it's a trend that has even made is way onto the desktop.

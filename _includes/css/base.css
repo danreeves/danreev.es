@@ -72,3 +72,13 @@ a:hover, a:focus {
     /* In case a browser has trouble rendering this glyph in a web font */
     /* I started using it because of Android browsers */
 }
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}

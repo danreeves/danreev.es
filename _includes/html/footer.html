@@ -8,7 +8,7 @@
 {% raw %}
 <script>
     hljs.initHighlightingOnLoad();
-    $('#search-label').append('<input type="search" id="search"><i class="icon icon-search"></i>');
+    $('#search-label').append('<input type="search" id="search" name="search" /><i class="icon icon-search"><span class="visuallyhidden">Search</span></i>');
     var search = $('#search').typeahead({
         prefetch: '/search.json',
         template: [

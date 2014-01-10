@@ -5,3 +5,4 @@ permalink: /posts/:title/
 paginate: 5
 paginate_path: /:num/
 url: http://localhost:4000/
+exclude: node_modules

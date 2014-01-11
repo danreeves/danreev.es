@@ -45,7 +45,6 @@ nav {
     margin: 0;
     padding: 0;
     display: block;
-    overflow: hidden;
     width: 100%;
     padding: 5px 0;
 }
@@ -59,9 +58,8 @@ nav ul {
 
 nav li {
     list-style-type: none;
-    display: block;
-    float: left;
-    margin-right: 2em;
+    display: inline-block;
+    margin-right: 1.5em;
 }
 
 header .icon {
@@ -206,7 +204,7 @@ article .tags {
     transition: all 0.2s;
 }
 .tt-query:focus {
-  width: 105px;
+  width: 110px;
   background-color: #fff;
 }
 
@@ -247,7 +245,7 @@ article .tags {
 
 @media only screen and (max-width: 700px) {
     nav li {
-        width: 50%;
+        width: 49%;
         margin: 0;
     }
     .tt-query:focus {

@@ -4,37 +4,6 @@
         </div>
     </footer>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="/all.js"></script>
-{% raw %}
-<script>
-    hljs.initHighlightingOnLoad();
-    $('#search-label').append('<input type="search" id="search" name="search" /><i class="icon icon-search"><span class="visuallyhidden">Search</span></i>');
-    var search = $('#search').typeahead({
-        prefetch: '/search.json',
-        template: [
-            '<p class="post-name">{{name}}</p>',
-            '<p class="post-date">{{date}}</p>'
-            ].join(''),
-        engine: Hogan
-    });
-    search.on('typeahead:selected', function (evt, data) {
-        window.location = data.url;
-    });
-    $.ajax({
-        url: 'https://api.github.com/zen',
-        success: function (data) {
-            $('.footer').append('<span class="zen">' + data + '</span>');
-        }
-    });
-    // Google Analytics
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-35945795-1', 'danreev.es');
-    ga('send', 'pageview');
-    // End Google Analytics
-</script>
-{% endraw %}
+<script src="/assets/js/all.js"></script>
 </body>
 </html>

@@ -1,40 +1,19 @@
 /* Layout
 ************************************/
-header,
-main,
-footer {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .header,
 .content,
 .footer {
-    max-width: 960px;
-    width: 75%;
+    width: 85%;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid #bebebe;
-    padding: 2em;
-    background: #FFF;
-    -webkit-box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
-    -moz-box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
-    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
 }
 .header {
-    border-bottom: none;
-    border-radius: 3px 3px 0 0;
     margin-top: 3em;
 }
-.content {
-    border-top: none;
-    border-bottom: none;
-    padding-top: 0;
-}
 .footer {
-    border-top: none;
-    border-radius: 0 0 3px 3px;
+    padding-top: 2em;
     margin-bottom: 3em;
 }
 
@@ -45,7 +24,7 @@ header a,
 header a:visited,
 header label {
     text-decoration: none;
-    color: #353535;
+    color: #000;
 }
 
 header a:hover,
@@ -65,16 +44,22 @@ h1 {
 nav {
     margin: 0;
     padding: 0;
+    // overflow: hidden;
+    display: block;
+    width: 100%;
 }
 
 nav ul {
     margin: 0;
     padding: 0;
+    display: block;
+    width: 100%;
 }
 
 nav li {
     list-style-type: none;
-    display: inline-block;
+    display: block;
+    float: left;
     margin-right: 2em;
 }
 
@@ -83,48 +68,30 @@ header .icon {
     text-decoration: none;
 }
 
-nav,
-header label {
-    display: inline-block;
-}
-
-header label {
-    float: right;
-    margin-right: 25px;
-}
-
 main p {
     text-align: justify;
 }
-
+h2,h3,h4,h5,h6 {
+    letter-spacing: -1px;
+}
 h2 {
-    font-weight: 100;
     font-size: 3em;
     line-height: 1em;
-    margin-top: 0;
     margin-bottom: 0;
-    padding-top: 0.83em;
     letter-spacing: -3px;
 }
 h2 a, h2 a:visited {
     color: #353535;
 }
 h3 {
-    font-weight: 400;
     font-size: 2em;
-    line-height: 1em;
 }
 h4 {
     font-size: 1.5em;
-    font-weight: 400;
-    line-height: 1em;
 }
 h5,
 h6 {
     font-size: 1.2em;
-    font-weight: 400;
-    line-height: 1em;
-    margin: 1em 0;
 }
 
 hr {
@@ -170,12 +137,6 @@ article .tags {
     font-size: 0.9em;
     margin-top: 0.5em;
     margin-right: 0.25em;
-}
-
-pre code {
-    display: block;
-    background: #eaeaea;
-    padding: 1em ;
 }
 
 .article-footer {
@@ -280,80 +241,4 @@ pre code {
 .tt-is-under-cursor .post-date {
   color: #fff;
   font-size: 12px;
-}
-
-
-
-/* Media Queries
-************************************/
-@media only screen and (max-width: 1280px) {
-    .header,
-    .content,
-    .footer {
-        width: 85%;
-    }
-}
-@media only screen and (max-width: 1080px) {
-    .header,
-    .content,
-    .footer {
-        width: 95%;
-    }
-}
-@media only screen and (max-width: 960px) {
-    .header,
-    .content,
-    .footer {
-        width: 100%;
-    }
-}
-@media only screen and (max-width: 720px) {
-    nav li {
-        width: 49%;
-        margin: 0;
-    }
-}
-@media only screen and (max-width: 640px) {
-    header, main, footer {
-        width: 90%;
-    }
-}
-@media only screen and (max-width: 600px) {
-    h1 {
-        font-size: 3em;
-        letter-spacing: -2px;
-    }
-}
-@media only screen and (max-width: 490px) {
-    header, main, footer {
-        width: 90%;
-    }
-}
-@media only screen and (max-width: 430px) {
-    header, main, footer {
-        width: 99%;
-    }
-    .header {
-        margin-top: 5px;
-    }
-    .footer {
-        margin-bottom: 5px;
-    }
-}
-@media only screen and (max-width: 390px) {
-    .header,.content,.footer {
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-    h1 {
-        font-size: 2.5em;
-        letter-spacing: -2px;
-    }
-}
-@media only screen and (max-width: 360px) {
-    nav li {
-        display: block;
-        width: 100%;
-        margin: 0;
-    }
 }

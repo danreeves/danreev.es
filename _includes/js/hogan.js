@@ -1,4 +1,4 @@
-{% raw %}
+
 /*
  *  Copyright 2011 Twitter, Inc.
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +24,7 @@ var Hogan = {};
     this.options = options;
     this.text = text || '';
     this.buf = (useArrayBuffer) ? [] : '';
-  }
+  };
 
   Hogan.Template.prototype = {
     // render: replaced by generated code.
@@ -573,5 +573,3 @@ var Hogan = {};
     return this.cache[key] = t;
   };
 })(typeof exports !== 'undefined' ? exports : Hogan);
-
-{% endraw %}

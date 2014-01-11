@@ -4,7 +4,7 @@
  * Copyright 2013 Twitter, Inc. and other contributors; Licensed MIT
  */
 
-(function($) {
+;(function($) {
     var VERSION = "0.9.3";
     var utils = {
         isMsie: function() {

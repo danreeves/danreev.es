@@ -8,7 +8,7 @@
 *
 * Date: Tue Aug 09 2011 10:45:54 GMT+0200 (CEST)
 */
-(function(){
+;(function(){
   var css = function (el, prop) {
     return window.getComputedStyle ? getComputedStyle(el).getPropertyValue(prop) : el.currentStyle[prop];
   };
@@ -21,7 +21,7 @@
   };
 
   var extend = function(obj,ext){
-    for(key in ext)
+    for(var key in ext)
       if(ext.hasOwnProperty(key))
         obj[key] = ext[key];
     return obj;

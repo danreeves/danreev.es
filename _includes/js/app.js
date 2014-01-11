@@ -20,7 +20,7 @@ $(document).ready(function () {
     $.ajax({
         url: 'https://api.github.com/zen',
         success: function (data) {
-            $('.footer').append('<span class="zen">' + data + '</span>');
+            $('.zen').append(data);
         }
     });
 

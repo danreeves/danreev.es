@@ -7,7 +7,7 @@ $(document).ready(function () {
     var search = $('#search').typeahead({
         prefetch: '/search.json',
         template: [
-            '<p class="post-name">{{name}}</p>',
+            '<p class="post-name">{{value}}</p>',
             '<p class="post-date">{{date}}</p>'
             ].join(''),
         engine: Hogan

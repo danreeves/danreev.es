@@ -19,10 +19,10 @@
     "type": "git",
     "url": "git://github.com/DanReeves/danreeves.github.io.git"
   },
-  "author": "",
+  "author": "Dan Reeves",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/DanReeves/danreeves.github.io/issues"
   },
-  "homepage": "https://github.com/DanReeves/danreeves.github.io"
+  "homepage": "http://danreev.es"
 }

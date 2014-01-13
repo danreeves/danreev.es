@@ -1,0 +1,28 @@
+{
+  "name": "danreeves.github.io",
+  "version": "0.0.0",
+  "description": "danreeves.github.io ===================",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "~3.3.0",
+    "gulp-concat": "~2.1.7",
+    "gulp-csso": "~0.1.7",
+    "gulp-sass": "~0.3.0",
+    "gulp-uglify": "~0.1.0",
+    "gulp-util": "~2.2.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DanReeves/danreeves.github.io.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DanReeves/danreeves.github.io/issues"
+  },
+  "homepage": "https://github.com/DanReeves/danreeves.github.io"
+}

@@ -22,14 +22,17 @@
 
 header a,
 header a:visited,
-header label {
+header label,
+h2 a {
     text-decoration: none;
     color: #000;
 }
 
 header a:hover,
 header a:focus,
-header label:hover {
+header label:hover,
+h2 a:hover,
+h2 a:focus {
     text-decoration: underline;
 }
 
@@ -39,6 +42,9 @@ h1 {
     line-height: 0.9em;
     letter-spacing: -4px;
     margin: 0 0 0.5em 0;
+}
+h1 a:hover {
+    text-decoration: none;
 }
 
 nav {
@@ -72,6 +78,7 @@ main p {
 }
 h2,h3,h4,h5,h6 {
     letter-spacing: -1px;
+    color: #353535;
 }
 h2 {
     font-size: 3em;
@@ -191,11 +198,12 @@ article .tags {
 
 .tt-query {
     font-family: sans-serif;
-    width: 1px;
+    width: 110px;
     border: 0;
     margin: 0;
     padding: 0;
     outline: 0;
+  border: 1px solid #eaeaea;
     margin-top: 1px;
     background-color: #fff;
     -webkit-transition: all 0.2s;

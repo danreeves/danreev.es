@@ -1,9 +1,10 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var sass = require('gulp-sass');
-var csso = require('gulp-csso');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
+var gulp = require('gulp'),
+    gutil = require('gulp-util'),
+    sass = require('gulp-sass'),
+    csso = require('gulp-csso'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat');
+
 
 gulp.task('css', function () {
     gulp.src('./_includes/css/*.scss')

@@ -4,11 +4,11 @@ title: Getting Started With Gulp.js
 tags: gulpjs
 ---
 
-[Gulp.js](http://gulpjs.com/) is a build system/task automator written for nodejs. It's useful for simplifying and speeding up your build process, automating tasks for you such as comiling code, minification, and concatenation.
+[Gulp.js](http://gulpjs.com/) is a build system/task automator written for nodejs. It's useful for simplifying and speeding up your build process, automating tasks for you such as compiling code, minification, and concatenation.
 
 Gulp differs from Grunt through the use of [streams](http://nodejs.org/api/stream.html) and a code-over-configuration approach. Through the use of streams, it allows you to write very simple scripts in a very similar way that you would to the front end using a library like jQuery while being very efficient and only writing files to the disk when you're ready.
 
-It's also very easy to pick up and get running with only 6 methods to worry about. Only some minimal knowledge of the command line and npm is needed and then anyone confortable writing javascript will get alon
+It's also very easy to pick up and get running with only 6 methods to worry about. Only some minimal knowledge of the command line and npm is needed and then anyone comfortable writing javascript will get alon
 g nicely.
 
 Before you start you'll need nodejs and npm installed which you can here [here](http://nodejs.org/).
@@ -17,13 +17,13 @@ Before you start you'll need nodejs and npm installed which you can here [here](
 ### Getting Started
 
 First, you'll need to install gulp globally with:
- 
+
     npm install -g gulp
 Now you can go into your project directory and install gulp and gulp-util, which are the only two dependencies. You can also install any packages you'd like to use now.
 
     npm install --save-dev gulp gulp-util
     npm install --save-dev gulp-concat gulp-csso gulp-sass gulp-uglify
-    
+
 Here, I've also installed packages for concatenating files, minifying css, compiling sass, and minifying javascript.
 
 The `--save-dev` option saves these packages to your devDependencies list in `package.json`. If you don't already have this file, I recommend creating one according to the [docs](https://npmjs.org/doc/json.html) or using `npm init` to create one for you. The benefit of this is that anyone using this project will know exactly what packages they need and npm can automatically install them all.
@@ -56,7 +56,7 @@ The first thing you need to do here is require all the modules you just installe
 
 [Gulp has 6 methods](https://github.com/gulpjs/gulp/blob/master/docs/API.md): `gulp.task`, `gulp.src`, `gulp.dest`, `gulp.watch`, `gulp.run`, and `gulp.env`. The first five are the most important.
 
-`gulp.task` is used for defining a task. You pass it a name and a function to be run. When you enter `gulp` to the command line it tries to execute the `default` task but if you pass anything in it will try to do that task, for example `gulp taskone`. Using this you can set up different tasks thatyou might run at different times, such as a testing/dev task, where you keep code unminified and create source maps, or a production task, where you minify and concatenate everything.
+`gulp.task` is used for defining a task. You pass it a name and a function to be run. When you enter `gulp` to the command line it tries to execute the `default` task but if you pass anything in it will try to do that task, for example `gulp taskone`. Using this you can set up different tasks that you might run at different times, such as a testing/dev task, where you keep code unminified and create source maps, or a production task, where you minify and concatenate everything.
 
 This can also be done using `gulp.env` which allows you to pass in `--options`.
 
@@ -66,7 +66,7 @@ The last thing you will need to know before you can write a simple gulpfile is a
 
 ### Writing A Task
 
-The first thing we'll write is a task to comile our sass and minify it.
+The first thing we'll write is a task to compile our sass and minify it.
 
 	gulp.task('css', function () {
 	    gulp.src('./pathto/css/*.scss')
@@ -74,9 +74,9 @@ The first thing we'll write is a task to comile our sass and minify it.
 	        .pipe(csso())
 	        .pipe(gulp.dest('./assets/css'));
 	});
-	
-Here we've created a task named `css` which sources all `.scss` files in the folder `/path/to/` from the root of our project. It pipes these files to the `sass()` function with an option that tells sass where the include files are. 
-*This is only necassary if you're using `@include` in your sass.*
+
+Here we've created a task named `css` which sources all `.scss` files in the folder `/path/to/` from the root of our project. It pipes these files to the `sass()` function with an option that tells sass where the include files are.
+*This is only necessary if you're using `@include` in your sass.*
 
 It then gets piped into `csso()` which minifies it and lastly it is piped ito `gulp.dest()` which creates the file in the `assets/css` folder from the root of the project.
 
@@ -90,13 +90,13 @@ I created another task for my javascript:
 	        .pipe(concat('all.js'))
 	        .pipe(gulp.dest('./assets/js'));
 	});
-	
-The usage and documentation for all packages can be found  on their [npm registery page](https://npmjs.org/) and you can find gulp-packages by searching [here](http://gratimax.github.io/search-gulp-plugins/).
+
+The usage and documentation for all packages can be found  on their [npm registry page](https://npmjs.org/) and you can find gulp-packages by searching [here](http://gratimax.github.io/search-gulp-plugins/).
 
 ### Automation
 
 It's good so far; we can build our css and js with only two commands:
- 
+
 	gulp css
 	gulp js
 
@@ -119,23 +119,23 @@ We can create watch function which keep and eye on your different types of files
 Our default task could instead look like this:
 
 	gulp.task('default', function () {
-	
+
 	    // Run both tasks on first run
 	    gulp.run('css', 'js');
-	    
+
 	    // Watch the css folder for changes
 	    gulp.watch('./pathto/css/*', function () {
 	    	// Run the css task
 	        gulp.run('css');
 	    });
-	
+
 	    // Watch the js folder for changes
 	    gulp.watch('./pathto/js/*', function () {
 	    	// Run the js task
 	        gulp.run('js');
 	    });
 	});
-	
+
 Now, when we run `gulp` it will keep running until we close it with `Ctrl C`.
 
 You now have an almost fully automated built process. It is also possible to use a livereload package which even automates page refreshes for you after you have changed anything.

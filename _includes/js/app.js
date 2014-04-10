@@ -1,20 +1,7 @@
 $(document).ready(function () {
+
     // highlight.js
     hljs.initHighlightingOnLoad();
-
-    // post search with typeahead.js
-    $('#search-label').append('<i class="icon icon-search"><span class="visuallyhidden">Search</span></i><input type="search" id="search" name="search" />');
-    var search = $('#search').typeahead({
-        prefetch: '/search.json',
-        template: [
-            '<p class="post-name">{{value}}</p>',
-            '<p class="post-date">{{date}}</p>'
-            ].join(''),
-        engine: Hogan
-    });
-    search.on('typeahead:selected', function (evt, data) {
-        window.location = data.url;
-    });
 
     // footer philosophy
     $.ajax({

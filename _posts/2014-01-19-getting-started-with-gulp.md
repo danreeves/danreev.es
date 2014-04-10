@@ -8,8 +8,7 @@ tags: gulpjs
 
 Gulp differs from Grunt through the use of [streams](http://nodejs.org/api/stream.html) and a code-over-configuration approach. Through the use of streams, it allows you to write very simple scripts in a very similar way that you would to the front end using a library like jQuery while being very efficient and only writing files to the disk when you're ready.
 
-It's also very easy to pick up and get running with only 6 methods to worry about. Only some minimal knowledge of the command line and npm is needed and then anyone comfortable writing javascript will get alon
-g nicely.
+It's also very easy to pick up and get running with only 6 methods to worry about. Only some minimal knowledge of the command line and npm is needed and then anyone comfortable writing javascript will get along nicely.
 
 Before you start you'll need nodejs and npm installed which you can here [here](http://nodejs.org/).
 
@@ -19,6 +18,7 @@ Before you start you'll need nodejs and npm installed which you can here [here](
 First, you'll need to install gulp globally with:
 
     npm install -g gulp
+
 Now you can go into your project directory and install gulp and gulp-util, which are the only two dependencies. You can also install any packages you'd like to use now.
 
     npm install --save-dev gulp gulp-util

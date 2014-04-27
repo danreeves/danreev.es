@@ -1,7 +1,7 @@
 - name: Asteroids
   url: /asteroids
-  desc: A canvas game built with the help of @seb_ly on his fantastic #CreativeJS wrokshop.
+  desc: 'A canvas game built with the help of <a href="https://twitter.com/seb_ly">@seb_ly</a> on his fantastic <a href="http://seb.ly/training/">CreativeJS workshop</a>.'
 
 - name: Pong
   url: /pong
-  desc: My first go at making a game. Pong, made with Phaser.js
+  desc: 'My first go at making a game. Pong, made with <a href="http://phaser.io">Phaser</a>.'

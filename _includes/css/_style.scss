@@ -20,17 +20,23 @@
 /* Design
 ************************************/
 
-header a,
-header a:visited,
-header label,
+h1 a,
+h1 a:visited,
+h1 label,
+nav a,
+nav a:visited,
+nav label,
 h2 a {
     text-decoration: none;
     color: #000;
 }
 
-header a:hover,
-header a:focus,
-header label:hover,
+h1 a:hover,
+h1 a:focus,
+h1 label:hover,
+nav a:hover,
+nav a:focus,
+nav label:hover,
 h2 a:hover,
 h2 a:focus {
     text-decoration: underline;
@@ -82,7 +88,7 @@ h2 {
     font-size: 3em;
     line-height: 1em;
     margin-bottom: 0;
-    letter-spacing: -3px;
+    letter-spacing: -2px;
 }
 h2 a, h2 a:visited {
     color: #353535;

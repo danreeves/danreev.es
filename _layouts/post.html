@@ -8,7 +8,8 @@
                 {{ content }}
             </div>
             <div class="article-footer">
-                <a href="https://twitter.com/intent/tweet?text=%40heydanreeves+RE:+{{ page.title| cgi_escape }}:"><i class="icon icon-twitter"></i>Continue the conversation</a>
+                <a href="https://twitter.com/intent/tweet?text=%40heydanreeves+{{ page.title | cgi_escape }}:"><i class="icon icon-twitter"></i>Talk to me</a>
+                <a href="https://github.com/danreeves/danreeves.github.io/issues/new?title={{ page.title | cgi_escape }}"><i class="icon icon-github"></i>Report an issue</a>
                 <a href="{{ page.url }}"><i class="icon icon-link"></i>Permalink</a>
             </div>
         </article>

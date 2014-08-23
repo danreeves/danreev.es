@@ -4,3 +4,9 @@
 [submodule "games/asteroids"]
 	path = games/asteroids
 	url = https://github.com/DanReeves/asteroids.git
+[submodule "games/games/platformer"]
+	path = games/games/platformer
+	url = https://github.com/DanReeves/platformer.git
+[submodule "games/platformer"]
+	path = games/platformer
+	url = https://github.com/DanReeves/platformer.git

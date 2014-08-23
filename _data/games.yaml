@@ -1,7 +1,6 @@
 - name: Asteroids
   url: asteroids
-  desc: 'A canvas game built with the help of <a href="https://twitter.com/seb_ly">@seb_ly</a> on his fantastic <a href="http://seb.ly/training/">CreativeJS workshop</a>.'- name: Asteroids
-  url: asteroids
+  desc: 'A canvas game built with the help of <a href="https://twitter.com/seb_ly">@seb_ly</a> on his fantastic <a href="http://seb.ly/training/">CreativeJS workshop</a>.'
 
 - name: Pong
   url: pong

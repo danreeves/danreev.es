@@ -10,3 +10,6 @@
 [submodule "games/platformer"]
 	path = games/platformer
 	url = https://github.com/DanReeves/platformer.git
+[submodule "games/ld30"]
+	path = games/ld30
+	url = https://github.com/DanReeves/LD30.git

@@ -1,0 +1,77 @@
+==================================================================
+https://keybase.io/danreeves
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://danreev.es
+  * I am danreeves (https://keybase.io/danreeves) on keybase.
+  * I have a public key with fingerprint E230 EFC4 9EE1 0E31 9C0F  D345 DCDE 2CA4 7555 5C87
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.7.2"
+        },
+        "key": {
+            "fingerprint": "e230efc49ee10e319c0fd345dcde2ca475555c87",
+            "host": "keybase.io",
+            "key_id": "DCDE2CA475555C87",
+            "uid": "e43978490b9a72b64e29bcdd32de7d00",
+            "username": "danreeves"
+        },
+        "merkle_root": {
+            "ctime": 1412002314,
+            "hash": "74f2400b65766224c9a0ce99d2b7cc59dfa16349e67a6a994d5b65031364b7b6dccf2a6092c4e80c3899efa685ff4958089144fb3f0c3288d10e6916704db84c",
+            "seqno": 64858
+        },
+        "service": {
+            "hostname": "danreev.es",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1412002442,
+    "expire_in": 157680000,
+    "prev": "2410d7270675e01f6cd7bf59cf9a0fafd3b8d4d4058871e1438cf202d2172d59",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - https://gpgtools.org
+
+owFVkn1oVlUcx59luXwsW1L5R0EPlzDMh4dzzz33vMzsbXvsxVGB4oYTn+4953ee
+Xbfd++ze6/TJni2EsUxBi3AVZQYJpX9EQsEWamYFZiQE9UcEcxKDpFKQZMGgzn0y
+auev8/I53/P7fn/nwK2LcvmWJ3fn28ZnnYdbzv3i5zauiid2WX6k6lb7LksOBBCm
+2Sz0BsFqt/qh7nsJlIKoEEYKStuSwnWmaA1DnARRaChUYiVsNYoZnl3WQViFuBYH
+mZYF2EGgJREANgLHFhJp5RBXSQVYeoS5ZkjOjGRflKQLXrWampVAmd3Ojs4y7nj0
+H76jyW9vHgBxBONEIF94DPuUABa+VMrBCphCKAMTiK9bUl4YAwxDkhU8CHH/AFTi
+KGq6lmmQMTaxMULYsYkpyUv6zC1GNCYI+dRllGJMpPCQBCEU9pmUrlDas6ljPFLm
+UU8IolzDIsd2KPGZT5WUGnsUCSwJcCQdLgRoj3JXayJcjriwCdG+o80Z5lyZqKiw
+KUNE+ZxI4yGBoTCy2inhLm9ky3g4kJCVncW20F3J2CtatThKIxkNmP2+NK21Z47T
+ei3jdoBfSeBYU6LiB6EyLft/T22DLkyDEFy0YGctiKESZIRJgiMzsndg2GhiYiPF
+MEOUuYBsTaVivnaF1CYs7Zmm+1wRRZDLObPBJg43oSCssM2wcsV/Hk3uqVc1kklQ
+Db10ewxWY0/LPTfmWvK5xTfdkH3aXH5J278/eVa3/qU/nu+efOAIXXNm3i2/2Zg6
+272ifu1C9Nii13+4vXAquKUXvNa7Lz8+9PU3oEnPoT/KX86U516+dmXLh6tzE0e6
+nlr2bP301TMXp48Odb32++SBnkvLNqy/8+2LjWPVddtGl3pP37fV3bj1+VfeemHf
+2Gyt/5Hc6eWfXc0/9HMy2XbwT1K77XLvzieO3tv7a7J7T+vS5Uvefe/m8+vnfuo+
+W73rRzqyf3E6tu98+fD9eHpy5YXS3tHcSCRO7Z1fm4y/Mf3+9HebV4x+9P2mzw/t
+f3HswbXPTFwR504eHw++enVw88wXOz4dmVoZHP5tzTvr5uK2Syd6Oj85MfaB9VJ5
+ZlVXsXAH/7Zw8uBzbMvU3w==
+=hBLx
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/danreeves
+
+==================================================================

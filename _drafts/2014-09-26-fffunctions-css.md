@@ -22,6 +22,8 @@ tags: css frameworks workflow
 
 ___
 
+*This was written for the [fffunction blog](http://blog.fffunction.co/article/functions-css)*
+
 This article is in response to some recent posts by [Mark Dotto](http://markdotto.com/2014/07/23/githubs-css/), [Lonely Planet](http://ianfeather.co.uk/css-at-lonely-planet/), and [Chris Coyier](http://codepen.io/chriscoyier/blog/codepens-css). I'm big on optimising architectures and workflows, so I found reading how other people are doing it pretty helpful. It's also great to validate your own thoughts while learning from others.
 
 ### Quick Facts
@@ -60,7 +62,7 @@ Sassaparilla looks like this:
  - modules - user created modules
  - screen.scss - All imports and some base styling, this gets compiled and minified
 
-The `libs` directory is all of Sassaparillas core files, things like: resets, sensible defaults, variables, the grid system and other mixins. These files are generally left alone or configured for colours or site-wide typography.
+The `libs` directory is all of Sassaparilla's core files, things like: resets, sensible defaults, variables, the grid system and other mixins. These files are generally left alone or configured for colours or site-wide typography.
 
 The `modules` directory is where all the BEM defined blocks go, each in its own file. This keeps everything modular and never interdependent. This is further enforced by the potentially unordered importing of Sass globbing. We're big proponents for BEM syntax and structure, for how easily maintainable and self-documenting it keeps our code.
 
@@ -98,7 +100,7 @@ I thought this section was worth adding because we deploy on a variety of platfo
 
 Our own site is hosted by Mixture. This means that it's just a Mixture project on the backend which handles lots of nice things like image optimisation and the templating has helpers for adding CSS and JS files to the HTML.
 
-We also use a lot of WordPress, and other CMS'. For these, as mentioned before, we keep a Mixture project pattern library in the same repo. All the CSS is compiled here by Mixture and we're loading the CSS file the usual way (often we can write our own helper functions/template tags).
+We also use a lot of WordPress, and other CMSs. For these, as mentioned before, we keep a Mixture project pattern library in the same repo. All the CSS is compiled here by Mixture and we're loading the CSS file the usual way (often we can write our own helper functions/template tags).
 
 Sometimes, like in large Django builds, we feel the complexity of using Mixture was unnecessary, while it also needed a more customised build process with lots of JavaScript files. In these circumstances we're using Gulp and once again Django has nice helpers for `<link>` tags.
 
@@ -108,9 +110,9 @@ Performance is a thing I think we all have in mind while writing our Sass. We al
 
 ### Prototyping
 
-One of the big part of fffunction is the importance of user experience and prototyping, so I thought it was worth mentioning.
+One of the big parts of fffunction is the importance of user experience and prototyping, so I thought it was worth mentioning.
 
-We start every project with prototypes. Sometimes this HTML and CSS makes it through into the final project, but often it doesn't. When in the prototyping stage with use Foundation a lot, for it's large library of prebuilt components, grids, and styling.
+We start every project with prototypes. Sometimes this HTML and CSS makes it through into the final project, but often it doesn't. When in the prototyping stage we use Foundation a lot, for it's large library of prebuilt components, grids, and styling.
 
 ### Refactoring
 

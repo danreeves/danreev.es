@@ -1,19 +1,20 @@
-- name: Asteroids
-  url: asteroids
-  desc: 'A canvas game built with the help of <a href="https://twitter.com/seb_ly">@seb_ly</a> on his fantastic <a href="http://seb.ly/training/">CreativeJS workshop</a>.'
 
-- name: Pong
-  url: pong
-  desc: 'My first go at making a game. Pong, made with <a href="http://phaser.io">Phaser</a>.'
-
-- name: Platformer
-  url: platformer
-  desc: 'A practice for Ludum Dare. It has a player jumping on platforms. Even double jump!'
+- name: Roll-a-ball
+  url: roll-a-ball
+  desc: "The first Unity3D tutorial game."
 
 - name: Connected Worlds
   url: ld30
   desc: "My Ludum Dare 30 attempt. It's an unfinished 2D shooter based in the future. Hell has connected to our world and it's down to faceless, generic spaceman with a gun to save the day."
 
-- name: Roll-a-ball
-  url: roll-a-ball
-  desc: "The first Unity3D tutorial game."
+- name: Platformer
+  url: platformer
+  desc: 'A practice for Ludum Dare. It has a player jumping on platforms. Even double jump!'
+
+- name: Pong
+  url: pong
+  desc: 'My first go at making a game. Pong, made with <a href="http://phaser.io">Phaser</a>.'
+
+- name: Asteroids
+  url: asteroids
+  desc: 'A canvas game built with the help of <a href="https://twitter.com/seb_ly">@seb_ly</a> on his fantastic <a href="http://seb.ly/training/">CreativeJS workshop</a>.'

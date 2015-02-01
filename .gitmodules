@@ -13,3 +13,6 @@
 [submodule "games/ld30"]
 	path = games/ld30
 	url = https://github.com/DanReeves/LD30.git
+[submodule "games/roll-a-ball"]
+	path = games/roll-a-ball
+	url = https://github.com/DanReeves/roll-a-ball.git

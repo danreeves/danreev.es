@@ -10,7 +10,7 @@ In this article we'll be writing a build script that can compile [Sassaparilla](
 
 Everyone who's [aware of Grunt](http://24ways.org/2013/grunt-is-not-weird-and-hard/) will know what this is about, but Gulp differs from Grunt in two important ways: the use of streams and a code-over-configuration approach. A [stream](http://maxogden.com/node-streams.html) is a method of plugging the output of one tool into the input of another, allowing you to compose large systems out of small tools that do one thing well. [Gulp](http://gulpjs.com/) is a framework for plugging in your favourite tools to form a build script.
 
-## Getting Going
+### Getting Going
 
 To begin we'll need node and npm. If you don't have these you can download installer from the [website](http://nodejs.org/) or if you're on OS X, I recommend using [homebrew](http://brew.sh/).
 
@@ -32,7 +32,7 @@ While there are many purpose-written Gulp plugins (e.g gulp-compass), gulpfiles 
 
 The `--save-dev` option saves these packages to your `devDependencies` list in `package.json`. If you donâ€™t already have this file, I recommend creating one according to the [docs](https://www.npmjs.org/doc/json.html) or using `npm init` in the project root folder. This means that anyone using this project will know exactly what packages they need and npm can automatically install them.
 
-## Grasping Gulps API
+### Grasping Gulps API
 
 We're ready to  write the script! Gulp only has four methods, so it's easy to learn and then gets out of your way letting you write a build script how you want.
 
@@ -51,7 +51,7 @@ Run `gulp` in the terminal to test it's all working.
 
 <div class="img"><img src="/assets/img/guide-to-gulp/gulp1.gif" alt="Demo of the gulp task running" title="Demo of the gulp task running"></div>
 
-## Going Up A Gear
+### Going Up A Gear
 
 Now everything is running we can start compiling our Sassaparilla. Add the relevant module imports and write a new task (you can remove the old one). Your file should now look like this:
 
@@ -93,7 +93,7 @@ The addition of watching files for changes will introduce us to the fourth and f
 
 In case you're not familiar with globbing, the asterisks in that task match anything, so "`css/**/*.scss`" will be looking at every scss file in every folder in the css folder.
 
-## Graduation
+### Graduation
 
 Congratulations, you've grokked gulp and got in the groove of watching files with globbing!
 

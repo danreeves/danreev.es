@@ -1,23 +1,7 @@
 {% include html/header.html %}
 <main>
     <div class="content">
-    {{ content }}
-    {% for post in paginator.posts %}
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-            <h2 itemprop="name headline"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            <p class="meta">Posted on <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date_to_long_string }}</time> &mdash; {{ post.content | number_of_words }} words about {{ post.tags | array_to_sentence_string }}.</p>
-            <div itemprop="articleBody">
-                {{ post.content }}
-            </div>
-            <div class="article-footer">
-                <a href="https://twitter.com/intent/tweet?text=%40heydanreeves+{{ post.title | cgi_escape }}:"><i class="icon icon-twitter"></i>Reply on Twitter</a>
-                <a href="https://github.com/danreeves/danreeves.github.io/issues/new?title={{ post.title | cgi_escape }}"><i class="icon icon-github"></i>Report an issue</a>
-                <a href="{{ post.url }}"><i class="icon icon-link"></i>Permalink to post</a>
-            </div>
-        </article>
-        <hr />
-    {% endfor %}
-    {% include html/paginate.html %}
+        {{ content }}
     </div>
 </main>
 {% include html/footer.html %}

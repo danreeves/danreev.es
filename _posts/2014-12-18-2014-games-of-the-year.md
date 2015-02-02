@@ -4,7 +4,7 @@ title: "2014: Games of the year"
 tags: games
 ---
 
-## 1. Transistor
+### 1. Transistor
 
 _Released: May 20, 2014_
 
@@ -22,7 +22,7 @@ The game play also worked wonderfully for me. It combined real-time combat with 
 
 It also had an interesting mechanic in which all of your upgrades could either be used as an attack, an upgrade to another attack, or a passive ability. This gave the game an enormous amount of customisation. What they did you prevent you falling into a routine set of attacks you like, however, was probably what lead to such an engaging experience: every time you died you temporarily lost one of your equipped skills. This could mean suddenly being without the attack your whole set-up relied on in the middle of a difficult fight you just died in. Now you need to re-evaluate all the abilities and probably try some combinations you wouldn't have done otherwise.
 
-## 2. Wolfenstein: The New Order
+### 2. Wolfenstein: The New Order
 
 _Released: May 20, 2014_
 
@@ -34,7 +34,7 @@ The story was equal parts over the top gunfights, dual wielding machine guns kil
 
 Another success for this game was level design. This may just be because the current state of AAA FPS games is abysmal in this department, with linear "corridor shooters" filling the roster, and looking to the past you might wonder why games don't do this so much any more. The levels in Wolfenstein were interesting and multipathed. They had secrets and hidden vantage points. They promoted experimental and emergent game play, contrasting the extravagant gun-play with stealth and exploration.
 
-## 3. Gang Beasts
+### 3. Gang Beasts
 
 _Released: 29 Aug, 2014_
 
@@ -46,7 +46,7 @@ The simple yet unpredictable mechanics, mixed with the adorable graphics, make t
 
 10/10, would recommend!
 
-## 4. Nidhogg
+### 4. Nidhogg
 
 _Released: 13 Jan, 2014_
 
@@ -58,7 +58,7 @@ The simple pixel graphics emphasis the games minimalist package, the game is pur
 
 This simple game is worth every penny for some intense one-on-ones with your friends.
 
-## 5. Divinity: Original Sin
+### 5. Divinity: Original Sin
 
 _Released: 30 Jun, 2014_
 
@@ -72,7 +72,7 @@ The deep level of roleplaying and interaction available in this game make it an 
 
 
 
-## Honourable mentions
+### Honourable mentions
 
 There were lots of great games this year, too many to write about. Here's a list of other games I though were great, but not good enough for the top 5.
 
@@ -94,7 +94,7 @@ There was also games that didn't release this year but I poured a lot of hours i
  - The Stanley Parable
 
 
-## Dishonourable mention
+### Dishonourable mention
 
 Watch_Dogs. Enough said.
 

@@ -21,13 +21,8 @@ gulp.task('js', function () {
 });
 
 
-gulp.task('default', function () {
-    gulp.run('css', 'js');
-    gulp.watch('./_includes/css/*', function () {
-        gulp.run('css');
-    });
+gulp.task('default', ['js', 'css'], function () {
+    gulp.watch('./_includes/css/*', ['css']);
 
-    gulp.watch('./_includes/js/*', function () {
-        gulp.run('js');
-    });
+    gulp.watch('./_includes/js/*', ['js']);
 });

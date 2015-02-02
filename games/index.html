@@ -6,7 +6,7 @@ title: Games
 <ul class="post-list">
 {% for game in site.data.games %}
     <li>
-        <p><a href="{{ game.url }}">{{ game.name }}</a></p>
+        <p class="title"><a href="{{ game.url }}">{{ game.name }}</a></p>
         <p class="meta">{{ game.desc }}</p>
     </li>
 {% endfor %}

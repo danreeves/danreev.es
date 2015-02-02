@@ -8,18 +8,22 @@
 /* #Basic Styles
 ================================================== */
 *, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
- }
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 body {
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
     background:transparent;
     color: #555;
-    font-size: 1em;
-    line-height: 1.5em;
+    font-size: 1.25em;
+    line-height: 1.55em;
 
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Lora', serif;
     font-weight: 300;
 
     -webkit-hyphens: auto;
@@ -29,6 +33,7 @@ body {
     -o-hyphens: auto;
     hyphens: auto;
 }
+
 code, var, kbd, samp, tt, dir, listing, plaintext, xmp, abbr, acronym, blockquote, q {
     -webkit-hyphens: none;
     -epub-hyphens: none;
@@ -40,17 +45,17 @@ code, var, kbd, samp, tt, dir, listing, plaintext, xmp, abbr, acronym, blockquot
 }
 
 b, strong {
-font-weight: 900;
+    font-weight: 900;
 }
 
 /* #Links
 ================================================== */
 a, a:visited {
-    color: #000;
+    color: inherit;
     text-decoration: underline;
 }
 a:hover, a:focus {
-    color: #000;
+    color: inherit;
     text-decoration: none;
     outline: none;
 }
@@ -61,7 +66,7 @@ a:hover, a:focus {
 .amp {
     font-style:italic;
     font-weight:100;
-    font-family:'Baskerville','Goudy Old Style','Palatino','Book Antiqua','Palatino Linotype',
+    font-family:'Lora','Baskerville','Goudy Old Style','Palatino','Book Antiqua','Palatino Linotype',
                 'Constantia','LMRomanUnsl10','URW Palladio L','URW Chancery L', sans-serif;
     /* Use for beautiful &amp;s in your titles! */
     /* Should cover Windows XP, Vista, 7, Mac OS X, and Linux */

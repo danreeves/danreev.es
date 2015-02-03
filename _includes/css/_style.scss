@@ -109,3 +109,19 @@ nav {
         text-decoration: underline;
     }
 }
+
+.article-footer {
+    font-size: 0.8em;
+    a {
+        text-decoration: none;
+        display: inline-block;
+        margin-right: 1em;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    .fa {
+        color: darken(#543, 15%);
+        margin-right: 0.25em;
+    }
+}

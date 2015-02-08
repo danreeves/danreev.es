@@ -16,3 +16,6 @@
 [submodule "games/roll-a-ball"]
 	path = games/roll-a-ball
 	url = https://github.com/DanReeves/roll-a-ball.git
+[submodule "steam"]
+	path = steam
+	url = git@github.com:danreeves/steam-react.git

@@ -54,10 +54,17 @@ hr {
     border: none;
     border-bottom: 1px solid #543;
 }
+
 .meta {
     font-size: 0.8em;
     margin-top: -2em;
     font-style: italic;
+}
+
+.avatar {
+    width: 128px;
+    float: right;
+    border-radius: 50%;
 }
 
 .post-list {

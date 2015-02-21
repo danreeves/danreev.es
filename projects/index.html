@@ -1,0 +1,13 @@
+---
+layout: default
+title: Projects
+---
+<h2>Projects</h2>
+<ul class="post-list">
+{% for item in site.data.projects %}
+    <li>
+        <p class="title"><a href="{{ item.url }}">{{ item.name }}</a></p>
+        <p class="meta">{{ item.desc }}</p>
+    </li>
+{% endfor %}
+</ul>

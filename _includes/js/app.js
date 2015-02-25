@@ -1,5 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    // setTimeout(function mobileScrollDown () {
+    //     // try {
+    //         if (window.location.pathname !== '/' && document.referrer.split('/')[2] === window.location.host) {
+    //             document.querySelector('.header hr').scrollIntoView();
+    //         }
+    //     // } catch (e) {/*lol*/}
+    // }, 1000);
+
     // highlight.js
     hljs.initHighlightingOnLoad();
 

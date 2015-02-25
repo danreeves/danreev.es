@@ -145,3 +145,9 @@ nav {
         margin:0;
     }
 }
+
+@media (max-width: 400px) {
+    .avatar {
+        width: 112px;
+    }
+}

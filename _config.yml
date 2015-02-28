@@ -5,3 +5,7 @@ highlighter: false
 permalink: /posts/:title/
 exclude:
     - node_modules
+
+name: Dan Reeves
+description: "My blog on development, games and, things that interest me."
+url: http://danreev.es

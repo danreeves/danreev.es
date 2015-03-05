@@ -11,7 +11,7 @@
 }
 
 .header {
-    margin-top: 2.5em;
+    margin-top: 1.5em;
 }
 
 .footer {
@@ -30,8 +30,12 @@ img {
 
 h1, h2, h3, h4, h5, h6 {
     color: darken(#543, 15%);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
+    font-family: 'Lora', sans-serif;
+    font-weight: 400;
+}
+h1 {
+    font-size: 1.5em;
+    display: none;
 }
 h2 {
     font-size: 3em;
@@ -71,11 +75,11 @@ hr {
     padding: 0;
     list-style: none;
     p.title {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Lora', sans-serif;
         font-size: 1.5em;
         color: darken(#543, 15%);
         letter-spacing: -1px;
-        font-weight: 900;
+        font-weight: 400;
         a {
             text-decoration: none;
         }

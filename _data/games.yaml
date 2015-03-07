@@ -1,4 +1,8 @@
 
+- name: Javascript Quine Game
+  url: /javascript-quine-game
+  desc: "A small experiment that lets you walk around on its own code."
+
 - name: Survival shooter
   url: /survival_shooter
   desc: Another unity tutorial

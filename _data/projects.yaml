@@ -1,4 +1,8 @@
 
+- name: Cornwall Codes
+  url: http://cornwall.codes
+  desc: "A community project, collating all the things for developers based in Cornwall might be interested in."
+
 - name: Please
   url: https://github.com/fffunction/please
   desc: "A small and modern AJAX library, that supports form uploads back to IE9."

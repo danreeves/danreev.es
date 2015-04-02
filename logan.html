@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+    <style>
+        html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+#card {
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 1000;
+    width: 250px;
+    height: 250px;
+    position: relative;
+}   
+.back, .front {
+    position: absolute;
+    /* -webkit-backface-visibility: hidden; */
+    -webkit-transition: -webkit-transform 1s ease-in;
+    width: 100%;
+    height: 100%;   
+    padding: 20px;
+    font-family: Comic Sans, Comic Sans MS;
+    background-color: #fff;
+    font-weight: bold;
+    -webkit-transform-origin: left center;
+    border: 3px solid #000;
+}
+.back {
+    overflow: hidden;
+    background-image: url('http://i.imgur.com/etjgJ2D.jpg');
+    background-size: auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}   
+.front {
+    font-size: 40px;
+    text-align: center;
+    
+}
+#card-container {
+  margin-left: auto;margin-right: auto;
+    margin-top: 50px;
+    width:250px;
+    
+}   
+#card-container:hover .back {   
+    -webkit-transform: rotateY(0deg);
+}
+#card-container:hover .front {      
+    -webkit-transform: rotateY(-180deg);
+}
+    </style>
+</head>
+<body>
+<div id="card-container">
+    <div id="card">
+        <div class="back"></div>
+        <div class="front">Happy Birthday Logan</div>
+    </div>
+</div>
+
+    <br>Hover to open!
+</body>
+</html>

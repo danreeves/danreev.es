@@ -1,7 +1,7 @@
 
 - name: Jumping is illegal
   url: http://danreeves.itch.io/jumping-is-illegal
-  desc: "A Punkjam entry with art by <a href="https://twitter.com/slyphor">@Slyphor</a>"
+  desc: 'A Punkjam entry with art by <a href="https://twitter.com/slyphor">@Slyphor</a>'
   
 - name: Javascript Quine Game
   url: /javascript-quine-game

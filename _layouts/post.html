@@ -2,7 +2,7 @@
     <main>
         <div class="content">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-            <h2 itemprop="name headline">{{ page.title }}</h2>
+            <h1 itemprop="name headline">{{ page.title }}</h1>
             <p class="meta">Posted on <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date_to_long_string }}</time> &mdash; {{ page.content | number_of_words }} words about {{ page.tags | array_to_sentence_string }}.</p>
             <div itemprop="articleBody">
                 {{ content }}

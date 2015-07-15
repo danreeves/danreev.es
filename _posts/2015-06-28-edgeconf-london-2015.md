@@ -16,7 +16,7 @@ The first panel was on security on the web, moderated by [Dan Appelquist](https:
 
 The discussion mostly revolved around, the main sticking point for a lot of developers when trying to implement HTTPS, external sources not using HTTPS and causing insecure domain warnings. The solutions suggested ranged from carrots to sticks; ranking secure content higher in search results, only giving new web features to secure domains, and slowly deprecating features from HTTP sites. It was agreed that more pressure needs to be applied to ad networks to get them to move to HTTPS.
 
-According to the panel getting HTTPS easily and for free will become a non-issue in the near future, with the release of [LetsEncrypt](https://letsencrypt.org/). There was some concern that even though the process has been reduced to a single command it's still no easy enough for the standard user.
+According to the panel getting HTTPS easily and for free will become a non-issue in the near future, with the release of [LetsEncrypt](https://letsencrypt.org/). There was some concern that even though the process has been reduced to a single command it's still not easy enough for the standard user.
 
 <div class="img"><img src="/assets/img/edgeconf-london-2015/web-for-everyone.png" alt="" /></div>
 
@@ -65,7 +65,7 @@ There was a lot of interest in the potential for shadow dom to hide complexity a
     />
 </div>
 
-The final panel of the day way moderated by [Lyza Danger Gardener](https://twitter.com/lyzadanger) and keynoted by [Remy Sharp](https://twitter.com/rem). This was probably the most discussed item of the day, being an important undercurrent in almost every session.
+The final panel of the day way moderated by [Lyza Danger Gardner](https://twitter.com/lyzadanger) and keynoted by [Remy Sharp](https://twitter.com/rem). This was probably the most discussed item of the day, being an important undercurrent in almost every session.
 
 Remy's keynote started by explaining how the term progressive enhancement is often geared towards the lowest common denominator and is more often than not defined as making something work without JavaScipt; unfortunately these misconceptions are widely spread. He continued to talk about examples of apps that can and can't work without JS and explaining why that can be fine.
 

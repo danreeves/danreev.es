@@ -16,4 +16,4 @@ The most important thing to not forget is the countless problems that have alrea
 
 Next time you're about to write some code, stop for a moment. Think, has this already been done? Look at some of the [best](https://www.npmjs.com/browse/depended) [code](https://github.com/trending?l=javascript&since=monthly) [you](https://github.com/jquery/jquery) [can](https://github.com/jashkenas/underscore) [find](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/inspector/InjectedScriptSource.js). Figure out what's worth stealing, move onto the next thing.
 
-Steal like an artist.
+[Steal like an artist.](http://austinkleon.com/steal/)

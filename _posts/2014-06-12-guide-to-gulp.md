@@ -30,7 +30,7 @@ This will create a `node-modules` directory in your project where all the node p
 
 While there are many purpose-written Gulp plugins (e.g gulp-compass), gulpfiles are just like any other node program and you can use any node modules to do custom tasks; you don't even have to use streams.
 
-The `--save-dev` option saves these packages to your `devDependencies` list in `package.json`. If you donâ€™t already have this file, I recommend creating one according to the [docs](https://www.npmjs.org/doc/json.html) or using `npm init` in the project root folder. This means that anyone using this project will know exactly what packages they need and npm can automatically install them.
+The `--save-dev` option saves these packages to your `devDependencies` list in `package.json`. If you don't already have this file, I recommend creating one according to the [docs](https://www.npmjs.org/doc/json.html) or using `npm init` in the project root folder. This means that anyone using this project will know exactly what packages they need and npm can automatically install them.
 
 ### Grasping Gulps API
 

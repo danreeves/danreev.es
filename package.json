@@ -15,7 +15,7 @@
   "scripts": {
     "start": "jekyll serve --watch",
     "deploy": "jekyll build && surge ./_site",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\""
   },
   "repository": {
     "type": "git",

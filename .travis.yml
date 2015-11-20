@@ -4,6 +4,5 @@ node_js:
 before_install:
   - rvm install 2.2.2
 install:
-  - npm install
-  - gem install
+  - bundle install
 after_success: npm run deploy

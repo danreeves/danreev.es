@@ -1,17 +1,17 @@
 {
-  "name": "danreeves.github.io",
+  "name": "danreev.es",
   "version": "0.0.0",
-  "description": "danreeves.github.io ===================",
+  "description": "My website",
   "main": "gulpfile.js",
-  "dependencies": {
+  "devDependencies": {
     "gulp": "*",
     "gulp-concat": "*",
     "gulp-csso": "*",
     "gulp-sass": "*",
     "gulp-uglify": "*",
-    "gulp-util": "*"
+    "gulp-util": "*",
+    "surge": "^0.17.3"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "jekyll serve --watch",
     "deploy": "jekyll build && surge ./_site",
@@ -19,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/DanReeves/danreeves.github.io.git"
+    "url": "git://github.com/DanReeves/danreev.es.git"
   },
   "author": "Dan Reeves",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DanReeves/danreeves.github.io/issues"
+    "url": "https://github.com/DanReeves/danreev.es/issues"
   },
   "homepage": "http://danreev.es"
 }

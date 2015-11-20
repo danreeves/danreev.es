@@ -1,7 +1,7 @@
 
-- name: Cornwall Codes
-  url: http://cornwall.codes
-  desc: "A community project, collating all the things for developers based in Cornwall might be interested in."
+- name: nunjucks-capture
+  url: https://www.npmjs.com/package/nunjucks-capture
+  desc: "A nunjucks port of the Liquid capture tag."
 
 - name: Please
   url: https://github.com/fffunction/please
@@ -11,16 +11,12 @@
   url: https://github.com/danreeves/lumberjack
   desc: "A Wordpress theme based on the Timber plugin, inspired by MVC frameworks, focusing on clean code, sensible design, maintainabilty, and collaboration."
 
-- name: Automatos
-  url: https://github.com/danreeves/automatos
-  desc: "A javascript library for controlling CSS Animations."
-
 - name: Hero generator
-  url: http://danreev.es/hero-generator/
+  url: http://danreeves.github.io/hero-generator/
   desc: A quick joke hacked together in an hour or two. Randomly generates a hero image for your stylish website.
 
 - name: Steam page
-  url: http://danreev.es/steam/
+  url: http://danreeves.github.io/steam/
   desc: 'Uses React, Flux, and the <a href="https://github.com/danreeves/steam-api">Steam API</a> to display the information from my Steam account.'
 
 - name: picotags
@@ -29,4 +25,4 @@
 
 - name: danreev.es
   url: http://danreev.es/
-  desc: "This blog, powered by Jekyll and GitHub Pages."
+  desc: "This blog, powered by Jekyll and Surge."

@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "jekyll serve --watch",
-    "deploy": "jekyll build && surge ./_site",
+    "deploy": "jekyll build && gulp && surge ./_site",
     "test": "echo \"Error: no test specified\""
   },
   "repository": {

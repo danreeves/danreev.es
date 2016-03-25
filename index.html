@@ -1,12 +1,14 @@
----
-layout: default
----
-<!-- <h2>Posts</h2> -->
-<ul class="post-list">
-{% for post in site.posts %}
-    <li>
-        <p class="title"><a href="{{ post.url }}">{{ post.title }}</a></p>
-        <p class="meta"><time datetime="{{ post.date }}">{{ post.date | date_to_long_string }}</time> &mdash; {{ post.content | number_of_words }} words about {{ post.tags | array_to_sentence_string }}.</p>
-    </li>
-{% endfor %}
-</ul>
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Dan Reeves</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/javascript" src="/static/bundle.js"></script>
+    </body>
+</html>

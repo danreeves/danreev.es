@@ -1,10 +1,10 @@
-language: node_js
-node_js:
-  - stable
-before_install:
-  - rvm install 2.2.2
-  - npm install -g surge
-  - npm install -g gulp
-install:
-  - bundle install
-after_success: npm run deploy
+# language: node_js
+# node_js:
+#   - stable
+# before_install:
+#   - rvm install 2.2.2
+#   - npm install -g surge
+#   - npm install -g gulp
+# install:
+#   - bundle install
+# after_success: npm run deploy

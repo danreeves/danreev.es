@@ -8,9 +8,12 @@ transform: translate(-50%, -50%);
 
 unicode-bidi: embed;
 white-space: pre;
+
+line-height: 0.85;
 }
 .no-skull {
 width: 360px;
 max-width: 80%;
 white-space: initial;
+line-height: initial;
 }

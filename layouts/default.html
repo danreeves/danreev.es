@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{ title|default('Dan Reeves') }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/assets/css/screen.min.css" />
+        <script src="/assets/js/app.bundle.js"></script>
+    </head>
+    <body class="{{ page }}">
+        {% block body %}
+        {% endblock %}
+        <nav>
+            <a href="/" title="home">⌂</a>
+            <a href="https://twitter.com/heydanreeves">twitter</a>
+            <a href="https://github.com/danreeves">github</a>
+            <a href="mailto:danr@fffunction.co">email</a>
+            <a href="/humans.txt" title="humans">✍&#xFE0E︎</a>
+        </nav>
+    </body>
+</html>

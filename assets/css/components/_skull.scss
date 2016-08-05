@@ -1,19 +1,21 @@
 .skull, .no-skull, .skull-404 {
-/* centre */
-display: inline-block;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+    // centre
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-unicode-bidi: embed;
-white-space: pre;
+    // pre
+    unicode-bidi: embed;
+    white-space: pre;
 
-line-height: 0.85;
+    // squish
+    line-height: 0.85;
 }
 .no-skull {
-width: 360px;
-max-width: 80%;
-white-space: initial;
-line-height: initial;
+    width: 450px;
+    max-width: 90%;
+    white-space: initial;
+    line-height: initial;
 }

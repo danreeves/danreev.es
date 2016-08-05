@@ -41,5 +41,5 @@ export default function home () {
 
         }, 1000);
 
-    }, 1500);
+    }, 1000);
 };

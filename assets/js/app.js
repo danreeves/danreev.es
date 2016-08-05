@@ -1,4 +1,6 @@
 import views from './views';
+import glitch from './util/glitch';
+import hover from './util/hover';
 
 window.onload = function onload () {
     const page = document.querySelector('body').classList;
@@ -6,4 +8,6 @@ window.onload = function onload () {
         views[page]();
     }
 
+    glitch();
+    hover();
 }

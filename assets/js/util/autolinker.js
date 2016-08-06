@@ -9,6 +9,6 @@ export default function autoLinker (selector) {
     });
     el.innerHTML = text;
     setTimeout(function () {
-        baffle('a', { characters:CHARS }).reveal(500);
+        baffle('a', { characters:CHARS }).reveal(200);
     }, 16);
 }

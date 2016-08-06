@@ -7,6 +7,6 @@ export default function glitch () {
     const links = document.querySelectorAll('a');
     const link = links[random(0, links.length-1)];
     link.dataset.text = link.dataset.text || link.innerHTML;
-    baffle(link, { characters: CHARS }).text(t => link.dataset.text).reveal(100);
+    baffle(link, { characters: CHARS }).text(t => link.dataset.text).reveal(200);
     setTimeout(glitch, nextInterval);
 }

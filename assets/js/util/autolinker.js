@@ -5,7 +5,7 @@ export default function autoLinker (selector) {
     const el = document.querySelector(selector);
     let text = el.innerHTML;
     LINKS.forEach(function (l) {
-        text = text.replace(l.link, `<a href="${l.to}">${l.link}</a>`);
+        text = text.replace(l.link, `<a href="${l.to}" data-text="${l.link}">${l.link}</a>`);
     });
     el.innerHTML = text;
     setTimeout(function () {

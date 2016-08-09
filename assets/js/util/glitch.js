@@ -1,5 +1,5 @@
 import random from './random';
-import baffle from '../baffle/baffle.js'
+import baffle from 'baffle'
 import { CHARS } from '../constants';
 
 export default function glitch () {

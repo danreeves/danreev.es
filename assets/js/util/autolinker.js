@@ -1,4 +1,4 @@
-import baffle from '../baffle/baffle.js';
+import baffle from 'baffle';
 import { CHARS, LINKS } from '../constants';
 
 export default function autoLinker (selector) {

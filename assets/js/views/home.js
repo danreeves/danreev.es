@@ -1,5 +1,5 @@
 import { SKULL, CHARS, BLACKLIST, REPLACEMENTS } from '../constants';
-import baffle from '../baffle/baffle.js';
+import baffle from 'baffle';
 import autoLinker from '../util/autolinker';
 
 const revealTime = 1000;

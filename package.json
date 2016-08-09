@@ -54,6 +54,6 @@
     }
   },
   "dependencies": {
-    "baffle": "0.3.4"
+    "baffle": "0.3.5"
   }
 }

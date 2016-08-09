@@ -1,4 +1,4 @@
-import baffle from '../baffle/baffle.js';
+import baffle from 'baffle';
 import { CHARS } from '../constants';
 function stop (b) {
     return function (e) {

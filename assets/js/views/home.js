@@ -1,5 +1,6 @@
-import { SKULL, CHARS, BLACKLIST, REPLACEMENTS } from '../constants';
+/* global document */
 import baffle from 'baffle';
+import { SKULL, CHARS, BLACKLIST, REPLACEMENTS } from '../constants';
 import autoLinker from '../util/autolinker';
 
 const revealTime = 1000;
@@ -20,9 +21,8 @@ export default function home () {
 
     b.reveal(revealTime, delayTime);
 
-    setTimeout(function scrollText () {
-        let lastChar = '';
-        let interval = setInterval(function () {
+    setTimeout(() => {
+        const interval = setInterval(() => {
             const text = skullEl.innerHTML;
             if (!text.length) {
                 clearInterval(interval);
@@ -34,12 +34,11 @@ export default function home () {
 
             let newText = noskullEl.innerHTML + next;
             newText = newText.replace(/\s+/g, ' ');
-            REPLACEMENTS.forEach(r => newText = newText.replace(r.match, r.with))
+            REPLACEMENTS.forEach(r => { newText = newText.replace(r.match, r.with); });
 
             noskullEl.innerHTML = newText;
             skullEl.innerHTML = text.slice(1, skullEl.innerHTML.length);
-            lastChar = next;
         }, 1);
 
     }, revealTime + delayTime);
-};
+}

@@ -22,7 +22,7 @@ pas     sio    n░░
       Geeks.
 `;
 
-export const CHARS =['█','▓','▒','░'];
+export const CHARS = ['█', '▓', '▒', '░'];
 
 export const BLACKLIST = CHARS.concat(['\n']);
 

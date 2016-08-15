@@ -1,17 +1,24 @@
+/* global document */
 import baffle from 'baffle';
 import { CHARS } from '../constants';
+
 function stop (b) {
-    return function (e) {
+    return (e) => {
         e.target.classList.remove('hover');
         b.reveal(200);
-    }
+    };
 }
+
 export default function hover () {
-    document.addEventListener('mouseover', function (e) {
-        if (e.target.tagName === 'A') {
-            e.target.dataset.text = e.target.dataset.text ||e.target.innerHTML;
-            const b = baffle(e.target, { characters: CHARS }).text(t => e.target.dataset.text).start().reveal(200);
-            e.target.addEventListener('mouseout', stop(b));
+    document.addEventListener('mouseover', (e) => {
+        const el = e.target;
+        if (el.tagName === 'A') {
+            el.dataset.text = el.dataset.text || el.innerHTML;
+            const b = baffle(el, { characters: CHARS })
+                .text(() => el.dataset.text)
+                .start()
+                .reveal(200);
+            el.addEventListener('mouseout', stop(b));
         }
     });
 }

@@ -1,3 +1,4 @@
+/* @flow */
 /* global document */
 import baffle from 'baffle';
 import { SKULL, CHARS, BLACKLIST, REPLACEMENTS } from '../constants';
@@ -34,7 +35,9 @@ export default function home () {
 
             let newText = noskullEl.innerHTML + next;
             newText = newText.replace(/\s+/g, ' ');
-            REPLACEMENTS.forEach(r => { newText = newText.replace(r.match, r.with); });
+            REPLACEMENTS.forEach((r : Object) => {
+                newText = newText.replace(r.match, r.with);
+            });
 
             noskullEl.innerHTML = newText;
             skullEl.innerHTML = text.slice(1, skullEl.innerHTML.length);

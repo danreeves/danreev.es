@@ -1,3 +1,4 @@
+/* @flow */
 import baffle from 'baffle';
 import { CHARS } from '../constants';
 

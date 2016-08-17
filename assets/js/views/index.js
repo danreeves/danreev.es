@@ -1,3 +1,4 @@
+/* @flow */
 import home from './home';
 import notfound from './notfound';
 

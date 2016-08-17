@@ -1,10 +1,11 @@
+/* @flow */
 /* global window document */
 import views from './views';
 import glitch from './util/glitch';
 import hover from './util/hover';
 
 window.onload = function onload () {
-    const page = document.querySelector('body').classList;
+    const page = document.querySelector('body').classList.toString();
     if (page && typeof views[page] === 'function') {
         views[page]();
     }

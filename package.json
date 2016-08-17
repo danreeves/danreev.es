@@ -20,8 +20,35 @@
     "skelly": "*"
   },
   "eslintConfig": {
+    "parser": "babel-eslint",
     "extends": "airbnb",
+    "plugins": [
+      "flowtype"
+    ],
     "rules": {
+      "flowtype/define-flow-type": 1,
+      "flowtype/require-parameter-type": 1,
+      "flowtype/require-return-type": [
+        1,
+        "always",
+        {
+          "annotateUndefined": "never"
+        }
+      ],
+      "flowtype/space-after-type-colon": [
+        1,
+        "always"
+      ],
+      "flowtype/space-before-type-colon": [
+        1,
+        "always"
+      ],
+      "flowtype/type-id-match": [
+        1,
+        "^([A-Z][a-z0-9]+)+Type$"
+      ],
+      "flowtype/use-flow-type": 1,
+      "flowtype/valid-syntax": 1,
       "semi": [
         1,
         "always"
@@ -40,9 +67,16 @@
       "no-console": 0,
       "padded-blocks": 0,
       "no-empty": 0
+    },
+    "settings": {
+      "flowtype": {
+        "onlyFilesWithFlowAnnotation": false
+      }
     }
   },
   "dependencies": {
-    "baffle": "0.3.5"
+    "babel-eslint": "6.1.2",
+    "baffle": "0.3.5",
+    "eslint-plugin-flowtype": "2.7.1"
   }
 }

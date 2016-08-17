@@ -1,3 +1,4 @@
+/* @flow */
 export const SKULL = `
      Hi. I'm░░
    Dan Reeves,░

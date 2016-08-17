@@ -1,3 +1,4 @@
+/* @flow */
 /* global document */
 import baffle from 'baffle';
 import random from './random';
@@ -8,6 +9,6 @@ export default function glitch () {
     const links = document.querySelectorAll('a');
     const link = links[random(0, links.length - 1)];
     link.dataset.text = link.dataset.text || link.innerHTML;
-    baffle(link, { characters: CHARS }).text(() => link.dataset.text).reveal(200);
+    baffle(link, { characters: CHARS }).text(() : string => link.dataset.text).reveal(200);
     setTimeout(glitch, nextInterval);
 }

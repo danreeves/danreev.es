@@ -1,0 +1,31 @@
+body {
+    background: black;
+    margin: 0;
+    padding: 0;
+}
+svg {
+    margin: 0;
+    padding: 0;
+}
+.name {
+    position: absolute;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: -100;
+    word-break: break-all;
+}
+.link,
+.outline {
+    stroke: gold;
+    stroke-width: 3px;
+}
+.dot {
+    stroke: black;
+    fill: gold;
+    stroke-width: 3px;
+}

@@ -1,4 +1,4 @@
-/* global window, requestAnimationFrame */
+/* global window, document, requestAnimationFrame */
 import {
     scaleLinear,
     select,
@@ -26,10 +26,33 @@ function smallest (num, arr) {
     return list;
 }
 
-const h = 600;
-const diff = window.innerHeight - h;
-const height = h + diff;
-const width = 900 + diff;
+function fitToScreen (width, height) {
+    let w = window.innerWidth;
+    let h = (window.innerWidth / (width / height));
+    const diff = h - window.innerHeight;
+    if (diff > 0) {
+        w -= diff;
+        h -= diff;
+    }
+    return {
+        width: w,
+        height: h,
+    };
+}
+
+function maxText (d) {
+    const name = document.querySelector('.name');
+    let size = 1;
+    name.removeAttribute('style');
+    name.innerHTML = d.popup.match(/<h3>(.+)<\/h3>/)[1];
+    while (name.clientHeight < window.innerHeight) {
+        name.setAttribute('style', `font-size: ${size}px`);
+        size++;
+    }
+    name.setAttribute('style', `font-size: ${size - 1}px`);
+}
+
+const { width, height } = fitToScreen(900, 600);
 
 const radius = 10;
 const concavity = 2;
@@ -38,14 +61,21 @@ const ykey = 'lat';
 
 const x = scaleLinear()
     .range([0, width])
-    .domain([0, window.innerWidth]);
+    .domain([0, width]);
 const y = scaleLinear()
     .range([height, 0])
-    .domain([window.innerHeight, 0]);
+    .domain([height, 0]);
 
 const svg = select('body').append('svg')
     .attr('width', window.innerWidth)
     .attr('height', window.innerHeight);
+
+document.querySelector('svg')
+.addEventListener('click', e => {
+    if (e.target && e.target.tagName !== 'circle') {
+        document.querySelector('.name').innerHTML = '';
+    }
+});
 
 json('kernow.json', (error, data) => {
     x.domain(extent(data, (d) => d[xkey])).nice();
@@ -133,10 +163,12 @@ json('kernow.json', (error, data) => {
         .attr('cy', (d) => y(d[ykey]))
         .style('fill', (d) => d.color)
         .call(drag()
+            .on('start', maxText)
             .on('drag', (d) => {
                 d.x = event.x; // eslint-disable-line no-param-reassign
                 d.y = event.y; // eslint-disable-line no-param-reassign
-            }));
+            }))
+        .on('click', maxText);
 
     const force = forceSimulation(data)
         .alphaDecay(0)

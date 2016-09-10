@@ -77,7 +77,7 @@ document.querySelector('svg')
     }
 });
 
-json('kernow.json', (error, data) => {
+json('/kernow.json', (error, data) => {
     x.domain(extent(data, (d) => d[xkey])).nice();
     y.domain(extent(data, (d) => d[ykey])).nice();
 

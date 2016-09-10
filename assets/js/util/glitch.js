@@ -8,6 +8,9 @@ export default function glitch () {
     const nextInterval = random(1500, 9000);
     const links = document.querySelectorAll('a');
     const link = links[random(0, links.length - 1)];
+    for (let i = link.childNodes.length - 1; i >= 0; i--) {
+        if (link.childNodes[i].nodeType === Node.ELEMENT_NODE) return;
+    }
     link.dataset.text = link.dataset.text || link.innerHTML;
     baffle(link, { characters: CHARS }).text(() : string => link.dataset.text).reveal(200);
     setTimeout(glitch, nextInterval);

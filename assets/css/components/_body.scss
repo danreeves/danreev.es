@@ -5,9 +5,11 @@ body {
     font-family: monospace;
 }
 body::before {
+    // height: 100%;
+    // width: 100%;
+    position: fixed;
     content: " ";
     display: block;
-    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;

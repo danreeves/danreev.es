@@ -1,0 +1,26 @@
+html {
+    margin: 0;
+    padding: 0;
+    zoom: 1.5;
+}
+body {
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+footer {
+    display: none;
+}
+.splash {
+    max-width: 90%;
+    margin: 2em 2em !important;
+}
+.logo.org::after {
+    width: 100% !important;
+}

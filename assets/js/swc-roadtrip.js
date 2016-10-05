@@ -26,6 +26,7 @@ const scilly = {
     latitude: 49.9361,
     longitude: -6.3228,
 };
+
 const counter = new Counter({
     start: 0,
     end: 100,

@@ -6,20 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "skelly build --production",
+    "now-start": "serve converted-html --clean",
     "start": "skelly serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "3.3.1",
     "babel-eslint": "6.1.2",
+    "eslint": "3.3.1",
     "eslint-config-airbnb": "10.0.1",
+    "eslint-plugin-flowtype": "2.7.1",
     "eslint-plugin-import": "1.13.0",
     "eslint-plugin-jsx-a11y": "2.1.0",
     "eslint-plugin-react": "6.1.0",
-    "eslint-plugin-flowtype": "2.7.1",
-    "skelly": "*"
+    "rollup": "^0.40.0",
+    "skelly": "2.0.0-rc.8"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
@@ -59,13 +61,6 @@
         1,
         4
       ],
-      "space-before-function-paren": [
-        1,
-        {
-          "anonymous": "always",
-          "named": "always"
-        }
-      ],
       "no-console": 0,
       "padded-blocks": 0,
       "no-empty": 0
@@ -78,13 +73,14 @@
   },
   "dependencies": {
     "baffle": "0.3.5",
-    "concaveman": "1.1.0",
+    "concaveman": "^1.1.1",
     "counter.js": "1.0.8",
-    "d3": "4.2.2",
+    "d3": "^4.4.0",
     "google-maps": "3.2.1",
-    "haversine": "1.0.0",
+    "haversine": "^1.0.2",
     "lodash.chunk": "4.2.0",
-    "lodash.flatten": "4.4.0",
+    "lodash.flatten": "^4.4.0",
+    "serve": "https://github.com/danreeves/serve/releases/download/666/serve.tar.gz",
     "whatwg-fetch": "1.0.0"
   }
 }

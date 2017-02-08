@@ -4,12 +4,12 @@ import views from './views';
 import glitch from './util/glitch';
 import hover from './util/hover';
 
-window.onload = function onload () {
+window.onload = function onload() {
     const page = document.querySelector('body').classList.toString();
     if (page && typeof views[page] === 'function') {
         views[page]();
     }
-
     glitch();
     hover();
 };
+

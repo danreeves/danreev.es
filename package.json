@@ -19,7 +19,6 @@
     "eslint-plugin-jsx-a11y": "2.1.0",
     "eslint-plugin-react": "6.1.0",
     "eslint-plugin-flowtype": "2.7.1",
-    "skelly": "*"
   },
   "eslintConfig": {
     "parser": "babel-eslint",

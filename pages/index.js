@@ -29,6 +29,9 @@ export default () =>
                 <li><a href="#">Choodux</a></li>
                 <li><a href="#">Facemoji</a></li>
                 <li><a href="#">http-referers</a></li>
+                <li><a href="#">Choodux</a></li>
+                <li><a href="#">Facemoji</a></li>
+                <li><a href="#">http-referers</a></li>
             </ul>
             <a href="#">See more...</a>
         </Box>
@@ -39,6 +42,19 @@ export default () =>
                 <li><a href="#">Choodux</a></li>
                 <li><a href="#">Facemoji</a></li>
                 <li><a href="#">http-referers</a></li>
+                <li><a href="#">Choodux</a></li>
+                <li><a href="#">Facemoji</a></li>
+                <li><a href="#">http-referers</a></li>
+            </ul>
+            <a href="#">See more...</a>
+        </Box>
+
+        <Box>
+            <h2>Bookmarks</h2>
+            <ul>
+                <li><a href="#">How to deploy software</a></li>
+                <li><a href="#">How to build stable systems</a></li>
+                <li><a href="#">Engineering a culture of psychological safety</a></li>
             </ul>
             <a href="#">See more...</a>
         </Box>

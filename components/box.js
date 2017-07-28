@@ -18,7 +18,7 @@ function getgrid({ tall, wide }) {
 export default styled.div`
     ${props => getgrid(props)};
     border: 2px solid white;
-    padding: 0.5rem;
+    padding: 1rem;
     flex: 1 1 200px;
 
     max-width: 100%;

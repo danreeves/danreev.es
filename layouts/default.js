@@ -167,12 +167,14 @@ export default ({ children, title = 'This is the default title' }) =>
         </Head>
         <Box>
             <nav>
-                <a href="/" title="home">home</a>{` — `}
-                <a href="/" title="home">projects</a>{` — `}
-                <a href="/" title="home">posts</a>{` — `}
-                <a href="https://twitter.com/dnrvs">twitter</a>{` — `}
-                <a href="https://github.com/danreeves">github</a>{` — `}
-                <a href="mailto:hey@danreev.es">email</a>
+            <ul>
+                <li><a href="/" title="home">home</a></li>
+                <li><a href="/" title="home">projects</a></li>
+                <li><a href="/" title="home">posts</a></li>
+                <li><a href="https://twitter.com/dnrvs">twitter</a></li>
+                <li><a href="https://github.com/danreeves">github</a></li>
+                <li><a href="mailto:hey@danreev.es">email</a></li>
+            </ul>
             </nav>
         </Box>
         {children}

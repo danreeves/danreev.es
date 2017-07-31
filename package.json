@@ -11,7 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "babel-plugin-styled-components": "^1.1.7",
+    "baffle": "^0.3.6",
     "next": "^3.0.1-beta.17",
+    "polished": "^1.3.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "styled-components": "^2.1.1"

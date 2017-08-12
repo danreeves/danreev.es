@@ -20,70 +20,26 @@ export default class Home extends Component {
             <Base title="Dan Reeves">
                 <Intro />
 
-                <div>
-                    <h2>Latest posts</h2>
-                    <ol>
-                        <li>
-                            <a href="#">Cornwall Geeks is 3!</a>
-                        </li>
-                        <li>
-                            <a href="#">Premature optimisation</a>
-                        </li>
-                        <li>
-                            <a href="#">JavaScript isn’t just JavaScript</a>
-                        </li>
-                    </ol>
-                    <a href="#">View all...</a>
-                </div>
-
+                <LinkSection
+                    title="Latest posts"
+                    list={glitch}
+                    fullPage="/glitch"
+                />
                 <LinkSection
                     title="Glitch demos"
                     list={glitch}
                     fullPage="/glitch"
                 />
-
-                <div>
-                    <h2>GitHub repos</h2>
-                    <ul>
-                        <li>
-                            <a href="#">Choodux</a>
-                        </li>
-                        <li>
-                            <a href="#">Facemoji</a>
-                        </li>
-                        <li>
-                            <a href="#">http-referers</a>
-                        </li>
-                        <li>
-                            <a href="#">Choodux</a>
-                        </li>
-                        <li>
-                            <a href="#">Facemoji</a>
-                        </li>
-                        <li>
-                            <a href="#">http-referers</a>
-                        </li>
-                    </ul>
-                    <a href="#">See more...</a>
-                </div>
-
-                <div>
-                    <h2>Bookmarks</h2>
-                    <ul>
-                        <li>
-                            <a href="#">How to deploy software</a>
-                        </li>
-                        <li>
-                            <a href="#">How to build stable systems</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Engineering a culture of psychological safety
-                            </a>
-                        </li>
-                    </ul>
-                    <a href="#">See more...</a>
-                </div>
+                 <LinkSection
+                    title="GitHub repos"
+                    list={glitch}
+                    fullPage="/glitch"
+                />
+                 <LinkSection
+                    title="Bookmarks"
+                    list={glitch}
+                    fullPage="/glitch"
+                />
             </Base>
         );
     }

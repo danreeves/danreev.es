@@ -2,43 +2,50 @@ import { Component } from 'react';
 import Base from '../components/base';
 import Intro from '../components/intro';
 import LinkSection from '../components/link-section';
-import { getProjects } from '../resources/glitch';
+import { getProjects, getPosts, getRepos } from '../resources';
 
 export default class Home extends Component {
     static async getInitialProps() {
         const glitchProjects = await getProjects();
+        const mediumPosts = await getPosts();
+        const githubRepos = await getRepos();
         return {
             glitch: glitchProjects.slice(0, 3).map(p => ({
                 label: p.domain,
                 href: `https://glitch.com/~${p.domain}`,
             })),
+            medium: mediumPosts.slice(0, 3).map(p => ({
+                label: p.title,
+                href: `https://medium.com/@dnrvs/${p.uniqueSlug}`,
+            })),
+            github: githubRepos.slice(0, 3).map(p => ({
+                label: p.name,
+                href: `https://github.com/${p.full_name}`,
+            })),
         };
     }
     render() {
-        const { glitch } = this.props;
+        const { glitch, medium, github } = this.props;
         return (
             <Base title="Dan Reeves">
                 <Intro />
 
                 <LinkSection
                     title="Latest posts"
-                    list={glitch}
-                    fullPage="/glitch"
+                    list={medium}
+                    fullPage="/posts"
                 />
+
                 <LinkSection
                     title="Glitch demos"
                     list={glitch}
                     fullPage="/glitch"
                 />
-                 <LinkSection
+
+                <LinkSection
                     title="GitHub repos"
-                    list={glitch}
-                    fullPage="/glitch"
-                />
-                 <LinkSection
-                    title="Bookmarks"
-                    list={glitch}
-                    fullPage="/glitch"
+                    list={github}
+                    fullPage="/github"
                 />
             </Base>
         );

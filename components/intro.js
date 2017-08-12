@@ -15,4 +15,5 @@ export default () =>
                 Cornwall Geeks
             </BaffledLink>.
         </p>
+        <p>Need to get in touch? <BaffledLink href="/contact">Contact me</BaffledLink></p>
     </div>;

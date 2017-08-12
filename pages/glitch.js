@@ -7,7 +7,6 @@ import { getProjects } from '../resources/glitch';
 export default class Glitch extends Component {
     static async getInitialProps() {
         const glitchProjects = await getProjects();
-        console.log(glitchProjects)
         return {
             glitch: glitchProjects.map(p => ({
                 label: p.domain,
@@ -19,7 +18,7 @@ export default class Glitch extends Component {
     render() {
         const { glitch } = this.props;
         return (
-            <Base title="Glitch projects">
+            <Base title="Glitch demos">
                 <BaffledLink href="/">← Home</BaffledLink>
                 <div>
                     <p>

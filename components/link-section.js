@@ -30,9 +30,7 @@ export default ({ title, list, fullPage }) => {
                 )}
             </List>
             {fullPage
-                ? <Link>
-                      <BaffledLink href={fullPage}>See more →</BaffledLink>
-                  </Link>
+                ? <BaffledLink href={fullPage}>See more →</BaffledLink>
                 : null}
         </div>
     );

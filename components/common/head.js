@@ -81,12 +81,12 @@ export default ({ title = 'This is the default title' }) =>
             href="/assets/favicons/favicon-16x16.png"
         />
         <link rel="manifest" href="/assets/favicons/manifest.json" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-TileColor" content="#000" />
         <meta
             name="msapplication-TileImage"
             content="/assets/favicons/ms-icon-144x144.png"
         />
-        <meta name="theme-color" content="#121010" />
+        <meta name="theme-color" content="#000" />
         <meta
             name="google-site-verification"
             content="kgIjoP-G9lKdG0RAaoLHMUwgxv5cLtIOZZfVdtTJvhY"

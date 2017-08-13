@@ -6,6 +6,8 @@ import { BaffledLink } from '../components/common/link';
 const ASCII = styled.pre`
     font-size: 0.5em;
     font-family: monospace;
+    max-width: 100%;
+    overflow: scroll;
 `
 
 export default class Contact extends Component {

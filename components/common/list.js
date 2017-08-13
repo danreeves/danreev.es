@@ -3,9 +3,15 @@ import styled from 'styled-components';
 export default styled.ul`
     list-style-type: none;
     padding-left: 0;
-
+    & > li > a {
+        max-width: calc(100% - 1.25em);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
     & > li:before {
         content: '';
+        vertical-align: super;
         height: 15px;
         width: 15px;
         margin-left: 0.1em;

@@ -17,7 +17,7 @@ app.prepare().then(() => {
     const server = express();
 
     server.get('*', (req, res) => {
-        if (req.path.includes('_next')) {
+        if (req.path.includes('_next') || req.path.includes('static')) {
             return handle(req, res);
         }
         return renderAndCache(req, res, req.path);

@@ -4,7 +4,7 @@ import { complement } from 'polished';
 import { BaffledLink } from './common/link';
 
 const Body = styled.div`
-    border: 1em solid black;
+    border: 3vw solid black;
     font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu,
         Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial,
         sans-serif;

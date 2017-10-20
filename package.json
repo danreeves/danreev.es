@@ -25,5 +25,10 @@
     "tabWidth": 4,
     "singleQuote": true,
     "trailingComma": "es5"
+  },
+  "now": {
+    "name": "danreev.es",
+    "alias": "danreev.es",
+    "public": false
   }
 }

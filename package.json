@@ -1,7 +1,7 @@
 {
   "name": "danreev.es",
   "version": "2.0.0",
-  "description": "yo its my website",
+  "description": "welcome to my home page",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -10,16 +10,16 @@
   "author": "Dan Reeves <hey@danreev.es>",
   "license": "ISC",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.1.7",
+    "babel-plugin-styled-components": "^1.2.1",
     "baffle": "^0.3.6",
-    "express": "^4.15.4",
+    "express": "^4.16.2",
     "isomorphic-fetch": "^2.2.1",
     "lru-cache": "^4.1.1",
-    "next": "^3.0.1-beta.17",
-    "polished": "^1.3.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "styled-components": "^2.1.1"
+    "next": "^4.1.2",
+    "polished": "^1.8.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "styled-components": "^2.2.1"
   },
   "prettier": {
     "tabWidth": 4,

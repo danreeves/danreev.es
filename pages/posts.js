@@ -11,9 +11,9 @@ export default class Medium extends Component {
             medium: mediumPosts.map(p => ({
                 label: p.title,
                 href: `https://medium.com/@dnrvs/${p.uniqueSlug}`,
-                desc: p.previewContent.bodyModel.paragraphs.find(
-                    x => x.type === 1
-                ).text,
+                desc: (p.previewContent.bodyModel.paragraphs.find(
+                    x => x.type === 1 || x.type === 6
+                ) || { text: '' }).text.substr(0, 140) + '...',
             })),
         };
     }

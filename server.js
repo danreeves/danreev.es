@@ -1,6 +1,7 @@
 const express = require('express');
 const next = require('next');
 const LRUCache = require('lru-cache');
+const rts = require('remove-trailing-slash')
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -19,6 +20,9 @@ app.prepare().then(() => {
     server.get('*', (req, res) => {
         if (req.path.includes('_next') || req.path.includes('static')) {
             return handle(req, res);
+        }
+        if (req.path.length > 1 && req.path.endsWith('/')) {
+            return res.redirect(rts(req.path) || '/')
         }
         return renderAndCache(req, res, req.path);
     });

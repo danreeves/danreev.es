@@ -1,10 +1,11 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Base from '../components/base';
 import LinkSection from '../components/link-section';
-import { BaffledLink } from '../components/common/link';
-import { getProjects } from '../resources/glitch';
+import BaffledLink from '../components/common/link';
+import { getProjects } from '../resources';
 
-export default class Glitch extends Component {
+class Glitch extends Component {
     static async getInitialProps() {
         const glitchProjects = await getProjects();
         return {
@@ -36,3 +37,9 @@ export default class Glitch extends Component {
         );
     }
 }
+
+Glitch.propTypes = {
+    glitch: PropTypes.array.isRequired,
+};
+
+export default Glitch;

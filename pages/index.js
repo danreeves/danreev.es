@@ -1,10 +1,11 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Base from '../components/base';
 import Intro from '../components/intro';
 import LinkSection from '../components/link-section';
 import { getProjects, getPosts, getRepos } from '../resources';
 
-export default class Home extends Component {
+class Home extends Component {
     static async getInitialProps() {
         const glitchProjects = await getProjects();
         const mediumPosts = await getPosts();
@@ -51,3 +52,11 @@ export default class Home extends Component {
         );
     }
 }
+
+Home.propTypes = {
+    glitch: PropTypes.array.isRequired,
+    medium: PropTypes.array.isRequired,
+    github: PropTypes.array.isRequired,
+};
+
+export default Home;

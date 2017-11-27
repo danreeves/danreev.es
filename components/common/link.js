@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import baffle from 'baffle';
 
@@ -10,18 +12,19 @@ const Link = styled.a`
     border-bottom: 0.1em solid black;
     padding: 0.2em 0.2em 0.1em 0.2em;
     margin: 1px;
-    :hover, :focus {
+    :hover,
+    :focus {
         cursor: inherit;
         outline: none;
         padding: 0.1em;
         border: 0.1em solid black;
     }
-`
+`;
 
-export class BaffledLink extends React.Component {
+export default class BaffledLink extends React.Component {
     constructor(props) {
         super(props);
-        this.doBaffle = this.doBaffle.bind(this);
+        this.handleBaffle = this.handleBaffle.bind(this);
         this.getRef = this.getRef.bind(this);
     }
 
@@ -33,7 +36,7 @@ export class BaffledLink extends React.Component {
         }).text(() => this.props.children);
     }
 
-    doBaffle() {
+    handleBaffle() {
         this.baffle.start();
         setTimeout(() => {
             this.baffle.reveal(500);
@@ -45,11 +48,15 @@ export class BaffledLink extends React.Component {
             <Link
                 {...this.props}
                 innerRef={this.getRef}
-                onFocus={this.doBaffle}
-                onMouseOver={this.doBaffle}
+                onFocus={this.handleBaffle}
+                onMouseOver={this.handleBaffle}
             >
                 {this.props.children}
             </Link>
         );
     }
 }
+
+BaffledLink.propTypes = {
+    children: PropTypes.node.isRequired,
+};

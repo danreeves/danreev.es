@@ -1,10 +1,11 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Base from '../components/base';
 import LinkSection from '../components/link-section';
-import { BaffledLink } from '../components/common/link';
+import BaffledLink from '../components/common/link';
 import { getRepos } from '../resources';
 
-export default class GitHub extends Component {
+class GitHub extends Component {
     static async getInitialProps() {
         const githubRepos = await getRepos();
         return {
@@ -36,3 +37,9 @@ export default class GitHub extends Component {
         );
     }
 }
+
+GitHub.propTypes = {
+    github: PropTypes.array.isRequired,
+};
+
+export default GitHub;

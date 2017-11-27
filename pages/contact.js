@@ -1,14 +1,14 @@
-import { Component } from 'react';
-import styled from 'styled-components'
+import React, { Component } from 'react';
+import styled from 'styled-components';
 import Base from '../components/base';
-import { BaffledLink } from '../components/common/link';
+import BaffledLink from '../components/common/link';
 
-const ASCII = styled.pre`
+const Ascii = styled.pre`
     font-size: 0.5em;
     font-family: monospace;
     max-width: 100%;
     overflow: scroll;
-`
+`;
 
 export default class Contact extends Component {
     render() {
@@ -21,38 +21,40 @@ export default class Contact extends Component {
                     through Twitter{' '}
                     <BaffledLink href="https://twitter.com/dnrvs">
                         @dnrvs
-                    </BaffledLink>. If it's longer than 140 characters then you
-                    can email me at{' '}
+                    </BaffledLink>. If it&apos;s longer than 140 characters then
+                    you can email me at{' '}
                     <BaffledLink href="mailto:hey@danreev.es">
                         hey@danreev.es
                     </BaffledLink>.
                 </p>
-                <p>Don't bother sending a message on LinkedIn.</p>
-                <p>Here's a good dog I found:</p>
-                <ASCII>{`
+                <p>Don&apos;t bother sending a message on LinkedIn.</p>
+                <p>Here&apos;s a good dog I found:</p>
+                <Ascii>
+                    {`
            ____,'\`-,
       _,--'   ,/::.;
    ,-'       ,/::,' \`---.___        ___,_
    |       ,:';:/        ;'"\`;"\`--./ ,-^.;--.
    |:     ,:';,'         '         \`.   ;\`   \`-.
-    \:.,:::/;/ -:.                   \`  | \`     \`-.
-     \:::,'//__.;  ,;  ,  ,  :.\`-.   :. |  ;       :.
-      \,',';/O)^. :'  ;  :   '__\` \`  :::\`.       .:' )
-      |,'  |\__,: ;      ;  '/O)\`.   :::\`;       ' ,'
-           |\`--''            \__,' , ::::(       ,'
-           \`    ,            \`--' ,: :::,'\   ,-'
+    \\:.,:::/;/ -:.                   \`  | \`     \`-.
+     \\:::,'//__.;  ,;  ,  ,  :.\`-.   :. |  ;       :.
+      \\,',';/O)^. :'  ;  :   '__\` \`  :::\`.       .:' )
+      |,'  |\\__,: ;      ;  '/O)\`.   :::\`;       ' ,'
+           |\`--''            \\__,' , ::::(       ,'
+           \`    ,            \`--' ,: :::,'\\   ,-'
             | ,;         ,    ,::'  ,:::   |,'
             |,:        .(          ,:::|   \`
             ::'_   _   ::         ,::/:|
-           ,',' \`-' \   \`.      ,:::/,:|
+           ,',' \`-' \\   \`.      ,:::/,:|
           | : _  _   |   '     ,::,' :::
-          | \ O\`'O  ,',   ,    :,'   ;::
-           \ \`-'\`--',:' ,' , ,,'      ::
+          | \\ O\`'O  ,',   ,    :,'   ;::
+           \\ \`-'\`--',:' ,' , ,,'      ::
             \`\`:.:.__   ',-','        ::'
                \`--.__, ,::.         ::'
                    |:  ::::.       ::'
                    |:  ::::::    ,::'
-                `}</ASCII>
+                `}
+                </Ascii>
             </Base>
         );
     }

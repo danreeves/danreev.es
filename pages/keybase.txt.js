@@ -1,7 +1,9 @@
+import React from 'react';
+
 export default () => {
     return (
-        <pre
-        >{`==================================================================
+        <pre>
+            {`==================================================================
 https://keybase.io/danreeves
 --------------------------------------------------------------------
 
@@ -78,6 +80,7 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/danreeves
 
 ==================================================================
-`}</pre>
+`}
+        </pre>
     );
 };

@@ -1,14 +1,14 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import Head from 'next/head';
 
-export default ({ title = 'Dan Reeves' }) => {
+const HeadMeta = ({ title = 'Dan Reeves' }) => {
     title = title === 'Dan Reeves' ? title : `${title} - Dan Reeves`;
     return (
         <Head>
             <meta charSet="utf-8" />
             <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-            <title>
-                {title}
-            </title>
+            <title>{title}</title>
             <meta
                 name="viewport"
                 content="width=device-width, initial-scale=1"
@@ -27,3 +27,9 @@ export default ({ title = 'Dan Reeves' }) => {
         </Head>
     );
 };
+
+HeadMeta.propTypes = {
+    title: PropTypes.string.isRequired,
+};
+
+export default HeadMeta;

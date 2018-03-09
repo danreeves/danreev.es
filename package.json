@@ -28,20 +28,16 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-xo-react": "^0.16.0",
     "eslint-plugin-react": "^7.7.0",
-    "xo": "^0.18.2"
+    "xo": "^0.20.3"
   },
   "xo": {
-    "space": 4,
     "extends": [
       "xo-react",
       "prettier"
-    ],
-    "rules": {
-      "react/jsx-tag-spacing": 0
-    }
+    ]
   },
   "prettier": {
-    "tabWidth": 4,
+    "tabWidth": 2,
     "singleQuote": true,
     "trailingComma": "es5"
   },

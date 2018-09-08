@@ -1,0 +1,9 @@
+[package]
+name = "my-web-site"
+version = "0.1.0"
+authors = ["Dan Reeves <hey@danreev.es>"]
+
+[dependencies]
+listenfd = "0.3.3"
+actix-web = "0.6.15"
+maud = { version = "0.18.1", features = ["actix-web"] }

@@ -17,7 +17,7 @@
     "husky": "^0.14.3",
     "isomorphic-fetch": "^2.2.1",
     "lru-cache": "^4.1.2",
-    "next": "^4.2.3",
+    "next": "^5.0.0",
     "polished": "^1.9.2",
     "pretty-quick": "^1.4.1",
     "prop-types": "^15.6.1",

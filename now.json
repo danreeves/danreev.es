@@ -1,6 +1,7 @@
 {
     "name": "danreeves-rust",
     "alias": "TODO: danreev.es",
+    "type": "docker",
     "public": true,
     "features": {
       "cloud": "v2"

@@ -1,9 +1,20 @@
 {
-    "name": "danreeves-rust",
-    "alias": "TODO: danreev.es",
-    "type": "docker",
-    "public": true,
-    "features": {
-      "cloud": "v2"
+  "name": "danreeves-rust",
+  "alias": "TODO: danreev.es",
+  "type": "docker",
+  "public": false,
+  "scale": {
+    "bru1": {
+      "min": 1,
+      "max": "auto"
+    },
+    "sfo1": {
+      "min": 0,
+      "max": "auto"
+    },
+    "gru1": {
+      "min": 0,
+      "max": "auto"
     }
+  }
 }

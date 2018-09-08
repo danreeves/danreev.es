@@ -1,0 +1,8 @@
+{
+    "name": "danreeves-rust",
+    "alias": "TODO: danreev.es",
+    "public": true,
+    "features": {
+      "cloud": "v2"
+    }
+}

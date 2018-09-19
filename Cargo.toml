@@ -7,3 +7,4 @@ authors = ["Dan Reeves <hey@danreev.es>"]
 listenfd = "0.3.3"
 actix-web = "0.6.15"
 maud = { version = "0.18.1", features = ["actix-web"] }
+comrak = "0.3.0"

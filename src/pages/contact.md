@@ -4,7 +4,7 @@ If you need to get in touch the quickest way might be through Twitter [@dnrvs](h
 
 You could even try sending me a message on [LinkedIn](https://www.linkedin.com/in/dnrvs/).
 
-This is me waiting for your message:
+This is me waiting for a message:
 
 ```
            _..--""---.

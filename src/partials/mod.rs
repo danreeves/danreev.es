@@ -33,7 +33,7 @@ pub fn page(page_title: &str, body: Markup) -> Markup {
                     meta http-equiv="x-ua-compatible" content="ie=edge";
                     title { (title_string(&page_title)) }
                     meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no";
-                    link rel="stylesheet" href="/static/css/style.css";
+                    link rel="stylesheet" href="/css/style.css";
                 }
                 body {
                     @if page_title.chars().count() > 0 {

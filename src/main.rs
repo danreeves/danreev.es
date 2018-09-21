@@ -19,10 +19,7 @@ fn main() {
         App::new()
             .resource("/", |r| r.method(Method::GET).with(index))
             .resource("/contact", |r| r.method(Method::GET).with(contact))
-            .handler(
-                "/static",
-                fs::StaticFiles::new("static").show_files_listing(),
-            )
+            .handler("/", fs::StaticFiles::new("static"))
     }).shutdown_timeout(server_timeout);
 
     server = if let Some(listener) = listenfd.take_tcp_listener(0).unwrap() {

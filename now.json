@@ -11,10 +11,6 @@
     "sfo1": {
       "min": 0,
       "max": "auto"
-    },
-    "gru1": {
-      "min": 0,
-      "max": "auto"
     }
   }
 }

@@ -1,0 +1,53 @@
+html, body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  box-sizing: border-box;
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin-bottom: 0.75em;
+}
+
+body {
+  margin: 1.5rem;
+  max-width: 800px;
+}
+
+p {
+  margin-bottom: 0.75em;
+}
+
+footer {
+  margin-top: 2rem;
+}
+
+a {
+  color: magenta;
+}
+
+.g {
+  color: green;
+}
+
+.b {
+  color: blue;
+}
+
+pre {
+  font-family: monospace;
+}
+
+.home-link {
+  float: left;
+  line-height: 3rem;
+  margin-right: 1rem;
+}

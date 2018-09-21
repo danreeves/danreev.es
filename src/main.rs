@@ -5,10 +5,11 @@ extern crate comrak;
 extern crate listenfd;
 extern crate maud;
 
-use actix_web::{http::Method, server, App};
+use actix_web::{fs, http::Method, server, App};
 use listenfd::ListenFd;
 
 mod pages;
+mod partials;
 use pages::{contact, index};
 
 fn main() {
@@ -18,6 +19,10 @@ fn main() {
         App::new()
             .resource("/", |r| r.method(Method::GET).with(index))
             .resource("/contact", |r| r.method(Method::GET).with(contact))
+            .handler(
+                "/static",
+                fs::StaticFiles::new("static").show_files_listing(),
+            )
     }).shutdown_timeout(server_timeout);
 
     server = if let Some(listener) = listenfd.take_tcp_listener(0).unwrap() {

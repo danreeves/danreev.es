@@ -1,5 +1,7 @@
 #![feature(proc_macro_non_items)]
 
+#[macro_use]
+extern crate serde_derive;
 extern crate actix_web;
 extern crate comrak;
 extern crate dissolve;
@@ -11,7 +13,8 @@ use listenfd::ListenFd;
 
 mod pages;
 mod partials;
-use pages::{contact, index, writing};
+mod utils;
+use pages::{article, contact, index, writing};
 
 fn main() {
     let server_timeout = if cfg!(debug_assertions) { 0 } else { 30 };
@@ -21,6 +24,7 @@ fn main() {
             .resource("/", |r| r.method(Method::GET).with(index))
             .resource("/contact", |r| r.method(Method::GET).with(contact))
             .resource("/writing", |r| r.method(Method::GET).with(writing))
+            .resource("/writing/{slug}", |r| r.method(Method::GET).with(article))
             .handler("/", fs::StaticFiles::new("static"))
     }).shutdown_timeout(server_timeout);
 

@@ -1,10 +1,13 @@
 use actix_web::Path;
 use comrak::nodes::NodeValue;
-use comrak::{markdown_to_html, parse_document, Arena, ComrakOptions};
+use comrak::{markdown_to_html, parse_document, Arena};
 use dissolve::strip_html_tags;
 use maud::{html, Markup, PreEscaped};
 use partials::page;
 use std::fs::{read_dir, read_to_string, ReadDir};
+use utils::comrak_options;
+
+const MD: &str = include_str!("writing.md");
 
 struct Article {
     pathname: String,
@@ -13,12 +16,9 @@ struct Article {
 }
 
 impl Article {
-    pub fn new(path: String) -> Article {
+    pub fn new(mut path: String) -> Article {
         let arena = Arena::new();
-        let options = ComrakOptions {
-            ext_strikethrough: true,
-            ..ComrakOptions::default()
-        };
+        let options = comrak_options();
         let content = read_to_string(&path).unwrap_or("".to_string());
         let root = parse_document(&arena, &content, &options);
 
@@ -52,8 +52,12 @@ impl Article {
 
         excerpt.push_str("...");
 
+        let path_len = path.len();
+        path.truncate(path_len - 3);
+        let pathname = format!("/{}", path);
+
         Article {
-            pathname: format!("/{}", path),
+            pathname,
             title,
             excerpt,
         }
@@ -93,7 +97,13 @@ pub fn writing(_params: Path<()>) -> Markup {
             html! { div { "Looks like there's nothing here..." } }
         }
     };
+    let options = comrak_options();
+    let content: String = markdown_to_html(MD, &options);
+    let body = html! {
+        (PreEscaped(content))
+        (post_list)
+    };
     html! {
-        (page("Writing", post_list))
+        (page("Writing", body))
     }
 }

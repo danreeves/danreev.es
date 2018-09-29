@@ -11,6 +11,8 @@ fn footer() -> Markup {
     html! {
         footer {
             nav {
+                a href="/" title="Home" { "⌂" }
+                " "
                 a href="https://twitter.com/dnrvs" { "Twitter" }
                 " "
                 a href="https://github.com/danreeves" { "GitHub" }
@@ -37,7 +39,7 @@ pub fn page(page_title: &str, body: Markup) -> Markup {
                 }
                 body {
                     @if page_title.chars().count() > 0 {
-                        a href="/" class="home-link" title="Go home" { "🔙" }
+                        a href="/" class="home-link" title="Go home" { "⇦" }
                     }
                     h1 { (page_title) }
                     (body)

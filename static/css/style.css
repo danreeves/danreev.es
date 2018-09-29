@@ -55,11 +55,68 @@ pre {
 }
 
 .home-link {
-  float: left;
-  line-height: 3rem;
-  margin-right: 1rem;
+    float: left;
+    line-height: 3rem;
+    text-decoration: none;
+    font-size: 2rem;
+    margin-right: 0.5ch;
 }
 
 .writing-list li {
   margin-bottom: 1rem;
+}
+
+.article h1 a:after,
+.article h2 a:after,
+.article h3 a:after,
+.article h4 a:after,
+.article h5 a:after,
+.article h6 a:after {
+    content: '\21AC';
+    display: inline-block;
+    margin-right: 0.5ch;
+}
+
+.writing-list blockquote,
+.article p {
+  font-weight: normal;
+  font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+.article ul,
+.article ol {
+  font-weight: normal;
+  font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+  margin-bottom: 1em;
+}
+
+.article li {
+  line-height: 1.5;
+}
+
+.article pre {
+  font-size: 1rem;
+  font-family: monaco, Consolas, Lucida Console, monospace;
+  font-weight: normal;
+  display: block;
+  max-width: 100%;
+  overflow: scroll;
+  background: lightgrey;
+  padding: 1rem;
+  margin-bottom: 1em;
+}
+
+.article blockquote {
+  border-left: 0.5ch solid lightgrey;
+  padding: 0.5ch;
+  margin-bottom: 1em;
+  color: dimgray;
+}
+
+.article blockquote p {
+  font-size: 0.9em;
+  line-height: 1;
+  margin-bottom: 0;
 }

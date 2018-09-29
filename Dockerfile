@@ -6,5 +6,6 @@ RUN cargo build --release
 FROM scratch
 COPY --from=build /usr/src/target/x86_64-unknown-linux-musl/release/my-web-site /
 COPY --from=build /usr/src/static/ /static
+COPY --from=build /usr/src/writing/ /writing
 EXPOSE 3000
 CMD ["/my-web-site"]

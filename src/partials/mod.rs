@@ -10,14 +10,14 @@ fn title_string(title: &str) -> String {
 fn footer() -> Markup {
     html! {
         footer {
-            div {
+            nav {
                 a href="https://twitter.com/dnrvs" { "Twitter" }
                 " "
                 a href="https://github.com/danreeves" { "GitHub" }
                 " "
                 a href="/contact" { "Contact" }
                 " "
-                a href="/posts" { "Posts" }
+                a href="/writing" { "Writing" }
             }
             p { "A world wide web site by Dan Reeves." }
         }
@@ -39,6 +39,7 @@ pub fn page(page_title: &str, body: Markup) -> Markup {
                     @if page_title.chars().count() > 0 {
                         a href="/" class="home-link" title="Go home" { "🔙" }
                     }
+                    h1 { (page_title) }
                     (body)
                     (footer())
                 }

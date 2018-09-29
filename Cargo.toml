@@ -3,12 +3,14 @@ name = "my-web-site"
 version = "0.1.0"
 authors = ["Dan Reeves <hey@danreev.es>"]
 
+[package.metadata.commands]
+dev = "systemfd --no-pid -s http::3000 -- cargo watch -x run"
+
 [dependencies]
 listenfd = "0.3.3"
 actix-web = "0.6.15"
 maud = { version = "0.18.1", features = ["actix-web"] }
 comrak = "0.3.0"
 dissolve = "0.2.2"
-
-[package.metadata.commands]
-dev = "systemfd --no-pid -s http::3000 -- cargo watch -x run"
+serde_derive = "1.0.79"
+serde = "1.0.79"

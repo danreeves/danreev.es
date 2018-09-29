@@ -9,7 +9,7 @@ this small size comes at the expense of some browser support. Most notably, at
 least in my case was that it didn’t support IE 10. Luckily it has a flexible
 plugin system and is built on top of other configurable tools.
 
-#### Custom prefixer data
+## Custom prefixer data
 
 The browser prefixing of glamor comes from another library:
 inline-style-prefixer. By default it only supports back to IE 11, but it
@@ -65,7 +65,7 @@ lowering `ie` from 11 to 10.
 Now that we have our custom browser data we can go about creating a custom
 prefixer from that and integrating it into glamor.
 
-#### Creating a custom prefixer
+## Creating a custom prefixer
 
 When you’re creating your custom prefixer you need to decide whether you want
 the static or dynamic version. The dynamic prefixer evaluates the browsers
@@ -91,7 +91,7 @@ for more specific information.
 As you can see we pass the static prefixer into the dynamic prefixer as a
 fallback.
 
-#### Using it as a glamor plugin
+## Using it as a glamor plugin
 
 Glamor has a [simple plugin
 system](https://github.com/threepointone/glamor/blob/master/docs/plugins.md)
@@ -139,16 +139,8 @@ this:
     plugins.keyframes = new PluginSet([prefixer, fallbacks])
 
 This is based on glamor’s initialisation:
-[https://github.com/threepointone/glamor/blob/667b480d31b3721a905021b26e1290ce92ca2879/src/index.js#L20-L24](https://github.com/threepointone/glamor/blob/667b480d31b3721a905021b26e1290ce92ca2879/src/index.js#L20-L24)
+[glamor/index.js#L20-L24](https://github.com/threepointone/glamor/blob/667b480d31b3721a905021b26e1290ce92ca2879/src/index.js#L20-L24)
 
 There we have it! Any time you use glamor or glamorous after this set up your
 styles will be prefixer properly across the browsers you chose in your data
 generation script.
-
-* [JavaScript](https://medium.com/tag/javascript?source=post)
-* [Css In Js](https://medium.com/tag/css-in-js?source=post)
-
-### [Dan Reeves](https://medium.com/@dnrvs)
-
-Frontend Engineer [@TreasureData](http://twitter.com/TreasureData) ▫︎ Organiser
-of [@CornwallGeeks](http://twitter.com/CornwallGeeks) ▫︎ they/them

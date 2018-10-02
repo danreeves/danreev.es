@@ -7,7 +7,9 @@ extern crate comrak;
 extern crate dissolve;
 extern crate listenfd;
 extern crate maud;
+extern crate pretty_env_logger;
 
+use actix_web::middleware::Logger;
 use actix_web::{fs, http::Method, server, App};
 use listenfd::ListenFd;
 
@@ -17,10 +19,13 @@ mod utils;
 use pages::{article, contact, index, writing};
 
 fn main() {
+    std::env::set_var("RUST_LOG", "actix_web=info");
+    pretty_env_logger::init();
     let server_timeout = if cfg!(debug_assertions) { 0 } else { 30 };
     let mut listenfd = ListenFd::from_env();
     let mut server = server::new(|| {
         App::new()
+            .middleware(Logger::new("%a %r %s %bb %Dms"))
             .resource("/", |r| r.method(Method::GET).with(index))
             .resource("/contact", |r| r.method(Method::GET).with(contact))
             .resource("/writing", |r| r.method(Method::GET).with(writing))

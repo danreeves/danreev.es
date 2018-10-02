@@ -35,6 +35,8 @@ pub fn page(page_title: &str, body: Markup) -> Markup {
                     meta http-equiv="x-ua-compatible" content="ie=edge";
                     title { (title_string(&page_title)) }
                     meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no";
+                    link rel="icon" href="/favicon.ico";
+                    link rel="apple-touch-icon" href="/favicon.png";
                     link rel="stylesheet" href="/css/style.css";
                 }
                 body {

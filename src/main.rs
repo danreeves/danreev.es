@@ -2,12 +2,15 @@
 
 #[macro_use]
 extern crate serde_derive;
+#[macro_use]
+extern crate lazy_static;
 extern crate actix_web;
 extern crate comrak;
 extern crate dissolve;
 extern crate listenfd;
 extern crate maud;
 extern crate pretty_env_logger;
+extern crate regex;
 
 use actix_web::middleware::Logger;
 use actix_web::{fs, http::Method, server, App};

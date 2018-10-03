@@ -1,3 +1,7 @@
++++
+published = "2018-07-05T13:20:11.330Z"
++++
+
 # On thinking you're no good and knowing better
 
 I'm not a good writer. I used to be a good writer, when I was maybe five or six. It was probably a low point in my writing ability technically speaking; my letters backwards, spelling poor, and vocabulary very not good. But I loved it, and I wrote a lot, and shared it with the people around me. Then slowly, for some reason or another, I stopped writing and somewhere along decided I wasn't any good at it and so I should just stay away from it.

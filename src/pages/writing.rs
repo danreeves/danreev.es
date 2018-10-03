@@ -4,10 +4,16 @@ use comrak::{markdown_to_html, parse_document, Arena};
 use dissolve::strip_html_tags;
 use maud::{html, Markup, PreEscaped};
 use partials::page;
+use regex::Regex;
 use std::fs::{read_dir, read_to_string, ReadDir};
 use utils::comrak_options;
 
 const MD: &str = include_str!("writing.md");
+
+lazy_static! {
+    static ref PAGE_RE: Regex =
+        Regex::new(r"^[[:space:]]*\+\+\+\r?\n((?s).*?(?-s))\+\+\+\r?\n?((?s).*(?-s))$").unwrap();
+}
 
 struct Article {
     pathname: String,
@@ -19,7 +25,10 @@ impl Article {
     pub fn new(mut path: String) -> Article {
         let arena = Arena::new();
         let options = comrak_options();
-        let content = read_to_string(&path).unwrap_or("".to_string());
+        let file_content = read_to_string(&path).unwrap_or("".to_string());
+        let caps = PAGE_RE.captures(&file_content).unwrap();
+        let frontmatter = caps[1].to_string();
+        let content = caps[2].to_string();
         let root = parse_document(&arena, &content, &options);
 
         let heading_node = &root

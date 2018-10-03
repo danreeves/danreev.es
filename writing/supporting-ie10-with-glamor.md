@@ -1,3 +1,7 @@
++++
+published = "2018-03-24T13:01:02.932Z"
++++
+
 # Supporting IE10 with glamor & glamorous
 
 [Glamor](https://github.com/threepointone/glamor) is a great little CSS-in-JS

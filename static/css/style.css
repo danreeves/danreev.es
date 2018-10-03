@@ -85,6 +85,10 @@ pre {
   margin-bottom: 1em;
 }
 
+.article img {
+  max-width: 100%;
+}
+
 .article ul,
 .article ol {
   font-weight: normal;
@@ -98,14 +102,30 @@ pre {
 
 .article pre {
   font-size: 1rem;
-  font-family: monaco, Consolas, Lucida Console, monospace;
   font-weight: normal;
+  font-family: monaco, Consolas, Lucida Console, monospace;
   display: block;
   max-width: 100%;
   overflow: scroll;
   background: lightgrey;
   padding: 1rem;
   margin-bottom: 1em;
+}
+
+.article code {
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: monaco, Consolas, Lucida Console, monospace;
+}
+
+.article strong {
+  font-weight: bold;
+}
+
+.article hr {
+  border-width: .5px;
+  border-style: solid;
+  margin-bottom: 0.75rem;
 }
 
 .article blockquote {

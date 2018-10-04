@@ -1,6 +1,6 @@
 {
-  "name": "danreeves-rust",
-  "alias": "soon.danreev.es",
+  "name": "danreeves",
+  "alias": "danreev.es",
   "type": "docker",
   "public": false,
   "scale": {

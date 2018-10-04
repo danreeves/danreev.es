@@ -1,5 +1,5 @@
 +++
-published = "2017-01-17T09:17:00.327Z"
+published = "2017-01-17"
 +++
 
 # JavaScript isn't just JavaScript

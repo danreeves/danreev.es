@@ -1,5 +1,5 @@
 +++
-published = "2017-10-29T10:26:42.397Z"
+published = "2017-10-29"
 +++
 
 # Automate your dev env with tmux

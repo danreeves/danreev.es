@@ -1,5 +1,5 @@
 +++
-published = "2014–06–12"
+published = "2014-06-12"
 +++
 
 # A guide to Gulp

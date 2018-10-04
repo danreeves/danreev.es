@@ -1,5 +1,5 @@
 +++
-published = "2014–01–12"
+published = "2014-01-12"
 +++
 
 # Jekyll search with Typeahead.js

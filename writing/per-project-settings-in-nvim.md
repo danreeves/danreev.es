@@ -1,5 +1,5 @@
 +++
-published = "2018-02-03T14:53:41.688Z"
+published = "2018-02-03"
 +++
 
 # Per project settings in nvim

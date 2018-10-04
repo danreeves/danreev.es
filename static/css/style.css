@@ -62,8 +62,18 @@ pre {
     margin-right: 0.5ch;
 }
 
+.writing-list {
+  list-style-type: none;
+  margin-top: 1.5rem;
+  margin-left: 0;
+}
+
 .writing-list li {
   margin-bottom: 1rem;
+}
+
+.writing-list blockquote {
+    margin-left: 1.2rem;
 }
 
 .article h1 a:after,

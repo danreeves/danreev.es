@@ -150,3 +150,8 @@ pre {
   line-height: 1;
   margin-bottom: 0;
 }
+
+.article .published-at {
+  display: inline-block;
+  margin-bottom: 1rem;
+}

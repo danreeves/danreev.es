@@ -19,6 +19,7 @@ use actix_web::middleware::Logger;
 use actix_web::{fs, http::Method, server, App};
 use listenfd::ListenFd;
 
+mod article;
 mod pages;
 mod partials;
 mod utils;

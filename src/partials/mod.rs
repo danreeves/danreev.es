@@ -41,7 +41,11 @@ pub fn page(page_title: &str, body: Markup) -> Markup {
                 }
                 body {
                     @if page_title.chars().count() > 0 {
-                        a href="/" class="home-link" title="Go home" { "⇦" }
+                        @if page_title == "Writing" || page_title == "Contact" {
+                            a href="/" class="home-link" title="Go home" { "⇦" }
+                        } @else {
+                            a href="/writing" class="home-link" title="More writing" { "⇦" }
+                        }
                     }
                     h1 { (page_title) }
                     (body)

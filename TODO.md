@@ -1,5 +1,5 @@
 - [ ] TOML frontmatter
-- [ ] Sort article list by date in frontmatter
+- [x] Sort article list by date in frontmatter
 - [ ] Projects
 - [ ] JS enhancements?
 - [ ] stats.danreev.es - display some stuff from now logs

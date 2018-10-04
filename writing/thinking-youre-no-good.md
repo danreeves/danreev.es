@@ -1,5 +1,5 @@
 +++
-published = "2018-07-05T13:20:11.330Z"
+published = "2018-07-05"
 +++
 
 # On thinking you're no good and knowing better

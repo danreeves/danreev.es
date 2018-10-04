@@ -1,5 +1,5 @@
 +++
-published = "2017-04-13T08:06:01.445Z"
+published = "2017-04-13"
 +++
 
 # Premature optimisation

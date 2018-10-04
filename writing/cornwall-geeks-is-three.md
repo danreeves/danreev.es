@@ -1,5 +1,5 @@
 +++
-published = "2017-06-29T08:31:00.981Z"
+published = "2017-06-29"
 +++
 
 # Cornwall Geeks is 3!

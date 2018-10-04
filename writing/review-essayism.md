@@ -1,5 +1,5 @@
 +++
-published = "2017-11-11T13:26:15.783Z"
+published = "2017-11-11"
 +++
 
 # Review: Essayism

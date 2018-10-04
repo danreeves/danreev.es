@@ -1,5 +1,5 @@
 +++
-published = "2015–06–28"
+published = "2015-06-28"
 +++
 
 # Edge Conf — London 2015

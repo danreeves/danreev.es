@@ -1,5 +1,5 @@
 +++
-published = "2017-10-23T11:45:47.826Z"
+published = "2017-10-23"
 +++
 
 # Of Practice

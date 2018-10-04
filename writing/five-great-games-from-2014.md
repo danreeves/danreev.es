@@ -1,5 +1,5 @@
 +++
-published = "2014–12–18"
+published = "2014-12-18"
 +++
 
 # 5 great games from 2014

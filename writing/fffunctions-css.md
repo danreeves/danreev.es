@@ -1,5 +1,5 @@
 +++
-published = "2014–09–26"
+published = "2014-09-26"
 +++
 
 # fffunction's CSS

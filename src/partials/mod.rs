@@ -23,6 +23,7 @@ fn footer() -> Markup {
             }
             p { "A world wide web site by Dan Reeves." }
         }
+        script src="/js/script.js" {}
     }
 }
 

@@ -23,7 +23,7 @@ fn footer() -> Markup {
             }
             p { "A world wide web site by Dan Reeves." }
         }
-        script src="/js/script.js" {}
+        script src="/static/js/script.js" {}
     }
 }
 
@@ -36,9 +36,9 @@ pub fn page(page_title: &str, body: Markup) -> Markup {
                     meta http-equiv="x-ua-compatible" content="ie=edge";
                     title { (title_string(&page_title)) }
                     meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no";
-                    link rel="icon" href="/favicon.ico";
-                    link rel="apple-touch-icon" href="/favicon.png";
-                    link rel="stylesheet" href="/css/style.css";
+                    link rel="icon" href="/static/favicon.ico";
+                    link rel="apple-touch-icon" href="/static/favicon.png";
+                    link rel="stylesheet" href="/static/css/style.css";
                 }
                 body {
                     @if page_title.chars().count() > 0 {

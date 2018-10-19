@@ -16,7 +16,11 @@ extern crate serde;
 extern crate toml;
 
 use actix_web::middleware::Logger;
-use actix_web::{fs, http::Method, server, App};
+use actix_web::{
+    fs,
+    http::{Method, NormalizePath, StatusCode},
+    server, App,
+};
 use listenfd::ListenFd;
 
 mod article;
@@ -37,7 +41,14 @@ fn main() {
             .resource("/contact", |r| r.method(Method::GET).with(contact))
             .resource("/writing", |r| r.method(Method::GET).with(writing))
             .resource("/writing/{slug}", |r| r.method(Method::GET).with(article))
-            .handler("/", fs::StaticFiles::new("static"))
+            .handler("/static", fs::StaticFiles::new("static"))
+            .default_resource(|r| {
+                r.h(NormalizePath::new(
+                    false,
+                    true,
+                    StatusCode::TEMPORARY_REDIRECT,
+                ))
+            })
     }).shutdown_timeout(server_timeout);
 
     server = if let Some(listener) = listenfd.take_tcp_listener(0).unwrap() {

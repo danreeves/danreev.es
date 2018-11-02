@@ -1,4 +1,4 @@
-FROM clux/muslrust as build
+FROM clux/muslrust:1.31.0-nightly as build
 WORKDIR /usr/src
 COPY . .
 RUN cargo build --release

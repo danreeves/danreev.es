@@ -1,4 +1,4 @@
-#![feature(proc_macro_non_items)]
+#![feature(proc_macro_hygiene)]
 
 #[macro_use]
 extern crate serde_derive;
@@ -8,6 +8,7 @@ extern crate actix_web;
 extern crate chrono;
 extern crate comrak;
 extern crate dissolve;
+extern crate failure;
 extern crate listenfd;
 extern crate maud;
 extern crate pretty_env_logger;
@@ -23,7 +24,17 @@ mod article;
 mod pages;
 mod partials;
 mod utils;
-use pages::{article, contact, index, writing};
+use pages::{article, contact, fourohfour, index, writing};
+use utils::normalize_slashes;
+
+fn redirect_or_404(req: &actix_web::HttpRequest) -> actix_web::HttpResponse {
+    let uri = req.uri();
+    let path = uri.path();
+    match path.ends_with("/") || path.contains("//") {
+        true => normalize_slashes(req),
+        false => fourohfour::handler(req),
+    }
+}
 
 fn main() {
     std::env::set_var("RUST_LOG", "actix_web=info");
@@ -33,12 +44,19 @@ fn main() {
     let mut server = server::new(|| {
         App::new()
             .middleware(Logger::new("%a %r %s %bb %Dms"))
+            .handler(
+                "/static",
+                fs::StaticFiles::new("static")
+                    .unwrap()
+                    .default_handler(fourohfour::handler),
+            )
             .resource("/", |r| r.method(Method::GET).with(index))
             .resource("/contact", |r| r.method(Method::GET).with(contact))
             .resource("/writing", |r| r.method(Method::GET).with(writing))
             .resource("/writing/{slug}", |r| r.method(Method::GET).with(article))
-            .handler("/", fs::StaticFiles::new("static"))
-    }).shutdown_timeout(server_timeout);
+            .default_resource(|r| r.h(redirect_or_404))
+    })
+    .shutdown_timeout(server_timeout);
 
     server = if let Some(listener) = listenfd.take_tcp_listener(0).unwrap() {
         server.listen(listener)

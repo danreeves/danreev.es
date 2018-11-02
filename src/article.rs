@@ -2,6 +2,7 @@ use chrono::{Date, Utc, MIN_DATE};
 use comrak::{format_html, nodes::NodeValue};
 use comrak::{markdown_to_html, parse_document, Arena};
 use dissolve::strip_html_tags;
+use pages::fourohfour::NotFoundError;
 use regex::Regex;
 use std::fs::read_to_string;
 use toml::from_str;
@@ -52,11 +53,15 @@ mod into_date {
 }
 
 impl Article {
-    pub fn new(mut path: String) -> Article {
+    pub fn new(mut path: String) -> Result<Article, NotFoundError> {
         let arena = Arena::new();
         let options = comrak_options();
         let file_content = read_to_string(&path).unwrap_or("".to_string());
-        let caps = PAGE_RE.captures(&file_content).unwrap();
+        let caps = PAGE_RE
+            .captures(&file_content)
+            .ok_or_else(|| NotFoundError {
+                name: "Couldn't read file.",
+            })?;
         let frontmatter =
             from_str::<Frontmatter>(&caps[1].to_string()).unwrap_or(Frontmatter::new());
         let content = caps[2].to_string();
@@ -67,7 +72,8 @@ impl Article {
             .find(|node| match node.data.borrow().value {
                 NodeValue::Heading(_node) => true,
                 _ => false,
-            }).unwrap() // TODO: Panics
+            })
+            .unwrap() // TODO: Panics
             .data
             .borrow();
         let title =
@@ -78,7 +84,8 @@ impl Article {
             .find(|node| match node.data.borrow().value {
                 NodeValue::Paragraph => true,
                 _ => false,
-            }).unwrap() // TODO: Panics
+            })
+            .unwrap() // TODO: Panics
             .data
             .borrow();
 
@@ -102,7 +109,8 @@ impl Article {
             .find(|node| match node.data.borrow().value {
                 NodeValue::Heading(_node) => true,
                 _ => false,
-            }).unwrap() // TODO: Panics
+            })
+            .unwrap() // TODO: Panics
             .detach();
 
         let mut body = vec![];
@@ -110,13 +118,13 @@ impl Article {
         format_html(&root, &options, &mut body);
         let body = String::from_utf8(body).unwrap_or("".to_string());
 
-        Article {
+        Ok(Article {
             pathname,
             title,
             excerpt,
             frontmatter,
             body,
-        }
+        })
     }
 
     pub fn is_published(&self) -> bool {

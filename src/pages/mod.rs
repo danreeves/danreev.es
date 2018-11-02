@@ -1,5 +1,6 @@
 mod article;
 mod contact;
+pub mod fourohfour;
 mod index;
 mod writing;
 

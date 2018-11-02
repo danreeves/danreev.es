@@ -8,6 +8,7 @@ extern crate actix_web;
 extern crate chrono;
 extern crate comrak;
 extern crate dissolve;
+extern crate failure;
 extern crate listenfd;
 extern crate maud;
 extern crate pretty_env_logger;
@@ -28,9 +29,10 @@ use utils::normalize_slashes;
 
 fn redirect_or_404(req: &actix_web::HttpRequest) -> actix_web::HttpResponse {
     let uri = req.uri();
-    match uri.path().ends_with("/") {
+    let path = uri.path();
+    match path.ends_with("/") || path.contains("//") {
         true => normalize_slashes(req),
-        false => fourohfour(req),
+        false => fourohfour::handler(req),
     }
 }
 
@@ -46,7 +48,7 @@ fn main() {
                 "/static",
                 fs::StaticFiles::new("static")
                     .unwrap()
-                    .default_handler(fourohfour),
+                    .default_handler(fourohfour::handler),
             )
             .resource("/", |r| r.method(Method::GET).with(index))
             .resource("/contact", |r| r.method(Method::GET).with(contact))

@@ -19,7 +19,7 @@ fn post_list_from_dir(dir: ReadDir) -> Markup {
 
     let mut articles = paths
         .iter()
-        .map(move |path| Article::new(path.to_owned()))
+        .map(move |path| Article::new(path.to_owned()).unwrap())
         .filter(|article| article.is_published())
         .collect::<Vec<Article>>();
 

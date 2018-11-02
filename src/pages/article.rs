@@ -1,6 +1,7 @@
 use actix_web::Path;
 use article::Article;
 use maud::{html, Markup, PreEscaped};
+use pages::fourohfour::NotFoundError;
 use partials::page;
 
 #[derive(Deserialize)]
@@ -8,11 +9,11 @@ pub struct Params {
     pub slug: String,
 }
 
-pub fn article(params: Path<Params>) -> Markup {
+pub fn article(params: Path<Params>) -> Result<Markup, NotFoundError> {
     let file_path = format!("writing/{}.md", params.slug);
-    let article = Article::new(file_path);
+    let article = Article::new(file_path)?;
 
-    html! {
+    Ok(html! {
         (page(&article.title, html! {
             div.article {
                 small.published-at {
@@ -23,5 +24,5 @@ pub fn article(params: Path<Params>) -> Markup {
                 (PreEscaped(article.body))
             }
         }))
-    }
+    })
 }

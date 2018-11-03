@@ -36,6 +36,14 @@ fn redirect_or_404(req: &actix_web::HttpRequest) -> actix_web::HttpResponse {
     }
 }
 
+fn keybase_proof(_: &actix_web::HttpRequest) -> Result<fs::NamedFile, fourohfour::NotFoundError> {
+    Ok(
+        fs::NamedFile::open("static/keybase.txt").map_err(|_| fourohfour::NotFoundError {
+            name: "keybase_proof",
+        })?,
+    )
+}
+
 fn main() {
     std::env::set_var("RUST_LOG", "actix_web=info");
     pretty_env_logger::init();
@@ -50,6 +58,7 @@ fn main() {
                     .unwrap()
                     .default_handler(fourohfour::handler),
             )
+            .resource("/keybase.txt", |r| r.method(Method::GET).h(keybase_proof))
             .resource("/", |r| r.method(Method::GET).with(index))
             .resource("/contact", |r| r.method(Method::GET).with(contact))
             .resource("/writing", |r| r.method(Method::GET).with(writing))

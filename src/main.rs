@@ -70,7 +70,7 @@ fn main() {
     server = if let Some(listener) = listenfd.take_tcp_listener(0).unwrap() {
         server.listen(listener)
     } else {
-        server.bind("0.0.0.0:3000").unwrap()
+        server.bind("0.0.0.0:80").unwrap()
     };
 
     server.run();

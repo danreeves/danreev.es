@@ -1,0 +1,8 @@
+{
+  "name": "danreeves",
+  "repository": "https://github.com/danreeves/danreev.es",
+  "success_url": "/",
+  "env": {
+    "BUILDPACK_URL": "https://github.com/emk/heroku-buildpack-rust.git"
+  }
+}

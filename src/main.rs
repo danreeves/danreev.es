@@ -19,6 +19,7 @@ extern crate toml;
 use actix_web::middleware::Logger;
 use actix_web::{fs, http::Method, server, App};
 use listenfd::ListenFd;
+use std::env;
 
 mod article;
 mod pages;
@@ -70,7 +71,11 @@ fn main() {
     server = if let Some(listener) = listenfd.take_tcp_listener(0).unwrap() {
         server.listen(listener)
     } else {
-        server.bind("0.0.0.0:80").unwrap()
+        let port = env::var("PORT")
+            .unwrap_or_else(|_| "3000".to_string())
+            .parse()
+            .expect("PORT must be a number");
+        server.bind(("0.0.0.0", port)).unwrap()
     };
 
     server.run();

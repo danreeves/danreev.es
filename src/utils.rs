@@ -21,7 +21,7 @@ pub fn normalize_slashes(req: &HttpRequest) -> HttpResponse {
     let slashes = Regex::new("/+").unwrap();
     let path = req.uri().path();
     let path = slashes.replace_all(path, "/");
-    let path = path.trim_right_matches("/");
+    let path = path.trim_end_matches("/");
     let path = match path.len() {
         0 => "/",
         _ => path,

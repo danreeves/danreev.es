@@ -16,7 +16,7 @@ extern crate regex;
 extern crate serde;
 extern crate toml;
 
-use actix_web::middleware::Logger;
+use actix_web::middleware::{DefaultHeaders, Logger};
 use actix_web::{fs, http::Method, server, App};
 use listenfd::ListenFd;
 use std::env;
@@ -53,6 +53,7 @@ fn main() {
     let mut server = server::new(|| {
         App::new()
             .middleware(Logger::new("%a %r %s %bb %Dms"))
+            .middleware(DefaultHeaders::new().header("Content-Type", "text/html"))
             .handler(
                 "/static",
                 fs::StaticFiles::new("static")

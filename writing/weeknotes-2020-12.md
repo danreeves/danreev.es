@@ -23,3 +23,17 @@ published = "2020-01-12"
  - I'm off to Seattle again in a few weeks which is very exciting.
 
 I'm going to push this now and see if my build still works and how this looks. I'll try remember to keep this up. :)
+
+---
+
+I'm looking into getting a new keyboard.
+
+Wants:
+ - Quieter
+ - Backlighting
+ - Macros/hotkeys/mediakeys
+ - mechanical
+
+Looking at:
+ - [WASD V3 87-Key](https://www.wasdkeyboards.com/wasd-v3-87-key-custom-mechanical-keyboard.html)
+ - [Razer BlackWidow Lite](https://www.razer.com/gb-en/gaming-keyboards-keypads/razer-blackwidow-lite)

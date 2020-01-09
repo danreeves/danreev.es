@@ -37,3 +37,7 @@ Wants:
 Looking at:
  - [WASD V3 87-Key](https://www.wasdkeyboards.com/wasd-v3-87-key-custom-mechanical-keyboard.html)
  - [Razer BlackWidow Lite](https://www.razer.com/gb-en/gaming-keyboards-keypads/razer-blackwidow-lite)
+
+---
+
+WASD totally has a keyboard that matches what I want and I missed it. Thanks Twitter! [Here.](https://www.wasdkeyboards.com/code-v3-87-key-mechanical-keyboard-cherry-mx-brown.html)

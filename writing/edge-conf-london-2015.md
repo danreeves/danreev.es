@@ -38,7 +38,7 @@ command it's still not easy enough for the standard user.
 
 ![Everyone keeps using the word "developers" to refer to people who build the
 web. The web is for everyone. The thought of Code Club students having to learn
-how to deploy HTTPS horrifies me.](/img/edge-conf-2015-1.png)
+how to deploy HTTPS horrifies me.](/static/img/edge-conf-2015-1.png)
 
 ## Front end data
 
@@ -105,7 +105,7 @@ are a long way from being even worth using.
 
 ## Progressive enhancement
 
-![fingers crossed this is not about JS vs non-JS](/img/edge-conf-2015-2.png)
+![fingers crossed this is not about JS vs non-JS](/static/img/edge-conf-2015-2.png)
 
 The final panel of the day way moderated by [Lyza Danger
 Gardner](https://twitter.com/lyzadanger) and keynoted by [Remy

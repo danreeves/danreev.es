@@ -49,7 +49,7 @@ Split the window a third time, but don’t run a command in it.
 
 Select the `tiled` layout from the list of default layouts `tmux` has.
 
-![A terminal showing the final result](/img/automate-your-dev-env-with-tmux.png)
+![A terminal showing the final result](/static/img/automate-your-dev-env-with-tmux.png)
 Tada 🎉
 
 ## Cool things

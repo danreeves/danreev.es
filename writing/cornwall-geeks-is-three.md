@@ -23,7 +23,7 @@ A few months later I was invited to a new Slack group: Falmouth Geeks. Since I
 was joining from Truro it became Cornwall Geeks. As it was a similar group of
 people with the same goals the meetup changed to share the name not long after.
 
-![The slack channel started as a separate venture — Falmouth Geeks](/img/cornwall-geeks-is-three.png)
+![The slack channel started as a separate venture — Falmouth Geeks](/static/img/cornwall-geeks-is-three.png)
 
 ## How things have changed
 

@@ -7,23 +7,32 @@ fn title_string(title: &str) -> String {
     }
 }
 
-fn footer() -> Markup {
-    html! {
-        footer {
-            nav {
-                a href="/" title="Home" { "⌂" }
-                " "
-                a href="https://twitter.com/dnrvs" { "Twitter" }
-                " "
-                a href="https://github.com/danreeves" { "GitHub" }
-                " "
-                a href="/contact" { "Contact" }
-                " "
-                a href="/writing" { "Writing" }
+fn nav(loc: &str) -> Markup {
+    let nav = html! {nav {
+        span.fake-link { "☂ Dan Reeves" }
+        " "
+        a href="/" title="Home" { "Home!" }
+        " "
+        a href="https://twitter.com/dnrvs" { "Twitter!" }
+        " "
+        a href="https://github.com/danreeves" { "GitHub!" }
+        " "
+        a href="/contact" title="Contact" { "Contact!" }
+        " "
+        a href="/writing" { "Blog!" }
+    }
+    };
+    match loc {
+        "header" => html! {
+            header { (nav) }
+        },
+        "footer" => html! {
+            footer {
+                (nav)
             }
-            p { "A world wide web site by Dan Reeves." }
-        }
-        script src="/static/js/script.js" {}
+            script src="/static/js/script.js" {}
+        },
+        &_ => html! {},
     }
 }
 
@@ -39,18 +48,15 @@ pub fn page(page_title: &str, body: Markup) -> Markup {
                     link rel="icon" href="/static/favicon.ico";
                     link rel="apple-touch-icon" href="/static/favicon.png";
                     link rel="stylesheet" href="/static/css/style.css";
+                    link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC|VT323|Work+Sans:400,900&display=swap";
                 }
                 body {
                     @if page_title.chars().count() > 0 {
-                        @if page_title == "Writing" || page_title == "Contact" {
-                            a href="/" class="home-link" title="Go home" { "⇦" }
-                        } @else {
-                            a href="/writing" class="home-link" title="More writing" { "⇦" }
-                        }
+                        (nav("header"))
                     }
                     h1 { (page_title) }
                     (body)
-                    (footer())
+                    (nav("footer"))
                 }
             }
     }

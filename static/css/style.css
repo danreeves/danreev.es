@@ -1,8 +1,7 @@
 html, body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Work Sans', sans-serif;
   box-sizing: border-box;
-  font-weight: 900;
-  font-size: 1.25rem;
+  font-size: 1.111rem;
 }
 
 *, *:before, *:after {
@@ -18,12 +17,19 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 body {
-  margin: 5vh 5vw;
-  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-width: 700px;
 }
 
 p {
   margin-bottom: 0.75em;
+}
+
+header {
+  margin-bottom: 2rem;
 }
 
 footer {
@@ -38,20 +44,63 @@ ul {
     list-style-type: square;
 }
 
-a {
-  color: deeppink;
+a, .fake-link {
+  display: inline-block;
+  color: #3e3c30;
+  text-decoration: none;
+  background: deeppink;
+  font-weight: bold;
+  font-family: Impact;
+  color: white;
+  padding: .25rem;
+  margin: .1rem;
+  font-size: 1.5rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  border: 1px solid black;
 }
 
-.g {
-  color: limegreen;
+a.color-2, .fake-link.color-2 {
+  background: limegreen;
 }
 
-.b {
-  color: dodgerblue;
+a.color-3, .fake-link.color-3 {
+  background: dodgerblue;
 }
+
+.fake-link {
+  cursor: url(/static/dds.cur), auto;
+}
+
+h1.fake-link {
+  font-size: 3rem;
+}
+
+.anchor {
+  display: none;
+}
+
+.article .anchor {
+  display: inline;
+}
+
+.anchor {
+  background: none !important;
+  border: none;
+  text-align: center;
+}
+
+.anchor:after {
+    content: '\21AC';
+    display: inline-block;
+}
+
+.g { color: limegreen; font-weight: 900; }
+.b { color: dodgerblue; font-weight: 900; }
 
 pre {
-  font-family: monospace;
+  font-family: 'VT323', monospace;
+  line-height: .8rem;
 }
 
 .home-link {
@@ -76,21 +125,8 @@ pre {
     margin-left: 1.2rem;
 }
 
-.article h1 a:after,
-.article h2 a:after,
-.article h3 a:after,
-.article h4 a:after,
-.article h5 a:after,
-.article h6 a:after {
-    content: '\21AC';
-    display: inline-block;
-    margin-right: 0.5ch;
-}
-
 .writing-list blockquote,
 .article p {
-  font-weight: normal;
-  font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
   line-height: 1.5;
   margin-bottom: 1em;
 }
@@ -102,7 +138,6 @@ pre {
 .article ul,
 .article ol {
   font-weight: normal;
-  font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
   margin-bottom: 1em;
 }
 
@@ -113,19 +148,20 @@ pre {
 .article pre {
   font-size: 1rem;
   font-weight: normal;
-  font-family: monaco, Consolas, Lucida Console, monospace;
+  font-family: 'VT323', monospace;
   display: block;
   max-width: 100%;
   overflow: scroll;
   background: lightgrey;
   padding: 1rem;
   margin-bottom: 1em;
+  line-height: 1;
 }
 
 .article code {
   font-size: 1rem;
   font-weight: normal;
-  font-family: monaco, Consolas, Lucida Console, monospace;
+  font-family: 'VT323', monospace;
 }
 
 .article strong {

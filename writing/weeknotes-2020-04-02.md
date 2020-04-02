@@ -16,6 +16,6 @@ here's my progress:
 ## projects
 one goal of this year is to output more stuff. i've starting working on the first of many games. it's a passion i've wanted to embrace for far too long.
 
-i also worked on a small web project for my favourite game: [Vermintide 2 Leaderboard](http://vt2leaderboards.onrender.com]. This was fun as it involved interacting with the Steam and PlayFab APIs.
+i also worked on a small web project for my favourite game: [Vermintide 2 Leaderboard](https://vt2leaderboards.onrender.com]. This was fun as it involved interacting with the Steam and PlayFab APIs.
 
 ttyl

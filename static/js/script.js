@@ -8,16 +8,28 @@ console.log("hey: https://twitter.com/dnrvs");
 console.log("src: https://github.com/danreeves/danreev.es");
 console.log("have a nice day!");
 
-let index = 1
+if (document.querySelectorAll(".writing-list").length) {
+  let times = Array.from(document.querySelectorAll(".writing-list time"))
 
-Array.from(document.querySelectorAll('a:not(.anchor), .fake-link')).forEach(node => {
-  if (index === 2) {
-    node.classList.add('color-2')
-  }
+  let lastTime
+  times.forEach(node => {
+    if (!lastTime) {
+      lastTime = node
+      return
+    }
 
-  if (index === 3) {
-    node.classList.add('color-3')
-  }
+    if (lastTime.textContent === node.textContent) {
+      let parent = node.parentElement
+      let links = Array.from(parent.querySelectorAll('a'))
+      let prevParent = lastTime.parentElement
 
-  index = index === 3 ? 1 : index + 1
-})
+      links.forEach(link => {
+        prevParent.appendChild(link)
+      })
+
+      parent.remove()
+    } else {
+      lastTime = node
+    }
+  })
+}

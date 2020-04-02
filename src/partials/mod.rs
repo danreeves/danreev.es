@@ -8,19 +8,18 @@ fn title_string(title: &str) -> String {
 }
 
 fn nav(loc: &str) -> Markup {
-    let nav = html! {nav {
-        span.fake-link { "☂ Dan Reeves" }
-        " "
-        a href="/" title="Home" { "Home!" }
-        " "
-        a href="https://twitter.com/dnrvs" { "Twitter!" }
-        " "
-        a href="https://github.com/danreeves" { "GitHub!" }
-        " "
-        a href="/contact" title="Contact" { "Contact!" }
-        " "
-        a href="/writing" { "Blog!" }
-    }
+    let nav = html! {
+        nav {
+            a href="/" title="Home" { "Home" }
+            " "
+            a href="/contact" title="Contact" { "Mail" }
+            " "
+            a href="/writing" { "Writing" }
+            " "
+            a href="https://twitter.com/dnrvs" { "Tweets" }
+            " "
+            a href="https://github.com/danreeves" { "Code" }
+        }
     };
     match loc {
         "header" => html! {
@@ -48,7 +47,6 @@ pub fn page(page_title: &str, body: Markup) -> Markup {
                     link rel="icon" href="/static/favicon.ico";
                     link rel="apple-touch-icon" href="/static/favicon.png";
                     link rel="stylesheet" href="/static/css/style.css";
-                    link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC|VT323|Work+Sans:400,900&display=swap";
                 }
                 body {
                     @if page_title.chars().count() > 0 {

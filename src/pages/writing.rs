@@ -25,18 +25,23 @@ fn post_list_from_dir(dir: ReadDir) -> Markup {
 
     articles.sort_by(|a, b| b.frontmatter.published.cmp(&a.frontmatter.published));
 
+
+    // TODO: THIS IN RUST. ITS IN JS
+                        // @if article.frontmatter.published.format("%Y-%m-%d").to_string() != last_date {
+                        //     time datetime=(article.frontmatter.published.format("%Y-%m-%d")) {
+                        //         (article.frontmatter.published.format("%B %Y"));
+                        //     }
+                        //     (set_last_date(article.frontmatter.published.format("%Y-%m-%d").to_string()))
+                        // }
+
     html! {
         ul.writing-list {
             @for article in articles {
                     li {
                         time datetime=(article.frontmatter.published.format("%Y-%m-%d")) {
-                            (article.frontmatter.published.format("%e %b %Y"));
+                            (article.frontmatter.published.format("%B %Y"));
                         }
-                        " - "
                         a href=(article.pathname) { (article.title) }
-                        blockquote cite=(article.pathname) {
-                            (PreEscaped(article.excerpt))
-                        }
                     }
             }
         }

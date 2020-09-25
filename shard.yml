@@ -1,0 +1,20 @@
+name: my-homepage
+version: 1337
+authors:
+    - Dan Reeves <hey@danreev.es>
+licence: MIT
+
+crystal: 0.35.1
+
+targets:
+  server:
+    main: src/server.cr
+
+dependencies:
+  watch:
+    github: danreeves/watch
+  kemal:
+    github: kemalcr/kemal
+    branch: master
+  temel:
+    github: f/temel

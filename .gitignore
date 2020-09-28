@@ -6,6 +6,7 @@ server
 #
 # ### Crystal ###
 /docs/
+/lib/
 /bin/
 /.shards/
 *.dwarf

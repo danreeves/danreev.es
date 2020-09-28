@@ -1,6 +1,6 @@
-+++
-published = "2018-02-03"
-+++
+---
+published: 2018-02-03
+---
 
 # Per project settings in nvim
 

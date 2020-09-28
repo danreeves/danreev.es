@@ -1,6 +1,6 @@
-+++
-published = "2017-11-11"
-+++
+---
+published: 2017-11-11
+---
 
 # Review: Essayism
 
@@ -12,5 +12,5 @@ the authors depression, and a handbook to its own creation. It so flawlessly
 weaves these threads together, calling upon digressions in a way so calculated
 and clever, that you might not even notice.
 
-![The cover of the book: Essayism by Brian Dillon](/static/img/review-essayism.jpeg)
+![The cover of the book: Essayism by Brian Dillon](/img/review-essayism.jpeg)
 

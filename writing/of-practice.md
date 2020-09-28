@@ -1,6 +1,6 @@
-+++
-published = "2017-10-23"
-+++
+---
+published: 2017-10-23
+---
 
 # Of Practice
 

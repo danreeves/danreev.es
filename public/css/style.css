@@ -50,7 +50,7 @@ a {
   display: inline-block;
   color: deeppink;
   text-decoration: underline;
-  cursor: url(/static/dds.cur), auto;
+  cursor: url(/dds.cur), auto;
 }
 
 nav a {

@@ -1,6 +1,6 @@
-+++
-published = "2018-03-24"
-+++
+---
+published: 2018-03-24
+---
 
 # Supporting IE10 with glamor & glamorous
 

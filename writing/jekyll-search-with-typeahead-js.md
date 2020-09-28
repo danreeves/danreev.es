@@ -1,6 +1,6 @@
-+++
-published = "2014-01-12"
-+++
+---
+published: 2014-01-12
+---
 
 # Jekyll search with Typeahead.js
 
@@ -123,7 +123,7 @@ As you can see, I passed in two extra properties to typeahead, a `template` and
 an `engine`. This allows me to create custom search results including the
 publication date.
 
-![The working product](/static/img/jekyll-search-with-typeahead.png)
+![The working product](/img/jekyll-search-with-typeahead.png)
 
 There we have it: a functional search box on a Jekyll blog. Unfortunately it
 only works for those with js enabled, but, hey, progressive enhancement!

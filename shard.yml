@@ -18,3 +18,5 @@ dependencies:
     branch: master
   temel:
     github: f/temel
+  markd:
+    github: icyleaf/markd

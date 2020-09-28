@@ -19,3 +19,6 @@ shards:
   temel:
     git: https://github.com/f/temel.git
     version: 0.1.0+git.commit.f7ddd6d70ff9f13ec00fa49f9ede68bb4650caf9
+  markd:
+    git: https://github.com/icyleaf/markd.git
+    version: 0.2.1

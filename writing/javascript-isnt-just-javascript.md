@@ -4,8 +4,6 @@ published: 2017-01-17
 
 # JavaScript isn't just JavaScript
 
-## Or: Why JavaScript fatigue is a reductionist train of thought
-
 2016 was the year of “JavaScript fatigue”. The idea that JavaScript has become
 too fractured and entrenched in tools. It's now harder than ever for a developer
 to get a project started, let alone finished.

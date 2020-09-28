@@ -1,6 +1,6 @@
-+++
-published = "2017-01-17"
-+++
+---
+published: 2017-01-17
+---
 
 # JavaScript isn't just JavaScript
 

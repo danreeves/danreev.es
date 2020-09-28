@@ -1,6 +1,6 @@
-+++
-published = "2018-07-05"
-+++
+---
+published: 2018-07-05
+---
 
 # On thinking you're no good and knowing better
 

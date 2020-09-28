@@ -1,6 +1,6 @@
-+++
-published = "2020-04-02"
-+++
+---
+published: 2020-04-02
+---
 
 # weeknotes 2
 

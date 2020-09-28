@@ -1,11 +1,5 @@
-FROM clux/muslrust:1.31.0-nightly as build
-WORKDIR /usr/src
+FROM crystallang/crystal:0.35.1-alpine-build
 COPY . .
-RUN cargo build --release
-
-FROM scratch
-COPY --from=build /usr/src/target/x86_64-unknown-linux-musl/release/my-web-site /
-COPY --from=build /usr/src/static/ /static
-COPY --from=build /usr/src/writing/ /writing
-EXPOSE 80
-CMD ["/my-web-site"]
+RUN shards install
+RUN crystal build src/server.cr
+CMD ["./server"]

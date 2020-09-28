@@ -1,6 +1,6 @@
-+++
-published = "2020-01-12"
-+++
+---
+published: 2020-01-12
+---
 
 # Weaknotes
 

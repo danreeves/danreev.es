@@ -1,6 +1,6 @@
-+++
-published = "2014-06-12"
-+++
+---
+published: 2014-06-12
+---
 
 # A guide to Gulp
 
@@ -71,7 +71,7 @@ stream to a destination folder.
 
 Run `gulp` in the terminal to test it's all working.
 
-![](/static/img/guide-to-gulp-1.gif)
+![](/img/guide-to-gulp-1.gif)
 
 ## Going Up A Gear
 
@@ -86,14 +86,14 @@ of tasks to call before itself, and a function to perform as it's task.
 After running `gulp` this time you should have a compiled and minified css file
 in your css directory.
 
-![](/static/img/guide-to-gulp-2.gif)
+![](/img/guide-to-gulp-2.gif)
 
 The addition of watching files for changes will introduce us to the fourth and
 final gulp method (`gulp.watch`) and allow us to run gulp once and compile any
 changes we make to our stylesheets. Create a new task like below, and amend the
 default task to include the watch task:
 
-![](/static/img/guide-to-gulp-3.gif)
+![](/img/guide-to-gulp-3.gif)
 
 In case you're not familiar with globbing, the asterisks in that task match
 anything, so "`css/**/*.scss`" will be looking at every scss file in every

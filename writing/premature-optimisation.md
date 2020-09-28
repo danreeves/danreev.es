@@ -1,6 +1,6 @@
-+++
-published = "2017-04-13"
-+++
+---
+published: 2017-04-13
+---
 
 # Premature optimisation
 

@@ -1,6 +1,5 @@
-If you need to get in touch the quickest way might be through Twitter [@dnrvs](https://twitter.com/dnrvs). If it's longer than ~~140~~ 280 characters then you can email me at [hey@danreev.es](mailto:hey@danreev.es).
-
-You could even try sending me a message on [LinkedIn](https://www.linkedin.com/in/dnrvs/).
+If you need to get in touch the quickest way might be through Twitter [@dnrvs](https://twitter.com/dnrvs).
+If it's longer than <s>140</s> 280 characters then you can email me at [hey@danreev.es](mailto:hey@danreev.es).
 
 ```
            _..--""---.

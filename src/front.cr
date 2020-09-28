@@ -10,6 +10,8 @@ def split_frontmatter(content : String, delimiter = "---") : Tuple(Frontmatter, 
   if content.empty?
     return {Frontmatter.from_yaml(""), ""}
   end
-  front, markdown = content.split(delimiter, nil, remove_empty: true)
+  parts = content.split(delimiter, remove_empty: true)
+  front = parts.shift
+  markdown = parts.join("")
   return {Frontmatter.from_yaml(front.strip), markdown}
 end

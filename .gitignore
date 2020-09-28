@@ -1,4 +1,16 @@
+server
 .next
+
+# Created by https://www.toptal.com/developers/gitignore/api/crystal
+# # Edit at https://www.toptal.com/developers/gitignore?templates=crystal
+#
+# ### Crystal ###
+/docs/
+/bin/
+/.shards/
+*.dwarf
+
+# # End of https://www.toptal.com/developers/gitignore/api/crystal
 
 # Created by https://www.gitignore.io/api/node,macos
 

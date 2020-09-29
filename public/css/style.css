@@ -118,7 +118,7 @@ pre {
 .article {
   text-transform: initial;
   font-size: 1rem;
-  letter-spacer: -.25;
+  letter-spacing: -.25;
 }
 
 .article h1,

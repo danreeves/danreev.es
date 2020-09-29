@@ -4,6 +4,7 @@ html, body {
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: lowercase;
+  letter-spacing: -1.5;
 }
 
 *, *:before, *:after {
@@ -16,6 +17,7 @@ html, body {
 
 h1,h2,h3,h4,h5,h6 {
   margin-bottom: 0.75em;
+  letter-spacing: -3;
 }
 
 body {
@@ -116,6 +118,7 @@ pre {
 .article {
   text-transform: initial;
   font-size: 1rem;
+  letter-spacer: -.25;
 }
 
 .article h1,

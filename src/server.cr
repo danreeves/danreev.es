@@ -24,7 +24,7 @@ get "/" do
     page_head(
       "dan reeves"
     ),
-    body(
+    body({class: "home"},
       html
     ),
     footer(nav())
@@ -40,11 +40,9 @@ get "/:page" do |env|
       "#{page} | dan reeves"
     ),
     body(
-      header(nav()),
-      div(
-        html
-      ),
+      html
     ),
+    footer(nav()),
   )
 end
 
@@ -71,20 +69,19 @@ get "/writing" do |env|
       "writing | dan reeves"
     ),
     body(
-      header(nav()),
       body,
-      div(
-        ul({class: "writing-list"},
-          sorted_list.map do |item|
-            front, html, title, slug = item
-            li(
-              a({href: "/writing/#{slug}"},
-                title
-              )
+      ol({class: "writing-list", reversed: ""},
+        sorted_list.map do |item|
+          front, html, title, slug = item
+          li(
+            a({href: "/writing/#{slug}"},
+              title
             )
-          end.join("")
-        )
+          )
+        end.join("")
       ),
+      img({src: "/img/yef.jpg", class: "cool-img"}),
+      footer(nav()),
     ),
   )
 end
@@ -98,8 +95,8 @@ get "/writing/:slug" do |env|
   html(
     page_head("#{title.downcase} | dan reeves"),
     body(
-      header(nav()),
       div({class: "article"}, html),
+      footer(nav()),
     )
   )
 end

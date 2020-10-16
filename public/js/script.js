@@ -14,21 +14,28 @@ window.onload = function () {
 	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
   }
 
-  let imgs = document.querySelectorAll('.cool-img')
-  imgs.forEach(img => {
-	let canvas = document.createElement("CANVAS")
-	canvas.className = "cool-img"
-	canvas.width = img.width
-	canvas.height = img.height
-	insertAfter(canvas, img)
+  let supportsPixelated = CSS && CSS.supports && CSS.supports('image-rendering', 'pixelated')
 
-	let ctx = canvas.getContext("2d")
-	ctx.msImageSmoothingEnabled = false;
-	ctx.mozImageSmoothingEnabled = false;
-	ctx.webkitImageSmoothingEnabled = false;
-	ctx.imageSmoothingEnabled = false;
-	ctx.drawImage(img, 0, 0, img.width, img.height);
+  if (!supportsPixelated) {
+	let imgs = document.querySelectorAll('.cool-img')
+	imgs.forEach(img => {
+	  img.onload = function () {
+		let canvas = document.createElement("CANVAS")
+		canvas.className = "cool-img"
+		canvas.width = img.width
+		canvas.height = img.height
+		insertAfter(canvas, img)
 
-	img.parentElement.removeChild(img)
-  })
+		let ctx = canvas.getContext("2d")
+		ctx.msImageSmoothingEnabled = false;
+		ctx.mozImageSmoothingEnabled = false;
+		ctx.webkitImageSmoothingEnabled = false;
+		ctx.imageSmoothingEnabled = false;
+		ctx.drawImage(img, 0, 0, img.width, img.height);
+
+		img.parentElement.removeChild(img)
+	  }
+	  img.src=img.src
+	})
+  }
 }

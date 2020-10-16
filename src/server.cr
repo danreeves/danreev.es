@@ -101,4 +101,8 @@ get "/writing/:slug" do |env|
   )
 end
 
+static_headers do |response, filepath, filestat|
+  response.headers.add("Cache-Control", "max-age=3600")
+end
+
 Kemal.run

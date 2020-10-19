@@ -1,5 +1,13 @@
 version: 2.0
 shards:
+  cache:
+    git: https://github.com/mamantoha/cache.git
+    version: 0.9.0
+
+  dotenv:
+    git: https://github.com/gdotdesign/cr-dotenv.git
+    version: 0.7.0
+
   exception_page:
     git: https://github.com/crystal-loot/exception_page.git
     version: 0.1.4
@@ -16,9 +24,21 @@ shards:
     git: https://github.com/icyleaf/markd.git
     version: 0.2.1
 
+  memcached:
+    git: https://github.com/comandeo/crystal-memcached.git
+    version: 0.2.2+git.commit.ee02a364a0274df0cde3d1bb3ef958e2e7c07c18
+
+  pool:
+    git: https://github.com/ysbaddaden/pool.git
+    version: 0.2.3
+
   radix:
     git: https://github.com/luislavena/radix.git
     version: 0.3.9
+
+  redis:
+    git: https://github.com/stefanwille/crystal-redis.git
+    version: 2.6.0
 
   temel:
     git: https://github.com/f/temel.git

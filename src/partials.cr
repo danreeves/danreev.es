@@ -17,10 +17,9 @@ end
 
 def nav
   nav(
-    a({href: "/", title: "Home"}, "Home"),
-    a({href: "/contact", title: "Contact"}, "Contact"),
+    a({href: "/"}, "Home"),
     a({href:"/writing"},  "Writing"),
-    a({href:"https://twitter.com/dnrvs"}, "Twitter"),
-    a({href:"https://github.com/danreeves"}, "GitHub"),
+    a({href:"/photography"},  "Photography"),
+    a({href: "/contact"}, "Contact"),
   )
 end

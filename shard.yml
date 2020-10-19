@@ -20,3 +20,7 @@ dependencies:
     github: f/temel
   markd:
     github: icyleaf/markd
+  dotenv:
+    github: gdotdesign/cr-dotenv
+  cache:
+    github: mamantoha/cache

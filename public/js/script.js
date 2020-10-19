@@ -40,7 +40,7 @@ window.onload = function () {
 
 }
 
-document.body.addEventListener("click", function(event) {
+window.addEventListener("click", function(event) {
   let opened = Array.from(document.querySelectorAll(".album-img.expanded"))
 
   opened.forEach(function(node) {

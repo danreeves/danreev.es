@@ -12,6 +12,7 @@ get "/photography" do |env|
     html = Markd.to_html(markdown, Markd::Options.new(smart: true))
     albums = Imgur.get_albums
   rescue ex
+    puts ex
     halt env, status_code: 404, response: fourohfour
   end
   html(

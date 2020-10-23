@@ -1,13 +1,18 @@
+function log (...args) {
+  console.log(...args.map(str=>`%c${str}`), "font-style: italic;")
+}
+
 window.onload = function () {
 
   if ("performance" in window) {
 	let pageNav = performance.getEntriesByType("navigation")[0];
 	let totalTime = pageNav.responseEnd - pageNav.requestStart;
-	console.log(`can you believe this page took ${totalTime.toFixed(2)}ms to load`);
+	log(`; page load in ${totalTime.toFixed(0)}ms`);
   }
 
-  console.log("hey https://twitter.com/dnrvs");
-  console.log("src https://github.com/danreeves/danreev.es");
+  log("; defund the police");
+  log("; black lives matter");
+  log("; trans rights are human rights");
 
   function insertAfter(newNode, referenceNode) {
 	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -41,16 +46,27 @@ window.onload = function () {
 }
 
 window.addEventListener("click", function(event) {
-  let opened = Array.from(document.querySelectorAll(".album-img.expanded"))
-
-  opened.forEach(function(node) {
-	node.className = node.className.replace(" expanded", "")
-  })
+  // Alway reenable scroll because it would suck to not be able to scroll
   enableScroll()
+  if (window.matchMedia("(min-width: 700px)").matches) {
+	let opened = Array.from(document.querySelectorAll(".album-img-cover"))
 
-  if (event.target.className.includes("album-img") && !opened.length) {
-	event.target.className = event.target.className + " expanded"
-	disableScroll()
+	opened.forEach(function(node) {
+	  document.body.removeChild(node)
+	})
+
+	if (event.target.className.includes("album-img") && !opened.length) {
+	  let newNode = event.target.cloneNode()
+	  newNode.className = event.target.className + " expanded"
+	  newNode.loading = "eager"
+
+	  let cover = document.createElement("DIV")
+	  cover.className = "album-img-cover"
+	  cover.appendChild(newNode)
+
+	  document.body.appendChild(cover)
+	  disableScroll()
+	}
   }
 })
 

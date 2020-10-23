@@ -1,3 +1,12 @@
+:root {
+  --color: black;
+  --highl: deeppink;
+  --backg: white;
+
+  --code-bg: floralwhite;
+  --code-fg: darkcyan;
+}
+
 html, body {
   font-family: "argentpixel";
   box-sizing: border-box;
@@ -5,6 +14,8 @@ html, body {
   text-transform: lowercase;
   font-style: italic;
   position: relative;
+  background: var(--backg);
+  color: var(--color);
 }
 
 @media (max-width: 700px) {
@@ -73,10 +84,9 @@ ul li:before {
 
 
 a {
-  color: deeppink;
+  color: var(--highl);
   text-decoration: none;
-  border-bottom: 2px solid deeppink;
-  padding-bottom: 2px;
+  border-bottom: 2px solid var(--highl);
 }
 
 nav {
@@ -86,28 +96,16 @@ nav {
 }
 
 abbr[data-title] {
-  border-bottom: 2px dashed black;
-  padding-bottom: 2px;
+  border-bottom: 2px solid var(--color);
 }
 
 abbr[data-title]:hover:after {
   content: attr(data-title);
   position: absolute;
-  border: 2px solid black;
-  padding: 0.25rem;
-  box-shadow:
-  -10px 0px 0px white,
-  0px -10px 0px white,
-  -10px -10px 0px white,
-  -2px -2px 0px white,
-  -4px -4px 0px black,
-  2px 2px 0px white,
-  4px 4px 0px black,
-  -10px 0px 0px white,
-  -10px 10px 0px white,
-  -10px 10px 0px white;
-  backdrop-filter: blur(5px) contrast(0.95);
-  background: white;
+  border: 2px solid var(--color);
+  padding: 0.5rem;
+  padding-top: 0;
+  background: var(--backg);
   transition: 1s;
 }
 
@@ -173,12 +171,12 @@ pre {
   display: block;
   max-width: 100%;
   overflow-x: scroll;
-  background: floralwhite;
+  background: var(--code-bg);
   padding: 1rem;
   margin-bottom: 1em;
   line-height: 1;
   border-radius: 2px;
-  color: darkcyan;
+  color: var(--code-fg);
 }
 
 .article code {
@@ -193,12 +191,12 @@ pre {
 
 .article hr {
   border-width: 2px;
-  border-style: solid;
+  border-style: double;
   margin-bottom: 1em;
 }
 
 .article blockquote {
-  border-left: 0.5ch solid lightgrey;
+  border-left: 0.5ch double lightgrey;
   padding: 0.5ch;
   margin-bottom: 1em;
   color: dimgray;
@@ -255,7 +253,7 @@ pre {
 .album a canvas {
   width: 100%;
   image-rendering: pixelated;
-  border: 4px solid deeppink;
+  border: 2px solid var(--highl);
   margin-bottom: 0;
 }
 
@@ -279,4 +277,15 @@ pre {
   object-fit: contain;
   max-width: 95%;
   max-height: 95%;
+}
+
+.album-img-cover {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
 }

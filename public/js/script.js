@@ -10,9 +10,9 @@ window.onload = function () {
 	log(`; page load in ${totalTime.toFixed(0)}ms`);
   }
 
-  log("; defund the police");
-  log("; black lives matter");
-  log("; trans rights are human rights");
+  log("; made at home")
+  log("; N 50° 15.7917'");
+  log("; W 5° 3.0625'");
 
   function insertAfter(newNode, referenceNode) {
 	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);

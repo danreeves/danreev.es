@@ -9,6 +9,7 @@ module Imgur
   CLIENT    = HTTP::Client.new(URI.parse("https://api.imgur.com"))
   CACHE     = Cache::MemoryStore(String, AlbumResponse).new(expires_in: 24.hours)
   ALBUM_IDS = [
+    "g8sJzLr",
     "O9Q5gsH",
     "wfI8IBa",
     "2by7snO",

@@ -228,19 +228,23 @@ pre {
   justify-content: space-between;
 }
 
-.album:not(:only-child) {
-  margin-bottom: 0.5rem;
+.album:first-child {
+  width: 100%;
 }
 
-.album:nth-child(odd):not(:only-child) {
-  padding-right: 0.25rem;
+.album:not(:only-child) {
+  margin-bottom: 1.5rem;
 }
 
 .album:nth-child(even):not(:only-child) {
+  padding-right: 0.25rem;
+}
+
+.album:nth-child(odd):not(:only-child) {
   padding-left: 0.25rem;
 }
 
-.album:last-child:not(:nth-child(even)) {
+.album:last-child:not(:nth-child(odd)) {
   padding: 0;
 }
 
@@ -253,15 +257,15 @@ pre {
 .album a canvas {
   width: 100%;
   image-rendering: pixelated;
-  border: 2px solid var(--highl);
   margin-bottom: 0;
 }
 
 .album a span {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  font-size: 3rem;
+  border-bottom: 2px solid deeppink;
+  border-top: 0;
+  display: block;
+  padding: .25rem 0.5rem;
+  padding-top: 0;
 }
 
 @media (max-width: 700px) {
@@ -269,18 +273,8 @@ pre {
 	width: 100%;
 	padding: 0 !important;
   }
-
   .album a span {
-	left: .5rem;
-	bottom: .5rem;
-	max-width: 100%;
-	padding-right: .5rem;
-  }
-}
-
-@media (max-width: 300px) {
-  .album a span {
-	font-size: 2rem;
+	font-size: 1.5rem;
   }
 }
 

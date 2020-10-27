@@ -258,23 +258,33 @@ pre {
   width: 100%;
   image-rendering: pixelated;
   margin-bottom: 0;
+  filter: brightness(0.75);
+  transition: filter 1s;
+}
+
+.album:hover img,
+.album:hover canvas {
+  filter: brightness(1);
 }
 
 .album a span {
-  border-bottom: 2px solid deeppink;
+  border-bottom: 4px solid deeppink;
   border-top: 0;
   display: block;
   padding: .25rem 0.5rem;
   padding-top: 0;
+  position: absolute;
+  bottom: 0;
+  font-size: 3.25rem;
+  font-weight: bold;
+  font-style: normal;
+  width: calc(100% - 0.25rem);
 }
 
 @media (max-width: 700px) {
   .album {
 	width: 100%;
 	padding: 0 !important;
-  }
-  .album a span {
-	font-size: 1.5rem;
   }
 }
 

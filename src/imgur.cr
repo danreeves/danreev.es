@@ -6,7 +6,6 @@ require "cache"
 module Imgur
   extend self
 
-  CLIENT    = HTTP::Client.new(URI.parse("https://api.imgur.com"))
   CACHE     = Cache::MemoryStore(String, AlbumResponse).new(expires_in: 24.hours)
   ALBUM_IDS = [
     "g8sJzLr",
@@ -51,8 +50,8 @@ module Imgur
 
   def get_album(album_id : String)
     CACHE.fetch(album_id) do
-      response = CLIENT.get(
-        "/3/album/#{album_id}",
+      response = HTTP::Client.get(
+        "https://api.imgur.com/3/album/#{album_id}",
         HTTP::Headers{"Authorization" => "Client-ID #{ENV["IMGUR_CLIENT_ID"]}"}
       )
       AlbumResponse.from_json(response.body)

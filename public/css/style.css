@@ -230,6 +230,7 @@ pre {
 
 .album:first-child {
   width: 100%;
+  padding-left: 0 !important;
 }
 
 .album:not(:only-child) {
@@ -276,7 +277,6 @@ pre {
   position: absolute;
   bottom: 0;
   font-size: 3.25rem;
-  font-weight: bold;
   font-style: normal;
   width: calc(100% - 0.25rem);
 }

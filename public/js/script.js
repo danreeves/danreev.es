@@ -2,17 +2,15 @@ function log (...args) {
   console.log(...args.map(str=>`%c${str}`), "font-style: italic;")
 }
 
-window.onload = function () {
+let weatherReq = fetch("https://coolweather.glitch.me/truro,gb")
+
+window.onload = async function () {
 
   if ("performance" in window) {
 	let pageNav = performance.getEntriesByType("navigation")[0];
 	let totalTime = pageNav.responseEnd - pageNav.requestStart;
 	log(`; page load in ${totalTime.toFixed(0)}ms`);
   }
-
-  log("; made at home")
-  log("; N 50° 15.7917'");
-  log("; W 5° 3.0625'");
 
   function insertAfter(newNode, referenceNode) {
 	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -43,6 +41,14 @@ window.onload = function () {
 	})
   }
 
+  log("; made at home")
+  log("; N 50° 15.7917'");
+  log("; W 5° 3.0625'");
+  let weatherRes = await weatherReq
+  let data = await weatherRes.json()
+  if (data.weather) {
+	log(`; enjoying the ${data.weather}`)
+  }
 }
 
 window.addEventListener("click", function(event) {

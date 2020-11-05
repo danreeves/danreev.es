@@ -8,18 +8,18 @@ def page_head(page_title : String)
     meta({name: "viewport", content: "width=device-width, initial-scale=1, shrink-to-fit=no"}),
     link({rel: "icon", href: "/favicon.ico"}),
     link({rel: "apple-touch-icon", href: "/favicon.png"}),
-    link({rel: "stylesheet", href: "/css/stolen.css"}),
+    link({rel: "stylesheet", href: "/cartograph/cartograph.css"}),
     link({rel: "stylesheet", href: "/css/style.css"}),
     link({rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=VT323&display=swap"}),
-    script({src: "/js/script.js"}, ""),
   )
 end
 
 def nav
   nav(
     a({href: "/"}, "Home"),
-    a({href:"/writing"},  "Writing"),
-    a({href:"/photography"},  "Photography"),
+    a({href: "/writing"}, "Writing"),
+    a({href: "/photography"}, "Photography"),
     a({href: "/contact"}, "Contact"),
+    script({src: "/js/script.js"}, ""),
   )
 end

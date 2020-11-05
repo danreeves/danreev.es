@@ -3,16 +3,17 @@
   --highl: deeppink;
   --backg: white;
 
-  --code-bg: floralwhite;
-  --code-fg: darkcyan;
+  --code-bg: grey;
+  --code-fg: lavenderblush;
 }
 
 html, body {
-  font-family: "argentpixel";
+  font-family: "Cartograph CF";
   box-sizing: border-box;
   font-size: 1.45rem;
   text-transform: lowercase;
   font-style: italic;
+  font-weight: bold;
   position: relative;
   background: var(--backg);
   color: var(--color);
@@ -39,13 +40,25 @@ body {
   margin-bottom: 1rem;
   max-width: 700px;
   width: 90%;
+  filter: blur(.75px);
+}
+
+body.no-blur {
+  filter: none;
+}
+
+body.no-blur h1,
+body.no-blur footer
+{
+  filter: blur(0.75px);
 }
 
 .cool-img {
   display: block;
-  image-rendering: pixelated;
   width: 100%;
   margin-bottom: 0.75em;
+  border: 3rem solid floralwhite;
+  filter: blur(5px);
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -86,7 +99,7 @@ ul li:before {
 a {
   color: var(--highl);
   text-decoration: none;
-  border-bottom: 2px solid var(--highl);
+  border-bottom: 3px solid var(--highl);
 }
 
 nav {
@@ -96,13 +109,13 @@ nav {
 }
 
 abbr[data-title] {
-  border-bottom: 2px solid var(--color);
+  border-bottom: 3px solid var(--color);
 }
 
 abbr[data-title]:hover:after {
   content: attr(data-title);
   position: absolute;
-  border: 2px solid var(--color);
+  border: 3px solid var(--color);
   padding: 0.5rem;
   padding-top: 0;
   background: var(--backg);
@@ -110,18 +123,32 @@ abbr[data-title]:hover:after {
 }
 
 pre {
-  font-family: 'VT323', monospace;
+  /* font-family: 'VT323', monospace; */
   line-height: .8rem;
   font-size: .8rem;
   font-style: normal;
   font-weight: normal;
 }
 
-.home h1 {
+.home h1,
+.caption,
+.caption-l
+{
+  font-size: 1rem;
   position: absolute;
-  top: 0;
-  color: lavenderblush;
-  padding-left: 0.75rem;
+  margin-top: -3.33rem;
+  margin-left: 1.5rem;
+  filter: blur(1.5px);
+  transform: rotate(.3deg);
+}
+
+.caption-l {
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin-left: auto;
+  right: 2rem;
+  transform: rotate(-.3deg);
+  margin-top: -3rem;
 }
 
 .writing-list li {
@@ -167,7 +194,7 @@ pre {
 .article pre {
   font-size: 1rem;
   font-weight: normal;
-  font-family: 'VT323', monospace;
+  /* font-family: 'VT323', monospace; */
   display: block;
   max-width: 100%;
   overflow-x: scroll;
@@ -182,7 +209,7 @@ pre {
 .article code {
   font-size: 1rem;
   font-weight: normal;
-  font-family: 'VT323', monospace;
+  /* font-family: 'VT323', monospace; */
 }
 
 .article strong {
@@ -257,19 +284,11 @@ pre {
 .album a img,
 .album a canvas {
   width: 100%;
-  image-rendering: pixelated;
   margin-bottom: 0;
-  filter: brightness(0.75);
-  transition: filter 1s;
-}
-
-.album:hover img,
-.album:hover canvas {
-  filter: brightness(1);
+  border-width: 2rem;
 }
 
 .album a span {
-  border-bottom: 4px solid deeppink;
   border-top: 0;
   display: block;
   padding: .25rem 0.5rem;
@@ -277,8 +296,8 @@ pre {
   position: absolute;
   bottom: 0;
   font-size: 3.25rem;
-  font-style: normal;
   width: calc(100% - 0.25rem);
+  line-height: 0.9;
 }
 
 @media (max-width: 700px) {
@@ -291,6 +310,11 @@ pre {
 .album-img {
   width: 100%;
   margin-bottom: 0.75rem;
+  border-radius: 3px;
+}
+
+.album-img:hover {
+  cursor: zoom-in;
 }
 
 .album-img.expanded {
@@ -301,6 +325,10 @@ pre {
   object-fit: contain;
   max-width: 95%;
   max-height: 95%;
+}
+
+.album-img.expanded:hover {
+  cursor: zoom-out;
 }
 
 .album-img-cover {

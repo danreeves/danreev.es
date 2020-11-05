@@ -53,7 +53,7 @@ get "/photography/:slug" do |env|
     page_head(
       "#{album.title} | dan reeves"
     ),
-    body(
+    body({class: "no-blur"},
       h1(album.title),
       album.images.map_with_index do |image, i|
         if image.id == album.cover

@@ -4,6 +4,10 @@ shards:
     git: https://github.com/mamantoha/cache.git
     version: 0.9.0
 
+  cmark:
+    git: https://github.com/amauryt/cr-cmark-gfm.git
+    version: 0.1.0+git.commit.92c4a6f4a3a5ce2029d0a2216a828d59d2b22dd6
+
   dotenv:
     git: https://github.com/gdotdesign/cr-dotenv.git
     version: 0.7.0
@@ -16,13 +20,13 @@ shards:
     git: https://github.com/kemalcr/kemal.git
     version: 0.26.1+git.commit.a819d4792bbc63d993d6dd2b15f9af5efb0c2d8c
 
+  kemal-watcher:
+    git: https://github.com/faustinoaq/kemal-watcher.git
+    version: 0.4.0
+
   kilt:
     git: https://github.com/jeromegn/kilt.git
     version: 0.4.0
-
-  markd:
-    git: https://github.com/icyleaf/markd.git
-    version: 0.2.1
 
   memcached:
     git: https://github.com/comandeo/crystal-memcached.git
@@ -47,4 +51,8 @@ shards:
   watch:
     git: https://github.com/danreeves/watch.git
     version: 1.0.1+git.commit.3246999fa5ea68e534f80df92ad13c928129173c
+
+  watcher:
+    git: https://github.com/faustinoaq/watcher.git
+    version: 0.3.0
 

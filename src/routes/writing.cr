@@ -1,19 +1,19 @@
 require "kemal"
 require "temel"
-require "markd"
+require "../markdown"
 require "../partials"
 require "../front"
 require "./404"
 
 get "/writing" do |env|
   markdown = File.read("./pages/writing.md")
-  body = Markd.to_html(markdown, Markd::Options.new(smart: true))
+  body = md_to_html(markdown)
   articles = Dir.glob("./writing/*.md")
 
   list = articles.map do |file|
     content = File.read(file)
     front, markdown = split_frontmatter(content)
-    html = Markd.to_html(markdown, Markd::Options.new(smart: true))
+    html = md_to_html(markdown)
     title = markdown.match(/# (?<title>.+)\n/).not_nil!.named_captures["title"]
     slug = file.match(/\.\/writing\/(?<slug>.*)\.md/).not_nil!.named_captures["slug"]
     {front, html, title, slug}
@@ -50,7 +50,7 @@ get "/writing/:slug" do |env|
   begin
     content = File.read("./writing/#{slug}.md")
     _, markdown = split_frontmatter(content)
-    html = Markd.to_html(markdown, Markd::Options.new(smart: true))
+    html = md_to_html(markdown)
     title = markdown.match(/# (?<title>.+)\n/).not_nil!.named_captures["title"].to_s
   rescue ex
     halt env, status_code: 404, response: fourohfour

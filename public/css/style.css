@@ -140,6 +140,44 @@ pre {
 	font-weight: normal;
 }
 
+table {
+	width: 100%;
+	font-size: 1rem;
+	font-style: italic;
+	margin-bottom: 0.75em;
+}
+
+tr {
+	height: 2rem;
+}
+
+th {
+	border-bottom: 3px solid var(--color);
+	position: relative;
+}
+
+th:after {
+	content: "";
+	height: 3px;
+	width: 6px;
+	background: var(--backg);
+	position: absolute;
+	bottom: -3px;
+	right: -3.5px;
+}
+
+th,
+td {
+	text-align: left;
+	border-right: 3px solid var(--color);
+	padding: 0 0.25rem;
+}
+
+th:last-child,
+td:last-child {
+	border-right: none;
+}
+
 .home h1,
 .caption,
 .caption-l {

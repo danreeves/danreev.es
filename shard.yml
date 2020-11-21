@@ -11,16 +11,18 @@ targets:
     main: src/server.cr
 
 dependencies:
-  watch:
-    github: danreeves/watch
   kemal:
     github: kemalcr/kemal
     branch: master
   temel:
     github: f/temel
-  markd:
-    github: icyleaf/markd
+  cmark:
+    github: amauryt/cr-cmark-gfm
   dotenv:
     github: gdotdesign/cr-dotenv
   cache:
     github: mamantoha/cache
+
+development_dependencies:
+  watch:
+    github: danreeves/watch

@@ -1,6 +1,6 @@
 require "kemal"
 require "temel"
-require "markd"
+require "../markdown"
 require "../partials"
 require "../imgur"
 require "../slug"
@@ -9,7 +9,7 @@ require "./404"
 get "/photography" do |env|
   begin
     markdown = File.read("./pages/photography.md")
-    html = Markd.to_html(markdown, Markd::Options.new(smart: true))
+    html = md_to_html(markdown)
     albums = Imgur.get_albums
   rescue ex
     puts ex

@@ -1,11 +1,11 @@
 require "kemal"
 require "temel"
-require "markd"
 require "../partials"
+require "../markdown"
 
 get "/" do
   markdown = File.read("./pages/index.md")
-  html = Markd.to_html(markdown, Markd::Options.new(smart: true))
+  html = md_to_html(markdown)
   html(
     page_head(
       "dan reeves"

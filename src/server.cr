@@ -1,7 +1,6 @@
 require "file"
 require "dotenv"
 require "kemal"
-require "kemal-watcher"
 require "./routes/**"
 
 begin

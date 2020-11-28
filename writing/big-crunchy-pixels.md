@@ -83,7 +83,7 @@ at a time and figure out what we're doing together.
 
 <dt><code>let canvas = document.createElement("CANVAS")</code></dt>
 <dd>This creates a new <a href="https://developer.mozilla.org/en-US/docs/Glossary/Canvas">&lt;canvas /&gt;</a>
-element and puts it in our variable `canvas`.</dd>
+element and puts it in our variable <code>canvas</code>.</dd>
 
 <dt><code>
   canvas.width = img.width

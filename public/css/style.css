@@ -232,6 +232,20 @@ td:last-child {
 
 .article img {
 	max-width: 100%;
+	margin-bottom: 0.75rem;
+}
+
+.article dl {
+	font-weight: normal;
+}
+
+.article dt {
+	margin-bottom: 0.25rem;
+}
+
+.article dd {
+	margin-left: 0.75rem;
+	margin-bottom: 1rem;
 }
 
 .article ul,

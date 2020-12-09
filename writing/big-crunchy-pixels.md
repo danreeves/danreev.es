@@ -182,6 +182,7 @@ Cool! Have a <span class="todaything">happy</span> <span class="todayday">Thursd
 
 <script>
 let days = [
+  "life",
   "Monday",
   "Tuesday",
   "Wednesday",

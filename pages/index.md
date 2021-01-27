@@ -2,7 +2,7 @@
 
 # Hello
 
-I'm Dan Reeves, Staff Software Engineer at [Treasure Data](https://treasuredata.com). I'm mostly in JavaScript & React but I do a lot <abbr data-title="crystal, lua, rust, python, html, css, godot, php">else</abbr>. Lately I've picked up [analogue photography](https://lomography.com/homes/ily).
+I'm Dan Reeves, Staff Software Engineer at [Treasure Data](https://treasuredata.com). I'm mostly in JavaScript & React but I do a lot <abbr data-title="crystal, lua, rust, python, html, css, godot, php">else</abbr>. Lately I've picked up [analogue photography](https://dnrvs.photo).
 
 I live in the UK and work remotely.
 

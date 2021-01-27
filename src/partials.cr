@@ -18,7 +18,7 @@ def nav
   nav(
     a({href: "/"}, "Home"),
     a({href: "/writing"}, "Writing"),
-    a({href: "/photography"}, "Photography"),
+    a({href: "https://dnrvs.photo"}, "Photography"),
     a({href: "/contact"}, "Contact"),
     script({src: "/js/script.js"}, ""),
   )

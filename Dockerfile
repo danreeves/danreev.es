@@ -1,4 +1,4 @@
-FROM crystallang/crystal:1.0.0-alpine-build
+FROM crystallang/crystal:0.35.1-alpine-build
 COPY . .
 RUN apk add cmake
 RUN shards install

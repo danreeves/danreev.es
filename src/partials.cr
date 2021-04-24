@@ -9,17 +9,19 @@ def page_head(page_title : String)
     link({rel: "icon", href: "/favicon.ico"}),
     link({rel: "apple-touch-icon", href: "/favicon.png"}),
     link({rel: "stylesheet", href: "/cartograph/cartograph.css"}),
-    link({rel: "stylesheet", href: "/css/style.css"}),
-    link({rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=VT323&display=swap"}),
+    style("
+      * { font-family: \"Cartograph CF\"; }
+      html { margin: 1rem; }
+      body { width: 600px; margin-left: auto; margin-right: auto; }
+      img { max-width: 100%; }
+      h1 { font-weight: 900; font-size: 3rem; line-height: 2.3rem; text-transform: capitalize; }
+    "),
   )
 end
 
 def nav
-  nav(
-    a({href: "/"}, "Home"),
-    a({href: "/writing"}, "Writing"),
-    a({href: "https://dnrvs.photo"}, "Photography"),
-    a({href: "/contact"}, "Contact"),
+  div(
+    a({href: "/"}, "~/dnrvs"),
     script({src: "/js/script.js"}, ""),
   )
 end

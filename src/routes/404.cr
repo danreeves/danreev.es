@@ -9,7 +9,6 @@ def fourohfour
     ),
     body(
       h1("Nothing here."),
-      img({src: "/img/me.jpg", class: "cool-img"}),
     ),
     footer(nav())
   )

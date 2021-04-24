@@ -14,7 +14,7 @@ get "/:page" do |env|
   end
   html(
     page_head(
-      "#{page} | dan reeves"
+      "~/#{page}.txt"
     ),
     body(
       html

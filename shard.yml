@@ -4,7 +4,7 @@ authors:
     - Dan Reeves <hey@danreev.es>
 licence: MIT
 
-crystal: 0.35.1
+crystal: 1.0.0
 
 targets:
   server:
@@ -13,7 +13,6 @@ targets:
 dependencies:
   kemal:
     github: kemalcr/kemal
-    branch: master
   temel:
     github: f/temel
   cmark:

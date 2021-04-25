@@ -5,10 +5,11 @@ require "../partials"
 require "../front"
 require "./404"
 
+page_content = File.read("./pages/index.md")
+articles = Dir.glob("./writing/*.md")
+
 get "/" do |env|
-  markdown = File.read("./pages/index.md")
-  body = md_to_html(markdown)
-  articles = Dir.glob("./writing/*.md")
+  body = md_to_html(page_content)
 
   list = articles.map do |file|
     content = File.read(file)

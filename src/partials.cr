@@ -18,6 +18,7 @@ def page_head(page_title : String)
       pre { background: #efefef; padding: 1rem; }
       dd { margin-top: 1rem; margin-bottom: 1rem; }
       code { background: #efefef; }
+      a { color: #000; }
     "),
   )
 end

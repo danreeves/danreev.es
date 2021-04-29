@@ -15,6 +15,7 @@ def page_head(page_title : String)
       body { width: 600px; margin-left: auto; margin-right: auto; }
       img { max-width: 100%; }
       h1 { font-weight: 900; font-size: 3rem; line-height: 2.3rem; text-transform: capitalize; }
+      pre { background: #cfcfcf; padding: 1rem; }
     "),
   )
 end

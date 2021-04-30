@@ -52,7 +52,7 @@ get "/writing/:slug" do |env|
     content = File.read("./writing/#{slug}.md")
     front, markdown = split_frontmatter(content)
     html = md_to_html(markdown)
-    print(front.published)
+    content = nil
   rescue ex
     halt env, status_code: 404, response: fourohfour
   end

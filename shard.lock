@@ -34,5 +34,5 @@ shards:
 
   watch:
     git: https://github.com/danreeves/watch.git
-    version: 1.0.1+git.commit.489bbbfaf4283f6d7a5bbf9ab34ae3c6d00713b2
+    version: 1.0.2+git.commit.685cf387d4dba2873805c24964a4e9f21b89015a
 

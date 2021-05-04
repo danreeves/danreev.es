@@ -5,7 +5,7 @@ require "../partials"
 require "../front"
 require "./404"
 
-page_content = File.read("./pages/index.md")
+page_content = md_to_html(File.read("./pages/index.md"))
 articles = Dir.glob("./writing/*.md")
 list = articles.map do |file|
   content = File.read(file)
@@ -21,15 +21,13 @@ sorted_list = list.sort do |a, b|
 end
 
 get "/" do |env|
-  body = md_to_html(page_content)
-
   html(
     page_head(
       "~/dnrvs.txt"
     ),
     body(
       {class: "home"},
-      body,
+      page_content,
       ol({class: "writing-list", reversed: ""},
         sorted_list.map do |item|
           front, html, title, slug = item

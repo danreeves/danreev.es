@@ -333,16 +333,9 @@ weatherReq
 	.then((res) => res.json())
 	.then((data) => {
 		if (data.weather) {
-			log(`enjoying the ${data.weather}`);
+			log(`under ${data.weather}`);
 			if (document.querySelector("body").className.includes("home")) {
 				title.text(() => data.weather).reveal(500);
-			} else if (!document.querySelector('.albums')){
-				let caption = document.createElement("SPAN");
-				caption.className = "caption";
-				caption.innerText = "       ";
-				insertAfter(caption, document.querySelector(".cool-img"));
-				b = baffle(".caption", { characters: gibberish }).start();
-				b.text(() => data.weather).reveal(500);
 			}
 		}
 	});

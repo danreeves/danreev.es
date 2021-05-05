@@ -5,7 +5,7 @@ require "../partials"
 def fourohfour
   html(
     page_head(
-      "nothing here | dan reeves"
+      "/dev/null"
     ),
     body(
       h1("Nothing here."),

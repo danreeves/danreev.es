@@ -11,7 +11,13 @@ def page_head(page_title : String)
     link({rel: "stylesheet", href: "/cartograph/cartograph.css"}),
     style("
       * { font-family: \"Cartograph CF\"; }
-      html { margin: 1rem; }
+      html { 
+        margin: 1rem; 
+        background: white; 
+        background-image: radial-gradient(#c1c1c1 1px, transparent 0); 
+        background-size: 40px 40px;
+        background-position: -19px -19px;
+      }
       body { width: 600px; margin-left: auto; margin-right: auto; }
       img { max-width: 100%; }
       h1 { font-weight: 900; font-size: 3rem; line-height: 2.3rem; text-transform: capitalize; }

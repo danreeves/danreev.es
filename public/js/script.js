@@ -324,7 +324,7 @@ let gibberish = [
 	"\u002f",
 ];
 
-let weatherReq = fetch("https://coolweather.glitch.me/truro,gb");
+let weatherReq = fetch("https://coolweather.glitch.me/london");
 let title = baffle("h1", { characters: gibberish }).start();
 if (!document.querySelector("body").className.includes("home")) {
 	title.reveal(500);

@@ -59,7 +59,7 @@
 					? [].slice.call(document.querySelectorAll(t))
 					: [NodeList, HTMLCollection].some(function (e) {
 							return t instanceof e;
-					  })
+						})
 					? [].slice.call(t)
 					: t.nodeType
 					? [t]
@@ -79,8 +79,9 @@
 				return t && t.__esModule ? t : { default: t };
 			}
 			function i(t, e) {
-				if (!(t instanceof e))
+				if (!(t instanceof e)) {
 					throw new TypeError("Cannot call a class as a function");
+				}
 			}
 			Object.defineProperty(e, "__esModule", { value: !0 });
 			var o = n(1),
@@ -106,80 +107,77 @@
 								(0, o.each)(this.elements, function (e) {
 									return e.write(t.options.characters, t.options.exclude);
 								}),
-								(this.running = !0),
-								this
+									(this.running = !0),
+									this
 							);
 						}),
-						(t.prototype.start = function () {
-							var t = this;
-							return (
-								clearInterval(this.interval),
-								(0, o.each)(this.elements, function (t) {
-									return t.init();
-								}),
-								(this.interval = setInterval(function () {
-									return t.once();
-								}, this.options.speed)),
-								(this.running = !0),
-								this
-							);
-						}),
-						(t.prototype.stop = function () {
-							return clearInterval(this.interval), (this.running = !1), this;
-						}),
-						(t.prototype.set = function (t) {
-							return (
-								(0, o.extend)(this.options, t),
-								this.running && this.start(),
-								this
-							);
-						}),
-						(t.prototype.text = function (t) {
-							var e = this;
-							return (
-								(0, o.each)(this.elements, function (n) {
-									n.text(t(n.value)), e.running || n.write();
-								}),
-								this
-							);
-						}),
-						(t.prototype.reveal = function () {
-							var t = this,
-								e =
-									arguments.length <= 0 || void 0 === arguments[0]
+							(t.prototype.start = function () {
+								var t = this;
+								return (
+									clearInterval(this.interval),
+										(0, o.each)(this.elements, function (t) {
+											return t.init();
+										}),
+										(this.interval = setInterval(function () {
+											return t.once();
+										}, this.options.speed)),
+										(this.running = !0),
+										this
+								);
+							}),
+							(t.prototype.stop = function () {
+								return clearInterval(this.interval), (this.running = !1), this;
+							}),
+							(t.prototype.set = function (t) {
+								return (
+									(0, o.extend)(this.options, t),
+										this.running && this.start(),
+										this
+								);
+							}),
+							(t.prototype.text = function (t) {
+								var e = this;
+								return (
+									(0, o.each)(this.elements, function (n) {
+										n.text(t(n.value)), e.running || n.write();
+									}), this
+								);
+							}),
+							(t.prototype.reveal = function () {
+								var t = this,
+									e = arguments.length <= 0 || void 0 === arguments[0]
 										? 0
 										: arguments[0],
-								n =
-									arguments.length <= 1 || void 0 === arguments[1]
+									n = arguments.length <= 1 || void 0 === arguments[1]
 										? 0
 										: arguments[1],
-								r = e / this.options.speed || 1,
-								i = function () {
-									clearInterval(t.interval),
-										(t.running = !0),
-										(t.interval = setInterval(function () {
-											var e = t.elements.filter(function (t) {
-												return !t.bitmap.every(function (t) {
-													return !t;
+									r = e / this.options.speed || 1,
+									i = function () {
+										clearInterval(t.interval),
+											(t.running = !0),
+											(t.interval = setInterval(function () {
+												var e = t.elements.filter(function (t) {
+													return !t.bitmap.every(function (t) {
+														return !t;
+													});
 												});
-											});
-											(0, o.each)(e, function (e) {
-												var n = Math.ceil(e.value.length / r);
-												e.decay(n).write(
-													t.options.characters,
-													t.options.exclude
-												);
-											}),
-												e.length ||
+												(0, o.each)(e, function (e) {
+													var n = Math.ceil(e.value.length / r);
+													e.decay(n).write(
+														t.options.characters,
+														t.options.exclude,
+													);
+												}),
+													e.length ||
 													(t.stop(),
-													(0, o.each)(t.elements, function (t) {
-														return t.init();
-													}));
-										}, t.options.speed));
-								};
-							return setTimeout(i, n), this;
-						}),
-						t
+														(0, o.each)(t.elements, function (t) {
+															return t.init();
+														}));
+											}, t.options.speed));
+									};
+								return setTimeout(i, n), this;
+							}),
+							t
 					);
 				})();
 			e["default"] = function (t, e) {
@@ -189,18 +187,20 @@
 		function (t, e, n) {
 			"use strict";
 			function r(t, e) {
-				if (!t)
+				if (!t) {
 					throw new ReferenceError(
-						"this hasn't been initialised - super() hasn't been called"
+						"this hasn't been initialised - super() hasn't been called",
 					);
+				}
 				return !e || ("object" != typeof e && "function" != typeof e) ? t : e;
 			}
 			function i(t, e) {
-				if ("function" != typeof e && null !== e)
+				if ("function" != typeof e && null !== e) {
 					throw new TypeError(
 						"Super expression must either be null or a function, not " +
-							typeof e
+							typeof e,
 					);
+				}
 				(t.prototype = Object.create(e && e.prototype, {
 					constructor: {
 						value: t,
@@ -210,13 +210,14 @@
 					},
 				})),
 					e &&
-						(Object.setPrototypeOf
-							? Object.setPrototypeOf(t, e)
-							: (t.__proto__ = e));
+					(Object.setPrototypeOf
+						? Object.setPrototypeOf(t, e)
+						: (t.__proto__ = e));
 			}
 			function o(t, e) {
-				if (!(t instanceof e))
+				if (!(t instanceof e)) {
 					throw new TypeError("Cannot call a class as a function");
+				}
 			}
 			Object.defineProperty(e, "__esModule", { value: !0 });
 			var u = n(1),
@@ -229,52 +230,46 @@
 							return (
 								(this.bitmap = this.value.split("").map(function () {
 									return 1;
-								})),
-								this
+								})), this
 							);
 						}),
-						(t.prototype.render = function () {
-							var t = this,
-								e =
-									arguments.length <= 0 || void 0 === arguments[0]
+							(t.prototype.render = function () {
+								var t = this,
+									e = arguments.length <= 0 || void 0 === arguments[0]
 										? []
 										: arguments[0],
-								n =
-									arguments.length <= 1 || void 0 === arguments[1]
+									n = arguments.length <= 1 || void 0 === arguments[1]
 										? []
 										: arguments[1];
-							return e.length
-								? (0, u.mapString)(this.value, function (r, i) {
+								return e.length
+									? (0, u.mapString)(this.value, function (r, i) {
 										return n.indexOf(r) > -1
 											? r
 											: t.bitmap[i]
 											? (0, u.sample)(e)
 											: r;
-								  })
-								: this.value;
-						}),
-						(t.prototype.decay = function () {
-							for (
-								var t =
-									arguments.length <= 0 || void 0 === arguments[0]
+									})
+									: this.value;
+							}),
+							(t.prototype.decay = function () {
+								for (
+									var t = arguments.length <= 0 || void 0 === arguments[0]
 										? 1
 										: arguments[0];
-								t--;
-
-							) {
-								var e = (0, u.getTruthyIndices)(this.bitmap);
-								this.bitmap[(0, u.sample)(e)] = 0;
-							}
-							return this;
-						}),
-						(t.prototype.text = function () {
-							var t =
-								arguments.length <= 0 || void 0 === arguments[0]
+									t--;
+								) {
+									var e = (0, u.getTruthyIndices)(this.bitmap);
+									this.bitmap[(0, u.sample)(e)] = 0;
+								}
+								return this;
+							}),
+							(t.prototype.text = function () {
+								var t = arguments.length <= 0 || void 0 === arguments[0]
 									? this.value
 									: arguments[0];
-							return (this.value = t), this.init(), this;
-						}),
-						t
+								return (this.value = t), this.init(), this;
+							}),
+							t
 					);
 				})(),
 				c = (function (t) {
@@ -285,10 +280,10 @@
 					}
 					return (
 						i(e, t),
-						(e.prototype.write = function (t, e) {
-							return (this.element.textContent = this.render(t, e)), this;
-						}),
-						e
+							(e.prototype.write = function (t, e) {
+								return (this.element.textContent = this.render(t, e)), this;
+							}),
+							e
 					);
 				})(s);
 			e["default"] = function (t) {

@@ -77,8 +77,8 @@ user-agent before prefixing styles so it only applies the needed ones. This
 comes with added size though, so you might want to opt for the static prefixer
 which applies all of the prefixes on every browser but is much smaller (~3kb vs
 ~8kb). Creating a dynamic prefixer requires both so I’ll use that for
-demonstration and you can [read the
-docs](https://github.com/rofrischmann/inline-style-prefixer/blob/master/docs/api/inline-style-prefixer/createPrefixer.md)
+demonstration and you can
+[read the docs](https://github.com/rofrischmann/inline-style-prefixer/blob/master/docs/api/inline-style-prefixer/createPrefixer.md)
 for more specific information.
 
     import createStaticPrefixer from 'inline-style-prefixer/static/createPrefixer';
@@ -97,8 +97,8 @@ fallback.
 
 ## Using it as a glamor plugin
 
-Glamor has a [simple plugin
-system](https://github.com/threepointone/glamor/blob/master/docs/plugins.md)
+Glamor has a
+[simple plugin system](https://github.com/threepointone/glamor/blob/master/docs/plugins.md)
 that gives the user a lot of power. A plugin is a function which recieves an
 object with a `selector` and a `style` key. In this instances we only care about
 the `style` object.
@@ -123,8 +123,8 @@ Now, in our app we need to integrate our plugin with glamor:
 
     plugins.add(prefixerPlugin);
 
-If you want to [copy glamor
-exactly](https://github.com/threepointone/glamor/blob/667b480d31b3721a905021b26e1290ce92ca2879/src/index.js#L20-L24),
+If you want to
+[copy glamor exactly](https://github.com/threepointone/glamor/blob/667b480d31b3721a905021b26e1290ce92ca2879/src/index.js#L20-L24),
 without duplicating the prefixing it does by default you can clear our the
 plugins automatically added by glamor. Then your code would look something like
 this:

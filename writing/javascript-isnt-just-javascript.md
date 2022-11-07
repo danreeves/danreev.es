@@ -19,7 +19,7 @@ dozens of frameworks? Why isn't there just one best tool?
 
 This is where the entire argument falls apart. There isn't one best way of doing
 anything of complexity because JavaScript isn't just JavaScript. Unless you're a
-Node.js developer, who sticks to the server, you're never *just* considering
+Node.js developer, who sticks to the server, you're never _just_ considering
 JavaScript. You need to consider: the server, how is this JavaScript being
 built, deployed, and sent to the client, the network, is it being served from a
 CDN, how big is the bundle, can I break it into smaller parts, can my views be
@@ -37,7 +37,7 @@ The world wide web is the largest and most variable platform there is. There
 never will be a one-size-fits-all solution, and that just comes with the
 territory. I'm sorry. Web development is hard. It's also very rewarding.
 
-*****
+---
 
 Okay, if number of packages and choice paralysis isn't the problem, what is and
 how do we solve it?
@@ -64,11 +64,11 @@ question one, and you're making something that solves a problem. But, to make
 informed decisions, and great experiences, developers need more information. The
 good and the bad. What are the aims and what trade-offs does it make.
 
-A great example of this is the [Inferno
-README](https://github.com/infernojs/inferno/blob/master/README.md). Although
-requiring some React knowledge, it explains the user-focused philosophy behind
-the project. It even goes into the differences between it and other similar
-libraries.
+A great example of this is the
+[Inferno README](https://github.com/infernojs/inferno/blob/master/README.md).
+Although requiring some React knowledge, it explains the user-focused philosophy
+behind the project. It even goes into the differences between it and other
+similar libraries.
 
 ### Conclusion
 

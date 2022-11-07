@@ -6,17 +6,17 @@ published: 2014-06-12
 
 In this article we'll be writing a build script that can compile
 [Sassaparilla](http://sass.fffunction.co/), our Sass powered css framework. You
-might want to [grab a copy of the
-repo](https://github.com/fffunction/sassaparilla), or try it out on one of your
-projects.
+might want to
+[grab a copy of the repo](https://github.com/fffunction/sassaparilla), or try it
+out on one of your projects.
 
-*This is an adaptation of an article I wrote for the July edition of Net
-Magazine.*
+_This is an adaptation of an article I wrote for the July edition of Net
+Magazine._
 
-Everyone who's [aware of
-Grunt](http://24ways.org/2013/grunt-is-not-weird-and-hard/) will know what this
-is about, but Gulp differs from Grunt in two important ways: the use of streams
-and a code-over-configuration approach. A
+Everyone who's
+[aware of Grunt](http://24ways.org/2013/grunt-is-not-weird-and-hard/) will know
+what this is about, but Gulp differs from Grunt in two important ways: the use
+of streams and a code-over-configuration approach. A
 [stream](http://maxogden.com/node-streams.html) is a method of plugging the
 output of one tool into the input of another, allowing you to compose large
 systems out of small tools that do one thing well. [Gulp](http://gulpjs.com/) is
@@ -43,8 +43,8 @@ get everything needed:
 
 This will create a `node-modules` directory in your project where all the node
 packages get saved, you can add this directory to your `.gitignore`, but there's
-some [debate on
-that](http://addyosmani.com/blog/checking-in-front-end-dependencies/).
+some
+[debate on that](http://addyosmani.com/blog/checking-in-front-end-dependencies/).
 
 While there are many purpose-written Gulp plugins (e.g gulp-compass), gulpfiles
 are just like any other node program and you can use any node modules to do

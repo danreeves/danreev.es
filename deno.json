@@ -1,0 +1,15 @@
+{
+	"tasks": {
+		"dev": "deno run --watch --allow-net --allow-read --allow-env --allow-write --allow-run server.tsx"
+	},
+	"compilerOptions": {
+		"jsx": "react-jsxdev",
+		"jsxImportSource": "react"
+	},
+	"importMap": "./importMap.json",
+	"fmt": {
+		"options": {
+			"useTabs": true
+		}
+	}
+}

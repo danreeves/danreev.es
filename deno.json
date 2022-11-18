@@ -1,6 +1,6 @@
 {
 	"tasks": {
-		"dev": "deno run --watch --allow-net=:8000 --allow-read=. --allow-run --allow-env=ESBUILD_BINARY_PATH,HOME --import-map importMapDev.json server.tsx"
+		"dev": "deno run --watch --allow-net --allow-read --allow-run --allow-env=ESBUILD_BINARY_PATH,HOME --import-map importMapDev.json server.tsx"
 	},
 	"compilerOptions": {
 		"jsx": "react-jsxdev",

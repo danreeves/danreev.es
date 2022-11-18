@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.162.0/http/server.ts";
 import { transform } from "https://deno.land/x/esbuild@v0.15.13/mod.js";
 import ReactDOMServer from "react-dom/server";
+import App from "./app/app.tsx";
 
 async function jsResponse(pathname: string) {
 	const { code } = await transform(
@@ -28,8 +29,6 @@ serve(async (request: Request): Promise<Response> => {
 
 	const importMap = await Deno.readTextFile("./importMap.json");
 	const clientScript = await Deno.readTextFile("./client.tsx");
-
-	const { default: App } = await import("./app/app.tsx");
 
 	const stream = await ReactDOMServer.renderToReadableStream(
 		<html>

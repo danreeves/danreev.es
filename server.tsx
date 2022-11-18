@@ -8,6 +8,7 @@ async function jsResponse(pathname: string) {
 		{
 			loader: "tsx",
 			jsx: "automatic",
+			minify: true,
 		},
 	);
 	return new Response(code, {
@@ -30,7 +31,7 @@ serve(async (request: Request): Promise<Response> => {
 
 	const { default: App } = await import("./app/app.tsx");
 
-	const stream = ReactDOMServer.renderToReadableStream(
+	const stream = await ReactDOMServer.renderToReadableStream(
 		<html>
 			<title>hello</title>
 			<script
@@ -52,8 +53,11 @@ serve(async (request: Request): Promise<Response> => {
 		</html>,
 	);
 
+	// Wait for suspense boundaries to settle
+	await stream.allReady;
+
 	return new Response(
-		await stream,
+		stream,
 		{
 			headers: { "Content-Type": "text/html;charset=utf-8" },
 		},

@@ -1,5 +1,5 @@
 import { serve } from "https://deno.land/std@0.162.0/http/server.ts";
-import { transform } from "https://deno.land/x/esbuild@v0.15.13/mod.js";
+import { transform } from "https://deno.land/x/esbuild@v0.15.13/wasm.js";
 import ReactDOMServer from "react-dom/server";
 import App from "./app/app.tsx";
 
@@ -9,7 +9,7 @@ async function jsResponse(pathname: string) {
 		{
 			loader: "tsx",
 			jsx: "automatic",
-			minify: true,
+			// minify: true,
 		},
 	);
 	return new Response(code, {

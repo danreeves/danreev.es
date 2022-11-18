@@ -1,23 +1,7 @@
 import { serve } from "https://deno.land/std@0.162.0/http/server.ts";
-import * as esbuild from "https://deno.land/x/esbuild@v0.15.13/wasm.js";
 import ReactDOMServer from "react-dom/server";
 import App from "./app/app.tsx";
-
-await esbuild.initialize({ worker: false });
-
-async function jsResponse(pathname: string) {
-	const { code } = await esbuild.transform(
-		await Deno.readTextFile("." + pathname),
-		{
-			loader: "tsx",
-			jsx: "automatic",
-			// minify: true,
-		},
-	);
-	return new Response(code, {
-		headers: { "Content-Type": "application/javascript;charset=utf-8" },
-	});
-}
+import { jsResponse } from "./server/js-loader.ts";
 
 serve(async (request: Request): Promise<Response> => {
 	const method = request.method;
@@ -25,7 +9,7 @@ serve(async (request: Request): Promise<Response> => {
 
 	console.log(method, pathname);
 
-	if (pathname.endsWith("tsx")) {
+	if (pathname.endsWith("tsx") || pathname.endsWith("ts")) {
 		return jsResponse(pathname);
 	}
 

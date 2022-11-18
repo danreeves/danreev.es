@@ -1,10 +1,12 @@
 import { serve } from "https://deno.land/std@0.162.0/http/server.ts";
-import { transform } from "https://deno.land/x/esbuild@v0.15.13/wasm.js";
+import * as esbuild from "https://deno.land/x/esbuild@v0.15.13/wasm.js";
 import ReactDOMServer from "react-dom/server";
 import App from "./app/app.tsx";
 
+await esbuild.initialize({ worker: false });
+
 async function jsResponse(pathname: string) {
-	const { code } = await transform(
+	const { code } = await esbuild.transform(
 		await Deno.readTextFile("." + pathname),
 		{
 			loader: "tsx",

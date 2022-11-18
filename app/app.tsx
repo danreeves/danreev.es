@@ -1,7 +1,6 @@
-import { lazy, Suspense } from "react";
-
-const About = lazy(() => import("./about.tsx"));
-const Button = lazy(() => import("./button.tsx"));
+import { Suspense } from "react";
+import About from "./about.tsx";
+import Button from "./button.tsx";
 
 export default function App() {
 	return (

@@ -3,7 +3,7 @@ import {
 	ReactElement,
 	use,
 	useContext,
-	useReducer,
+	useSyncExternalStore,
 } from "react";
 import isEqual from "https://esm.sh/v98/lodash.isequal@4.5.0/es2022/lodash.isequal.js";
 
@@ -23,10 +23,45 @@ export function LoaderProvider({ children }: { children: ReactElement }) {
 	);
 }
 
+class EventBus {
+	#busses = new Map();
+
+	subscribe(key: string) {
+		if (!this.#busses.has(key) && "document" in window) {
+			this.#busses.set(key, window.document.createElement("fakeelement"));
+		}
+
+		const bus = this.#busses.get(key);
+
+		return (rerender: () => void) => {
+			bus.addEventListener("update", () => {
+				rerender();
+			});
+			return () => bus.removeEventListener("update", rerender);
+		};
+	}
+
+	/**
+	 * Dispatch an event.
+	 */
+	dispatchEvent(key: string) {
+		const bus = this.#busses.get(key);
+		if (bus) {
+			bus.dispatchEvent(new CustomEvent("update"));
+		}
+	}
+}
+
+const eb = new EventBus();
+
 export function useData(url: string) {
 	const cache = useCache();
-	const [, render] = useReducer((s) => s + 1, 0);
 	const inCache = cache.get(url);
+	useSyncExternalStore(
+		eb.subscribe(url),
+		() => cache.get(url),
+		() => cache.get(url),
+	);
 
 	async function revalidate(showLoadingState = false) {
 		const prevData = await cache.get(url);
@@ -37,19 +72,19 @@ export function useData(url: string) {
 				.then((data) => {
 					resolve(data);
 					if (!isEqual(data, prevData)) {
-						render();
+						eb.dispatchEvent(url);
 					}
 				})
 				.catch((error) => {
 					reject(error);
-					render();
+					eb.dispatchEvent(url);
 				});
 		});
 
 		cache.set(url, promise);
 
 		if (showLoadingState) {
-			render();
+			eb.dispatchEvent(url);
 		}
 	}
 

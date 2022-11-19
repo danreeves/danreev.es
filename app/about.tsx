@@ -3,7 +3,9 @@ import { useData } from "./loader.tsx";
 
 export default function About() {
 	const [pokemon, setPokemon] = useState(270);
-	const [data] = useData(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+	const [data, revalidate] = useData(
+		`https://pokeapi.co/api/v2/pokemon/${pokemon}`,
+	);
 
 	// console.log("RENDER", data);
 
@@ -25,14 +27,18 @@ export default function About() {
 				}}
 				aria-hidden
 			/>
+
+			<button onClick={() => revalidate()}>Refresh</button>
+
 			<button
 				onClick={() => {
-					setPokemon((id) => id + 1);
+					startTransition(() => {
+						setPokemon((id) => id - 1);
+					});
 				}}
 			>
-				Next pokemon
+				Prev pokemon
 			</button>
-
 			<button
 				onClick={() => {
 					startTransition(() => {
@@ -40,7 +46,7 @@ export default function About() {
 					});
 				}}
 			>
-				Next pokemon no loading
+				Next pokemon
 			</button>
 		</>
 	);

@@ -11,8 +11,9 @@ export default function App() {
 				<Suspense fallback={<div>loading...</div>}>
 					<About />
 				</Suspense>
-				<Suspense>
-					<Button />
+				<hr />
+				<Suspense fallback={<div>loading...</div>}>
+					<About />
 				</Suspense>
 			</div>
 		</LoaderProvider>

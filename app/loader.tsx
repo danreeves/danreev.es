@@ -1,7 +1,6 @@
 import {
 	createContext,
 	ReactElement,
-	startTransition,
 	use,
 	useContext,
 	useReducer,
@@ -71,34 +70,4 @@ export function useData(url: string) {
 	const data = use(promise);
 
 	return [data, revalidate];
-}
-
-export function Img({ src, ...props }: React.DetailedHTMLProps<
-	React.ImgHTMLAttributes<HTMLImageElement>,
-	HTMLImageElement
->) {
-	const img = loadImage(src);
-	console.log(img);
-	return <img src={img.src} {...props} />;
-}
-
-function loadImage(src: string | undefined) {
-	if (!src || !("Image" in window)) return;
-
-	const key = `IMG:${src}`;
-	const cache = useCache();
-	const inCache = cache.get(key);
-
-	if (inCache) {
-		return use(inCache);
-	} else {
-		const promise = new Promise((resolve, reject) => {
-			const img = new Image();
-			img.onload = () => resolve(img);
-			img.onerror = () => reject();
-			img.src = src;
-		});
-		cache.set(key, promise);
-		return use(promise);
-	}
 }

@@ -11,7 +11,7 @@ export default function About() {
 		`https://coolweather.glitch.me/london`,
 	);
 
-	// console.log("RENDER", data);
+	console.log("RENDER");
 
 	return (
 		<>

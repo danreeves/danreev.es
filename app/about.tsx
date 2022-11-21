@@ -1,5 +1,6 @@
 import { startTransition, useState } from "react";
 import { useData } from "./loader.tsx";
+import isEqual from "https://esm.sh/v98/lodash.isequal@4.5.0/es2022/lodash.isequal.js";
 
 export default function About() {
 	const [pokemon, setPokemon] = useState(270);
@@ -9,7 +10,19 @@ export default function About() {
 
 	const [weather, revalidate] = useData(
 		`https://coolweather.glitch.me/london`,
+		{
+			poll: 1000 * 60 * 5,
+			hasChanged: (a = {}, b = {}) => {
+				const _a = { ...a };
+				const _b = { ...b };
+				delete _a._meta;
+				delete _b._meta;
+				return !isEqual(_a, _b);
+			},
+		},
 	);
+
+	console.log(pokemon, weather);
 
 	console.log("RENDER");
 
@@ -47,8 +60,20 @@ export default function About() {
 			<p>
 				<small>
 					<button onClick={() => revalidate()}>Refresh</button>{" "}
+					<img
+						style={{
+							display: "inline",
+							height: "2em",
+							width: "2em",
+							verticalAlign: "middle",
+						}}
+						src={`http://openweathermap.org/img/wn/${weather._meta.icon}@2x.png`}
+					/>{" "}
 					Weather in London: {weather.weather}, feels like {weather.feelsLike}
-					{"℃"}
+					{"℃"}.{" "}
+					<span style={{ color: "lightgray" }}>
+						Last updated at {new Date(weather.dt * 1000).toLocaleString()}
+					</span>
 				</small>
 			</p>
 		</>

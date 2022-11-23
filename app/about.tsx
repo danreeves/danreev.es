@@ -1,8 +1,10 @@
 import { startTransition, useState } from "react";
 import { useData } from "./loader.tsx";
 import isEqual from "https://esm.sh/v98/lodash.isequal@4.5.0/es2022/lodash.isequal.js";
+import { useLang } from "./lang.tsx";
 
 export default function About() {
+	const lang = useLang();
 	const [pokemon, setPokemon] = useState(270);
 	const [data] = useData(
 		`https://pokeapi.co/api/v2/pokemon/${pokemon}`,
@@ -72,7 +74,7 @@ export default function About() {
 					Weather in London: {weather.weather}, feels like {weather.feelsLike}
 					{"℃"}.{" "}
 					<span style={{ color: "lightgray" }}>
-						Last updated at {new Date(weather.dt * 1000).toLocaleString()}
+						Last updated at {new Date(weather.dt * 1000).toLocaleString(lang)}
 					</span>
 				</small>
 			</p>

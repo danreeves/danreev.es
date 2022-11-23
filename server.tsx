@@ -1,13 +1,19 @@
 import { serve } from "https://deno.land/std@0.162.0/http/server.ts";
 import ReactDOMServer from "react-dom/server";
 import App from "./app/app.tsx";
+import { LangProvider } from "./app/lang.tsx";
 import { jsResponse } from "./server/js-loader.ts";
 
 serve(async (request: Request): Promise<Response> => {
 	const method = request.method;
+	let [preferredLang] = request.headers.get("accept-language")?.split(",") ??
+		[];
+	if (preferredLang.includes(";")) {
+		[preferredLang] = preferredLang.split(";");
+	}
 	const { pathname } = new URL(request.url);
 
-	console.log(method, pathname);
+	console.log(method, pathname, preferredLang);
 
 	if (pathname.endsWith("tsx") || pathname.endsWith("ts")) {
 		return jsResponse(pathname);
@@ -33,7 +39,9 @@ serve(async (request: Request): Promise<Response> => {
 				dangerouslySetInnerHTML={{ __html: clientScript }}
 			/>
 			<div id="app">
-				<App />
+				<LangProvider lang={preferredLang}>
+					<App />
+				</LangProvider>
 			</div>
 		</html>,
 	);

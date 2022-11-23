@@ -125,12 +125,15 @@ export function useData(
 	}
 
 	useEffect(() => {
-		if (poll) {
-			const interval = setInterval(
-				revalidate,
-				poll,
-			);
-			return () => clearInterval(interval);
+		// No polling on the server
+		if ("document" in window) {
+			if (poll) {
+				const interval = setInterval(
+					revalidate,
+					poll,
+				);
+				return () => clearInterval(interval);
+			}
 		}
 	}, [poll, revalidate]);
 

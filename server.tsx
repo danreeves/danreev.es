@@ -47,7 +47,7 @@ serve(async (request: Request): Promise<Response> => {
 	);
 
 	// Wait for suspense boundaries to settle
-	// await stream.allReady;
+	await stream.allReady;
 
 	return new Response(
 		stream,

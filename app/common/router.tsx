@@ -55,12 +55,14 @@ export function Link(
 	const route = useRoute();
 	const isActive = route === to;
 	const className = `${rest.className} ${isActive ? "active" : ""}`;
+	const isLocal = !to.startsWith("http");
 	return (
 		<a
 			{...rest}
 			href={to}
 			className={className}
 			onClick={(event) => {
+				if (!isLocal) return;
 				event.preventDefault();
 				if ("history" in self) {
 					// @ts-ignore -- this only runs in the browser

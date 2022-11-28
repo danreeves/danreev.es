@@ -59,7 +59,7 @@ export default function About() {
 			<p className="box left">
 				<img
 					style={inlineImageStyles}
-					src={`http://openweathermap.org/img/wn/${weather._meta.icon}@2x.png`}
+					src={`https://openweathermap.org/img/wn/${weather._meta.icon}@2x.png`}
 				/>{" "}
 				Weather in London: {weather.weather}, feels like {weather.feelsLike}
 				{"℃"}.{" "}

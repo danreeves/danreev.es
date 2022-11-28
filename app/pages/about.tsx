@@ -23,7 +23,7 @@ export default function About() {
 				mostly React &amp; TypeScript but I get up to a lot else.
 			</p>
 			<p>
-				I live in London but I've worked async & remote since 2017.
+				I live in London but I've worked fully async & remote since 2017.
 			</p>
 			<p>
 				This site is currently a server side rendering react site with suspense

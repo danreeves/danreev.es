@@ -1,6 +1,6 @@
 import {
 	createContext,
-	ReactElement,
+	ReactNode,
 	use,
 	useContext,
 	useEffect,
@@ -18,7 +18,9 @@ function useCache() {
 	return cache;
 }
 
-export function LoaderProvider({ children }: { children: ReactElement }) {
+export function LoaderProvider(
+	{ children }: { children: ReactNode },
+) {
 	return (
 		<LoaderContext.Provider value={new Map()}>
 			{children}
@@ -49,30 +51,6 @@ class EventBus {
 		}
 	}
 }
-
-// class Cache {
-// 	#items: Map<string, unknown> = new Map();
-//
-// 	set(key: string, value: unknown, ttl?: number) {
-// 		this.#items.set(key, value);
-//
-// 		if (Number.isSafeInteger(ttl)) {
-// 			setTimeout(() => {
-// 				if (this.has(key)) {
-// 					this.remove(key);
-// 				}
-// 			}, ttl);
-// 		}
-// 	}
-//
-// 	remove(key: string) {
-// 		this.#items.delete(key);
-// 	}
-//
-// 	has(key: string) {
-// 		return this.#items.has(key);
-// 	}
-// }
 
 const eb = new EventBus();
 

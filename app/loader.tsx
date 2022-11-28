@@ -8,8 +8,6 @@ import {
 } from "react";
 import isEqual from "https://esm.sh/v98/lodash.isequal@4.5.0/es2022/lodash.isequal.js";
 
-type IsEqual = typeof isEqual;
-
 const LoaderContext = createContext<Map<string, unknown> | null>(null);
 
 function useCache() {

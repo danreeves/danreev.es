@@ -1,5 +1,4 @@
 import { useData } from "../loader.tsx";
-import { useLang } from "../lang.tsx";
 import { Link } from "../common/router.tsx";
 
 const inlineImageStyles = {

@@ -2,13 +2,28 @@
 	box-sizing: border-box;
 }
 
+--root {
+	--fg: black;
+	--bg: white;
+}
+
 html {
 	font-size: 1.5rem;
 	font-family: system-ui, sans-serif;
+	line-height: 1.5;
+	font-smooth: never;
+	-webkit-font-smoothing: none;
+	background: var(--bg);
+	color: var(--fg);
+	filter: blur(.3px);
+}
+
+body {
 	width: 50ch;
+	max-width: 90%;
 	margin-left: auto;
 	margin-right: auto;
-	line-height: 1.5;
+	animation: squiggly-anim 2.34s linear infinite;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -16,6 +31,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 header {
+	position: relative;
 	padding-bottom: .5em;
 	border-bottom: Chartreuse .25em solid;
 }
@@ -27,7 +43,7 @@ nav {
 }
 
 a {
-	color: black;
+	color: var(--fg);
 	text-decoration: none;
 	border-bottom: .15em solid Chartreuse;
 }
@@ -41,12 +57,12 @@ nav a.active {
 }
 
 @keyframes wave {
-  0% {
-    top: 0em;
-  }
-  100% {
-    top: -.1em;
-  }
+	0% {
+		top: 0em;
+	}
+	100% {
+		top: -.1em;
+	}
 }
 
 .wave {
@@ -57,6 +73,14 @@ nav a.active {
 .wave-hover-parent:hover .wave-hover {
 	position: relative;
 	animation: wave 0.5s steps(3, end) infinite alternate;
+}
+
+.avatar {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	bottom: 1em;
+	right: 1em;
 }
 
 .box {
@@ -84,3 +108,22 @@ footer {
 	margin-bottom: 1em;
 	opacity: 0.3;
 }
+
+@keyframes squiggly-anim {
+	0% {
+		filter: url('#squiggly-0');
+	}
+	25%{
+		filter: url('#squiggly-1');
+	}
+	50%{
+		filter: url('#squiggly-2');
+	}
+	75%{
+		filter: url('#squiggly-3');
+	}
+	100% {
+		filter: url('#squiggly-4');
+	}
+}
+

@@ -37,17 +37,18 @@ export default function About() {
 				/>
 			</p>
 			<p>
-				In the past I've been heavily involved in the{" "}
+				I've been heavily involved in the{" "}
 				<Link to="https://vmf-docs.verminti.de/">
 					Vermintide Modding Community
 				</Link>{" "}
-				where I wrote a lot of{" "}
+				where I write a lot of{" "}
 				<Link to="https://github.com/danreeves/vermintide-2-mods">lua</Link>.
+				For a while I regularly livestreamed.
 			</p>
 			<p>
-				Before that still I worked fullstack builds with php and python,
-				prototyping and ux testing, and much more for all variety of clients at
-				{" "}
+				Before that still, I worked on fullstack builds with php (WordPress,
+				etc) and python (Django), prototyping, ux testing, and much more for all
+				variety of clients at{" "}
 				<Link to="https://fffunction.co">fffunction</Link>.
 			</p>
 			<p>
@@ -60,7 +61,8 @@ export default function About() {
 					style={inlineImageStyles}
 					src={`https://openweathermap.org/img/wn/${weather._meta.icon}@2x.png`}
 				/>{" "}
-				Weather in London: {weather.weather}, feels like {weather.feelsLike}
+				Weather in London: {weather.weather}, feels like{" "}
+				{Math.round(weather.feelsLike)}
 				{"℃"}.{" "}
 			</p>
 		</>

@@ -4,7 +4,11 @@ export function Wave({ text, hover }: { text: string; hover?: boolean }) {
 	return (
 		<span className={parentClassName}>
 			{text.split("").map((char, i) => (
-				<span className={className} style={{ animationDelay: `${0.1 * i}s` }}>
+				<span
+					key={i + char}
+					className={className}
+					style={{ animationDelay: `${0.1 * i}s` }}
+				>
 					{char}
 				</span>
 			))}

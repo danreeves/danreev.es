@@ -19,7 +19,7 @@ export function Footer() {
 							id="displacement"
 							in="SourceGraphic"
 							in2="noise"
-							scale=".6"
+							scale="1"
 						/>
 					</filter>
 					<filter id="squiggly-1">
@@ -30,7 +30,7 @@ export function Footer() {
 							result="noise"
 							seed="1"
 						/>
-						<feDisplacementMap in="SourceGraphic" in2="noise" scale=".7" />
+						<feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
 					</filter>
 
 					<filter id="squiggly-2">
@@ -41,7 +41,7 @@ export function Footer() {
 							result="noise"
 							seed="2"
 						/>
-						<feDisplacementMap in="SourceGraphic" in2="noise" scale=".6" />
+						<feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
 					</filter>
 					<filter id="squiggly-3">
 						<feTurbulence
@@ -51,7 +51,7 @@ export function Footer() {
 							result="noise"
 							seed="3"
 						/>
-						<feDisplacementMap in="SourceGraphic" in2="noise" scale=".7" />
+						<feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
 					</filter>
 
 					<filter id="squiggly-4">
@@ -62,7 +62,7 @@ export function Footer() {
 							result="noise"
 							seed="4"
 						/>
-						<feDisplacementMap in="SourceGraphic" in2="noise" scale=".5" />
+						<feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
 					</filter>
 				</defs>
 			</svg>

@@ -2,9 +2,22 @@
 	box-sizing: border-box;
 }
 
---root {
-	--fg: black;
+:root {
+	--fg: #333;
 	--bg: white;
+	--accent: lightgreen;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--fg: #ddd;
+		--bg: #111;
+		--accent: lightgreen;
+	}
+}
+
+@media (prefers-reduced-motion) {
+	* { animation: none !important; }
 }
 
 html {
@@ -23,7 +36,8 @@ body {
 	max-width: 90%;
 	margin-left: auto;
 	margin-right: auto;
-	animation: squiggly-anim 2.34s linear infinite;
+	filter: url('#squiggly-0');
+	animation: squiggly-anim .34s linear infinite;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -33,7 +47,7 @@ h1,h2,h3,h4,h5,h6{
 header {
 	position: relative;
 	padding-bottom: .5em;
-	border-bottom: Chartreuse .25em solid;
+	border-bottom: var(--accent) .25em solid;
 }
 
 nav {
@@ -45,7 +59,7 @@ nav {
 a {
 	color: var(--fg);
 	text-decoration: none;
-	border-bottom: .15em solid Chartreuse;
+	border-bottom: .15em solid var(--accent);
 }
 
 nav a {
@@ -53,7 +67,7 @@ nav a {
 }
 
 nav a.active {
-	border-bottom: .15em solid Chartreuse;
+	border-bottom: .15em solid var(--accent);
 }
 
 @keyframes wave {
@@ -86,7 +100,7 @@ nav a.active {
 .box {
 	display: block;
 	width: 50%;
-	border: 1em solid Chartreuse;
+	border: 1em solid var(--accent);
 	padding: 1em;
 }
 

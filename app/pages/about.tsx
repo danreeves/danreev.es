@@ -65,6 +65,10 @@ export default function About() {
 				{Math.round(weather.feelsLike)}
 				{"℃"}.{" "}
 			</p>
+			<img
+				src="https://ghchart.rshah.org/73BE73/danreeves"
+				style={{ width: "100%" }}
+			/>
 		</>
 	);
 }

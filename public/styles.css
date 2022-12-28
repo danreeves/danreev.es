@@ -42,6 +42,8 @@ body {
 
 h1,h2,h3,h4,h5,h6{
 	font-weight: 900;
+	color: var(--accent);
+    -webkit-text-stroke: 1px var(--fg);
 }
 
 header {
@@ -57,13 +59,15 @@ nav {
 }
 
 a {
-	color: var(--fg);
 	text-decoration: none;
 	border-bottom: .15em solid var(--accent);
+	color: var(--fg);
 }
 
 nav a {
 	border-bottom: .15em solid transparent;
+	color: var(--accent);
+    -webkit-text-stroke: 1px var(--fg);
 }
 
 nav a.active {
@@ -100,8 +104,20 @@ nav a.active {
 .box {
 	display: block;
 	width: 50%;
-	border: 1em solid var(--accent);
 	padding: 1em;
+	position: relative;
+	border: 1px solid var(--fg);
+}
+
+.box:before {
+	content: '';
+    display: block;
+    border: 1px solid var(--fg);
+    position: absolute;
+    width: calc(100% + 1em);
+    height: calc(100% + 1em);
+    top: -0.5em;
+    left: -0.5em;
 }
 
 .box.left {

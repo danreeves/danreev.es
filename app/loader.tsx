@@ -11,7 +11,7 @@ import isEqual from "https://esm.sh/v98/lodash.isequal@4.5.0/es2022/lodash.isequ
 function getDomain() {
 	if ("Deno" in window) {
 		return Deno.env.get("DENO_DEPLOYMENT_ID")
-			? "https://dnrvs.deno.dev"
+			? "http://localhost"
 			: "http://localhost:8000";
 	}
 	if ("document" in window) {
@@ -137,6 +137,7 @@ export function useData(
 
 	const promise = new Promise((resolve, reject) => {
 		const urlToFetch = url.startsWith("/") ? `${domain}${url}` : url;
+		console.log({ urlToFetch });
 		fetch(urlToFetch)
 			.then((res) => res.json())
 			.then((data) => resolve(data))

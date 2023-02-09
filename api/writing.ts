@@ -3,7 +3,7 @@ export async function getArticles() {
 	for await (const dirEntry of Deno.readDir("./writing")) {
 		files.push({
 			path: "/writing/" + dirEntry.name.replace(".md", ""),
-			published: new Date(),
+			published: "2022-01-01",
 		});
 	}
 	return new Response(JSON.stringify({ data: files }), {

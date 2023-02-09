@@ -8,11 +8,19 @@ import {
 } from "react";
 import isEqual from "https://esm.sh/v98/lodash.isequal@4.5.0/es2022/lodash.isequal.js";
 
-const domain = Deno.env.get("DENO_DEPLOYMENT_ID")
-	? "https://dnrvs.deno.dev"
-	: "http://localhost:8000";
-const env = Deno.env.toObject();
-console.log("env:", env);
+function getDomain() {
+	if ("Deno" in window) {
+		return Deno.env.get("DENO_DEPLOYMENT_ID")
+			? "https://dnrvs.deno.dev"
+			: "http://localhost:8000";
+	}
+	if ("document" in window) {
+		return document.location.protocol + "//" + document.location.host;
+	}
+	return "";
+}
+
+const domain = getDomain();
 
 const LoaderContext = createContext<Map<string, unknown> | null>(null);
 

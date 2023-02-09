@@ -18,7 +18,7 @@ async function transform(path: string) {
 export async function jsResponse(path: string) {
 	let responseString = "";
 
-	if (Deno.env.get("PROD") === "true" && fileCache.has(path)) {
+	if (Deno.env.get("DENO_DEPLOYMENT_ID") === "true" && fileCache.has(path)) {
 		responseString = fileCache.get(path);
 	} else {
 		responseString = await transform(path);

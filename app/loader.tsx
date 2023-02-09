@@ -11,7 +11,7 @@ import isEqual from "https://esm.sh/v98/lodash.isequal@4.5.0/es2022/lodash.isequ
 function getDomain() {
 	if ("Deno" in window) {
 		return Deno.env.get("DENO_DEPLOYMENT_ID")
-			? "http://localhost"
+			? "http://127.0.0.1"
 			: "http://localhost:8000";
 	}
 	if ("document" in window) {

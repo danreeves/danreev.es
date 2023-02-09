@@ -22,6 +22,8 @@ function getDomain() {
 
 const domain = getDomain();
 
+console.log({ domain });
+
 const LoaderContext = createContext<Map<string, unknown> | null>(null);
 
 function useCache() {

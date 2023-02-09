@@ -5,7 +5,6 @@ export default function Writing() {
 	const [posts] = useData(
 		"/api/writing",
 	);
-	console.log(posts);
 
 	return (
 		<ol>

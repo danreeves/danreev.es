@@ -11,16 +11,14 @@ export default function App() {
 		<LoaderProvider>
 			<Header />
 			<main>
-				<Route path="/">
-					<Suspense fallback={<div>loading...</div>}>
+				<Suspense fallback={<div>loading...</div>}>
+					<Route path="/">
 						<About />
-					</Suspense>
-				</Route>
-				<Route path="/writing">
-					<Suspense fallback={<div>loading...</div>}>
+					</Route>
+					<Route path="/writing">
 						<Writing />
-					</Suspense>
-				</Route>
+					</Route>
+				</Suspense>
 			</main>
 			<Footer />
 		</LoaderProvider>

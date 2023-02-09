@@ -8,6 +8,12 @@ import {
 } from "react";
 import isEqual from "https://esm.sh/v98/lodash.isequal@4.5.0/es2022/lodash.isequal.js";
 
+const domain = Deno.env.get("DENO_DEPLOYMENT_ID")
+	? "https://dnrvs.deno.dev"
+	: "http://localhost:8000";
+const env = Deno.env.toObject();
+console.log("env:", env);
+
 const LoaderContext = createContext<Map<string, unknown> | null>(null);
 
 function useCache() {
@@ -79,7 +85,8 @@ export function useData(
 		const prevData = await cache.get(url);
 
 		const promise = new Promise((resolve, reject) => {
-			fetch(url)
+			const urlToFetch = url.startsWith("/") ? `${domain}${url}` : url;
+			fetch(urlToFetch)
 				.then((res) => res.json())
 				.then((data) => {
 					resolve(data);
@@ -119,7 +126,8 @@ export function useData(
 	}
 
 	const promise = new Promise((resolve, reject) => {
-		fetch(url)
+		const urlToFetch = url.startsWith("/") ? `${domain}${url}` : url;
+		fetch(urlToFetch)
 			.then((res) => res.json())
 			.then((data) => resolve(data))
 			.catch((error) => reject(error));

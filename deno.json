@@ -1,6 +1,6 @@
 {
 	"tasks": {
-		"dev": "deno run --watch --allow-net --allow-read --allow-run --allow-env=PROD server.tsx"
+		"dev": "deno run --watch --allow-net --allow-read --allow-run --allow-env server.tsx"
 	},
 	"compilerOptions": {
 		"jsx": "react-jsxdev",

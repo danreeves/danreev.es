@@ -46,10 +46,9 @@ export default function About() {
 				For a while I regularly livestreamed.
 			</p>
 			<p>
-				Before that still, I worked on fullstack builds with php (WordPress,
-				etc) and python (Django), prototyping, ux testing, and much more for all
-				variety of clients at{" "}
-				<Link to="https://fffunction.co">fffunction</Link>.
+				Before that still, I worked on fullstack builds with php (WordPress) and
+				python (Django), prototyping, ux testing, and much more for all variety
+				of clients at <Link to="https://fffunction.co">fffunction</Link>.
 			</p>
 			<p>
 				Outside of programming, I enjoy film photography. You can see my work on
@@ -63,11 +62,12 @@ export default function About() {
 				/>{" "}
 				Weather in London: {weather.weather}, feels like{" "}
 				{Math.round(weather.feelsLike)}
-				{"℃"}.{" "}
+				{"°C"}.{" "}
 			</p>
+			<a className="box right" href="writing">See latest post {">"}</a>
 			<img
-				src="https://ghchart.rshah.org/73BE73/danreeves"
-				style={{ width: "100%" }}
+				src="https://ghchart.rshah.org/fd9ff8/danreeves"
+				style={{ width: "100%", marginTop: "1em" }}
 			/>
 		</>
 	);

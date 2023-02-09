@@ -7,6 +7,11 @@ import { cssResponse } from "./server/css-response.ts";
 import { getPreferredLang } from "./server/get-preferred-lang.ts";
 import { jsResponse } from "./server/js-loader.ts";
 import { svgResponse } from "./server/svg-response.ts";
+import { Router } from "./server/router.ts";
+import { getArticles } from "./api/writing.ts";
+
+const router = new Router();
+router.add("GET", "/api/writing", getArticles);
 
 serve(async (request: Request): Promise<Response> => {
 	const method = request.method;
@@ -15,15 +20,19 @@ serve(async (request: Request): Promise<Response> => {
 
 	console.log(method, path, preferredLang);
 
-	if (path.endsWith("tsx") || path.endsWith("ts")) {
+	if (path.startsWith("/api")) {
+		return await router.route(request);
+	}
+
+	if (path.endsWith(".tsx") || path.endsWith(".ts")) {
 		return jsResponse(path);
 	}
 
-	if (path.endsWith("css")) {
+	if (path.endsWith(".css")) {
 		return cssResponse(path);
 	}
 
-	if (path.endsWith("svg")) {
+	if (path.endsWith(".svg")) {
 		return svgResponse(path);
 	}
 

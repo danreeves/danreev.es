@@ -1,3 +1,5 @@
+@import url(https://fonts.bunny.net/css?family=rubik:400|rubik-bubbles:400);
+
 * {
 	box-sizing: border-box;
 }
@@ -5,16 +7,16 @@
 :root {
 	--fg: #333;
 	--bg: white;
-	--accent: lightgreen;
+	--accent: #fd9ff8;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--fg: #ddd;
-		--bg: #111;
-		--accent: lightgreen;
-	}
-}
+/* @media (prefers-color-scheme: dark) { */
+/* 	:root { */
+/* 		--fg: #ddd; */
+/* 		--bg: #111; */
+/* 		--accent: lightgreen; */
+/* 	} */
+/* } */
 
 @media (prefers-reduced-motion) {
 	* { animation: none !important; }
@@ -22,7 +24,7 @@
 
 html {
 	font-size: 1.5rem;
-	font-family: system-ui, sans-serif;
+	font-family: 'Rubik', system-ui, sans-serif;
 	line-height: 1.5;
 	font-smooth: never;
 	-webkit-font-smoothing: none;
@@ -43,13 +45,14 @@ body {
 h1,h2,h3,h4,h5,h6{
 	font-weight: 900;
 	color: var(--accent);
-    -webkit-text-stroke: 1px var(--fg);
+	font-family: 'Rubik Bubbles', system-ui, sans-serif;
 }
 
 header {
 	position: relative;
 	padding-bottom: .5em;
 	border-bottom: var(--accent) .25em solid;
+	font-family: 'Rubik Bubbles';
 }
 
 nav {
@@ -67,7 +70,6 @@ a {
 nav a {
 	border-bottom: .15em solid transparent;
 	color: var(--accent);
-    -webkit-text-stroke: 1px var(--fg);
 }
 
 nav a.active {
@@ -103,38 +105,28 @@ nav a.active {
 
 .box {
 	display: block;
-	width: 50%;
-	padding: 1em;
+	width: 45%;
+	padding: 2.5%;
+	margin: 2.5%;
 	position: relative;
-	border: 1px solid var(--fg);
-}
-
-.box:before {
-	content: '';
-    display: block;
-    border: 1px solid var(--fg);
-    position: absolute;
-    width: calc(100% + 1em);
-    height: calc(100% + 1em);
-    top: -0.5em;
-    left: -0.5em;
+	background: var(--accent);
+	color: white;
+	font-family: 'Rubik Bubbles';
 }
 
 .box.left {
 	float: left;
-	margin: 1em;
-	margin-left: 0;
 }
 
 .box.right {
 	float: right;
-	margin: 1em;
-	margin-right: 0;
 }
 
 footer {
+	font-family: 'Rubik Bubbles';
 	clear: both;
 	text-align: center;
+	margin-top: 1em;
 	margin-bottom: 1em;
 	opacity: 0.3;
 }

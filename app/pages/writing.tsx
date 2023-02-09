@@ -3,7 +3,7 @@ import { Link } from "../common/router.tsx";
 
 export default function Writing() {
 	const [posts] = useData(
-		"http://localhost:8000/api/writing",
+		"/api/writing",
 	);
 	console.log(posts);
 

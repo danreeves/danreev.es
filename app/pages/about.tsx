@@ -66,7 +66,7 @@ export default function About() {
 			</p>
 			<a className="box right" href="writing">See latest post {">"}</a>
 			<img
-				src="https://ghchart.rshah.org/fd9ff8/danreeves"
+				src="https://ghchart.rshah.org/DCFF02/danreeves"
 				style={{ width: "100%", marginTop: "1em" }}
 			/>
 		</>

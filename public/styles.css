@@ -8,6 +8,7 @@
 	--fg: #333;
 	--bg: white;
 	--accent: #c58fff;
+	--accent2: #DCFF02;
 }
 
 /* @media (prefers-color-scheme: dark) { */
@@ -149,3 +150,6 @@ footer {
 	}
 }
 
+header small {
+	color: var(--accent2);
+}

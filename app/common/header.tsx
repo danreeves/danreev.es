@@ -6,7 +6,7 @@ export function Header() {
 	return (
 		<>
 			<header>
-				<small>
+				<small className="hello">
 					<Wave text="hello, planet." />
 				</small>
 				<nav>

@@ -102,6 +102,8 @@ nav a.active {
 	position: absolute;
 	bottom: 1em;
 	right: 1em;
+    border-radius: 12px;
+    transform: rotate(2deg);
 }
 
 .box {

@@ -115,6 +115,7 @@ nav a.active {
 	background: var(--accent);
 	color: white;
 	font-family: 'Rubik Bubbles';
+    border-radius: 0.5em;
 }
 
 .box.left {

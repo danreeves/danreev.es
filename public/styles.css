@@ -1,4 +1,4 @@
-@import url(https://fonts.bunny.net/css?family=rubik:400|rubik-bubbles:400);
+/* @import url(https://fonts.bunny.net/css?family=rubik:400|rubik-bubbles:400); */
 
 * {
 	box-sizing: border-box;
@@ -25,7 +25,7 @@
 
 html {
 	font-size: 1.5rem;
-	font-family: 'Rubik', system-ui, sans-serif;
+	font-family: "felt-tip-woman", 'Rubik', system-ui, sans-serif;
 	line-height: 1.5;
 	font-smooth: never;
 	-webkit-font-smoothing: none;
@@ -46,14 +46,14 @@ body {
 h1,h2,h3,h4,h5,h6{
 	font-weight: 900;
 	color: var(--accent);
-	font-family: 'Rubik Bubbles', system-ui, sans-serif;
+	font-family: "felt-tip-woman", 'Rubik Bubbles', system-ui, sans-serif;
 }
 
 header {
 	position: relative;
 	padding-bottom: .5em;
 	border-bottom: var(--accent) .25em solid;
-	font-family: 'Rubik Bubbles';
+	font-family: "felt-tip-woman", 'Rubik Bubbles';
 }
 
 nav {
@@ -114,7 +114,7 @@ nav a.active {
 	position: relative;
 	background: var(--accent);
 	color: white;
-	font-family: 'Rubik Bubbles';
+	font-family: "felt-tip-woman", 'Rubik Bubbles';
     border-radius: 0.5em;
 }
 
@@ -127,7 +127,7 @@ nav a.active {
 }
 
 footer {
-	font-family: 'Rubik Bubbles';
+	font-family: "felt-tip-woman", 'Rubik Bubbles';
 	clear: both;
 	text-align: center;
 	margin-top: 1em;

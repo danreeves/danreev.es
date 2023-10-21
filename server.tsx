@@ -7,11 +7,6 @@ import { cssResponse } from "./server/css-response.ts";
 import { getPreferredLang } from "./server/get-preferred-lang.ts";
 import { jsResponse } from "./server/js-loader.ts";
 import { svgResponse } from "./server/svg-response.ts";
-import { Router } from "./server/router.ts";
-import { getArticles } from "./api/writing.ts";
-
-const router = new Router();
-router.add("GET", "/api/writing", getArticles);
 
 serve(async (request: Request): Promise<Response> => {
   const method = request.method;
@@ -19,10 +14,6 @@ serve(async (request: Request): Promise<Response> => {
   const { pathname: path } = new URL(request.url);
 
   console.log(method, path, preferredLang);
-
-  if (path.startsWith("/api")) {
-    return await router.route(request);
-  }
 
   if (path.endsWith(".tsx") || path.endsWith(".ts")) {
     return jsResponse(path);
@@ -53,16 +44,12 @@ serve(async (request: Request): Promise<Response> => {
         type="importmap"
         dangerouslySetInnerHTML={{ __html: importMap }}
       />
-      <script
+      {/* <script
         type="module"
         dangerouslySetInnerHTML={{ __html: clientScript }}
-      />
+      /> */}
       <div id="app">
-        <ServerRoute.Provider value={path}>
-          <LangProvider lang={preferredLang}>
-            <App />
-          </LangProvider>
-        </ServerRoute.Provider>
+        <App path={path} lang={preferredLang} />
       </div>
     </html>
   );

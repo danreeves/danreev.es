@@ -1,5 +1,16 @@
 {
-  "version": "2",
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:react-server-dom-esm": "npm:react-server-dom-esm@0.0.1"
+    },
+    "npm": {
+      "react-server-dom-esm@0.0.1": {
+        "integrity": "sha512-HTvXS2HZDFqsSo9FfRRDmcsMh8exnI81gSfUG4Q019xRllafQUxBHZn0+axM4oEZ3Pxs7hSsqNlCYToLjbTZ/w==",
+        "dependencies": {}
+      }
+    }
+  },
   "remote": {
     "https://deno.land/std@0.140.0/_util/assert.ts": "e94f2eb37cebd7f199952e242c77654e43333c1ac4c5c700e929ea3aa5489f74",
     "https://deno.land/std@0.140.0/_util/os.ts": "3b4c6e27febd119d36a416d7a97bd3b0251b77c88942c8f16ee5953ea13e2e49",
@@ -55,11 +66,33 @@
     "https://deno.land/x/emit@0.10.0/mod.ts": "20fd97493b37308480c288a559311cf950b4b799c8e6a91f86fc77ce9467e248",
     "https://deno.land/x/esbuild@v0.15.13/mod.d.ts": "12e96a8d05c8e2c5638aa9cb09f24222134d437abb2f3f52de0156adb2270719",
     "https://deno.land/x/esbuild@v0.15.13/mod.js": "b826d8a942518a33da4a136aed2b749c6ad566f8aa2c51e5736392f2e34b9354",
+    "https://deno.land/x/esbuild@v0.15.13/wasm.js": "48d35feac7b16496dba727dda7bab6c73a565f646f8489052664c67fc812d7e0",
+    "https://esm.sh/react-dom@18.3.0-canary-d803f519e-20231020&dev/server": "a319b401bf9767fceb93f887a726191c8193c811898d8d67a0c0fed046768d13",
     "https://esm.sh/react-dom@18.3.0-next-4bd245e9e-20221104/server?dev": "c7ffc94b19654c602f1245e3608617dd4c37c0c50ef7fe572b4c2a06038673c0",
+    "https://esm.sh/react-server-dom-webpack@18.3.0-canary-d803f519e-20231020&dev/client": "439e7aa655cac46b2fd06ac2db53355a97e7314830c20281470d3e4bd88dd598",
+    "https://esm.sh/react-server-dom-webpack@18.3.0-canary-d803f519e-20231020&dev/server": "7b1a9605c3042214689ea43d772a79139d510be7d5cf443aec03c5093832dafd",
+    "https://esm.sh/react-server-dom-webpack@18.3.0-canary-d803f519e-20231020&dev/server.browser": "6e442aed91478ce580a0dddbfcfe5913bbf55ac595d935919ac07301b91b524d",
+    "https://esm.sh/react-server-dom-webpack@18.3.0-canary-d803f519e-20231020&dev/server.edge": "1744c4b365db86e6e8df2711fb0f1aebc6c45bd5d096a28c0536caab4f1a4b5f",
+    "https://esm.sh/react-server-dom-webpack@18.3.0-canary-d803f519e-20231020&dev/server.node.unbundled": "8e77c8176ed097817aea5aa24967b7ede083e3db2998b1b656580f338774ba65",
+    "https://esm.sh/react@18.3.0-canary-d803f519e-20231020&dev": "c3631edc23b9d6fb358941c3b920423039d164af46c91fc49def923656044d35",
+    "https://esm.sh/react@18.3.0-canary-d803f519e-20231020&dev/jsx-dev-runtime": "aefef1a460441e00cdf36613b43e83aad2e411428d333fadb17dc0398f19475c",
     "https://esm.sh/react@18.3.0-next-4bd245e9e-20221104/jsx-dev-runtime": "03a07ee751d3fe015571a9e46878ef63dd7ad8c10bee1ffc011c09504d1db2bc",
     "https://esm.sh/react@18.3.0-next-4bd245e9e-20221104?dev": "866c00a1a1190a917205579fd94f53ce7253b57d718fccfa1568ad8780c07e3e",
+    "https://esm.sh/stable/react@18.3.0-canary-d803f519e-20231020/deno/jsx-dev-runtime.development.js": "f5e6651bec2fe40a7d13ce1bc5c9da959c2d80486e2b716306f91a13e44de4f5",
+    "https://esm.sh/stable/react@18.3.0-canary-d803f519e-20231020/deno/react.development.mjs": "d831357489bd84f3eb1a11d195eddebf4efdf04b22eab2145235fbbb8b8b8fe0",
+    "https://esm.sh/stable/react@18.3.0-canary-d803f519e-20231020/denonext/react.development.mjs": "6296f39867a521867e4dbf1e69269a53f20c559f576ee0f0761d39a9e40da2e6",
     "https://esm.sh/stable/react@18.3.0-next-4bd245e9e-20221104/deno/jsx-dev-runtime.development.js": "28c24d336fff64758f3044b7636d1cffdcffdb517f270d4da1b8bd5ac569280b",
     "https://esm.sh/stable/react@18.3.0-next-4bd245e9e-20221104/deno/react.development.js": "809101b555a96986d830f6085abadaee17c722cc0878f6963fe0d9621d903e96",
+    "https://esm.sh/v133/react-dom@18.3.0-canary-d803f519e-20231020/deno/react-dom.development.mjs": "aa2fb465d94198517ce20d93888f0c4de8d7bfb23fa4912b29dffc45b7ed5590",
+    "https://esm.sh/v133/react-dom@18.3.0-canary-d803f519e-20231020/deno/server.development.js": "fa365fd9e3e87f1e9c48b7a83046f4a0d228cf44331798a532a5ffffcb38a54b",
+    "https://esm.sh/v133/react-dom@18.3.0-canary-d803f519e-20231020/denonext/react-dom.development.mjs": "a2d92dbd3204fabe91cc432e0eadb4666d7a2e3feaea778135b152e0590486fb",
+    "https://esm.sh/v133/react-server-dom-webpack@18.3.0-canary-d803f519e-20231020/deno/client.development.js": "6661cbbb8fd7359f6033aa9bb84886a9442c8df92f43ab07c202a25e56c84a90",
+    "https://esm.sh/v133/react-server-dom-webpack@18.3.0-canary-d803f519e-20231020/deno/server.browser.development.js": "8c626ef83b38bf66035c9cfc64cb52b3fb1ae8ba127b9d5a8adeccf5b8c0bdc4",
+    "https://esm.sh/v133/react-server-dom-webpack@18.3.0-canary-d803f519e-20231020/deno/server.development.js": "b87eb47c1cb73a98e2218d4b597de95b07751076274e37c8fe0d9a5f52b64259",
+    "https://esm.sh/v133/react-server-dom-webpack@18.3.0-canary-d803f519e-20231020/deno/server.edge.development.js": "c19d9cc07e09800ff1f2b6fbc1d9ec7cf4669c42a38f9a8add7b3a8077bc50b6",
+    "https://esm.sh/v133/react-server-dom-webpack@18.3.0-canary-d803f519e-20231020/denonext/server.node.unbundled.development.js": "d9ef121ed12cd62c225ef9405131b1608abfdf385cab855972b89785df41fcd1",
+    "https://esm.sh/v133/scheduler@0.24.0-canary-d803f519e-20231020/deno/scheduler.development.mjs": "a68c681f7b6294e7996ce4d51ffb603efe32325b585ee62b251885f3a2dcf45f",
+    "https://esm.sh/v133/scheduler@0.24.0-canary-d803f519e-20231020/denonext/scheduler.development.mjs": "06ecc809b8408239986afe975ac5a2f1762010176f4e902d38781e8324888f51",
     "https://esm.sh/v96/@types/prop-types@15.7.5/index.d.ts": "6a386ff939f180ae8ef064699d8b7b6e62bc2731a62d7fbf5e02589383838dea",
     "https://esm.sh/v96/@types/react-dom@18.0.8/server~.d.ts": "954d3e8681fe59bde6377bc8136c3488eaaace7746bd13b4060f655cc111be25",
     "https://esm.sh/v96/@types/react@18.0.21/global.d.ts": "bbdf156fea2fabed31a569445835aeedcc33643d404fcbaa54541f06c109df3f",
@@ -69,6 +102,7 @@
     "https://esm.sh/v96/csstype@3.1.1/index.d.ts": "1c29793071152b207c01ea1954e343be9a44d85234447b2b236acae9e709a383",
     "https://esm.sh/v96/react-dom@18.3.0-next-4bd245e9e-20221104/deno/react-dom.development.js": "43e2d604e37b6e8ea4cd4471692c884396411302f5076c14ad62073727dc5b8a",
     "https://esm.sh/v96/react-dom@18.3.0-next-4bd245e9e-20221104/deno/server.development.js": "d01f22009e7407b745b919372200b4ee16ab9edd71e218ea394a5bcc672a7660",
-    "https://esm.sh/v96/scheduler@0.24.0-next-4bd245e9e-20221104/deno/scheduler.development.js": "9cbe17045f90802e0596d394d7043fad4b9d49369ecc41c76d7f0e699937e6c8"
+    "https://esm.sh/v96/scheduler@0.24.0-next-4bd245e9e-20221104/deno/scheduler.development.js": "9cbe17045f90802e0596d394d7043fad4b9d49369ecc41c76d7f0e699937e6c8",
+    "https://esm.sh/v98/lodash.isequal@4.5.0/es2022/lodash.isequal.js": "34e7b1dbdf04561e97a667f494a1adcd0b37dafb26015d12542904fc4b5d913c"
   }
 }

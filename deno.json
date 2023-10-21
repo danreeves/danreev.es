@@ -1,15 +1,16 @@
 {
-	"tasks": {
-		"dev": "deno run --watch --allow-net --allow-read --allow-run --allow-env=DENO_DEPLOYMENT_ID server.tsx"
-	},
-	"compilerOptions": {
-		"jsx": "react-jsxdev",
-		"jsxImportSource": "react"
-	},
-	"importMap": "./importMap.json",
-	"fmt": {
-		"options": {
-			"useTabs": true
-		}
-	}
+  "tasks": {
+    "dev1": "deno run --watch --allow-net --allow-read --allow-run --allow-env=DENO_DEPLOYMENT_ID server.tsx",
+    "dev": "deno run --watch --allow-net --allow-read --allow-run --allow-env=DENO_DEPLOYMENT_ID entry.ts"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsxdev",
+    "jsxImportSource": "react"
+  },
+  "importMap": "./importMap.json",
+  "fmt": {
+    "options": {
+      "useTabs": true
+    }
+  }
 }

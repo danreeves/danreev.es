@@ -1,9 +1,12 @@
-import { useData } from "../loader.tsx";
+import { cache } from "react";
 
-export function Avatar() {
-	// const [data] = useData("https://api.github.com/users/danreeves");
-	const data = {
-		avatar_url: "https://avatars.githubusercontent.com/u/1973559?v=4",
-	};
-	return <img className="avatar" src={data.avatar_url} />;
+const getGHUser = cache(async () => {
+  const res = await fetch("https://api.github.com/users/danreeves");
+  const data = await res.json();
+  return data;
+});
+
+export async function Avatar() {
+  const data = await getGHUser();
+  return <img className="avatar" src={data.avatar_url} />;
 }

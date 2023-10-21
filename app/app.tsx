@@ -4,23 +4,25 @@ import Writing from "./pages/writing.tsx";
 import { Footer } from "./common/footer.tsx";
 import { Header } from "./common/header.tsx";
 import { Route } from "./common/router.tsx";
-import { LoaderProvider } from "./loader.tsx";
 
-export default function App() {
-	return (
-		<LoaderProvider>
-			<Header />
-			<main>
-				<Suspense fallback={<div>loading...</div>}>
-					<Route path="/">
-						<About />
-					</Route>
-					<Route path="/writing">
-						<Writing />
-					</Route>
-				</Suspense>
-			</main>
-			<Footer />
-		</LoaderProvider>
-	);
+export default function App({ path, lang }: { path: string; lang: string }) {
+  return (
+    <>
+      <Header />
+      <main>
+        <Suspense fallback={<div>loading...</div>}>
+          <Route currentPath={path} path="/">
+            <About />
+          </Route>
+          <Route currentPath={path} path="/writing">
+            <Writing />
+          </Route>
+          <Route currentPath={path} path="/writing/:slug">
+            <div>beep</div>
+          </Route>
+        </Suspense>
+      </main>
+      <Footer />
+    </>
+  );
 }

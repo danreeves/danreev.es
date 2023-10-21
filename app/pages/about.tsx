@@ -1,4 +1,3 @@
-import { useData } from "../loader.tsx";
 import { Link } from "../common/router.tsx";
 
 const inlineImageStyles = {
@@ -8,8 +7,10 @@ const inlineImageStyles = {
   verticalAlign: "middle",
 };
 
-export default function About() {
-  const [weather] = useData(`https://coolweather.glitch.me/london`);
+export default async function About() {
+  const weather = await (
+    await fetch(`https://coolweather.glitch.me/london`)
+  ).json();
 
   return (
     <>

@@ -24,7 +24,7 @@ export function Footer() {
         <defs>
           {SQUIGS.map((i) => {
             return (
-              <filter id={`squiggly-${i}`}>
+              <filter id={`squiggly-${i}`} key={i}>
                 <feTurbulence
                   id="turbulence"
                   baseFrequency="0.02"

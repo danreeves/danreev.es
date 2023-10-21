@@ -1,14 +1,12 @@
-/* @import url(https://fonts.bunny.net/css?family=rubik:400|rubik-bubbles:400); */
-
 * {
 	box-sizing: border-box;
 }
 
 :root {
 	--fg: #333;
-	--bg: white;
-	--accent: #c58fff;
-	--accent2: #DCFF02;
+	--bg: #fff;
+	/* --accent: #c58fff; */
+	/* --accent2: #DCFF02; */
 }
 
 /* @media (prefers-color-scheme: dark) { */
@@ -24,11 +22,9 @@
 }
 
 html {
-	font-size: 1.5rem;
-	font-family: "felt-tip-woman", 'Rubik', system-ui, sans-serif;
-	line-height: 1.5;
-	font-smooth: never;
-	-webkit-font-smoothing: none;
+	font-size: 2.5rem;
+	font-family: "felt-tip-woman", system-ui, sans-serif;
+	line-height: 1.1;
 	background: var(--bg);
 	color: var(--fg);
 	filter: blur(.3px);
@@ -36,7 +32,7 @@ html {
 
 body {
 	width: 50ch;
-	max-width: 90%;
+	max-width: 60%;
 	margin-left: auto;
 	margin-right: auto;
 	filter: url('#squiggly-0');
@@ -46,14 +42,14 @@ body {
 h1,h2,h3,h4,h5,h6{
 	font-weight: 900;
 	color: var(--accent);
-	font-family: "felt-tip-woman", 'Rubik Bubbles', system-ui, sans-serif;
+	font-family: "felt-tip-woman", system-ui, sans-serif;
 }
 
 header {
 	position: relative;
 	padding-bottom: .5em;
 	border-bottom: var(--accent) .25em solid;
-	font-family: "felt-tip-woman", 'Rubik Bubbles';
+	font-family: "felt-tip-woman";
 }
 
 nav {
@@ -63,9 +59,9 @@ nav {
 }
 
 a {
-	text-decoration: none;
 	border-bottom: .15em solid var(--accent);
 	color: var(--fg);
+	text-decoration-skip-ink: none;
 }
 
 nav a {
@@ -112,10 +108,14 @@ nav a.active {
 	padding: 2.5%;
 	margin: 2.5%;
 	position: relative;
-	background: var(--accent);
-	color: white;
-	font-family: "felt-tip-woman", 'Rubik Bubbles';
+	/* background: var(--accent); */
+	/* color: white; */
+	font-family: "felt-tip-woman";
     border-radius: 0.5em;
+	border-style: solid;
+	border-width: .1em;
+	border-radius: .1em;
+	border-color: var(--fg);
 }
 
 .box.left {
@@ -127,45 +127,10 @@ nav a.active {
 }
 
 footer {
-	font-family: "felt-tip-woman", 'Rubik Bubbles';
+	font-family: "felt-tip-woman";
 	clear: both;
 	text-align: center;
 	margin-top: 1em;
 	margin-bottom: 1em;
-	opacity: 0.3;
-}
-
-@keyframes squiggly-anim {
-	0% {
-		filter: url('#squiggly-0');
-	}
-	25%{
-		filter: url('#squiggly-1');
-	}
-	50%{
-		filter: url('#squiggly-2');
-	}
-	75%{
-		filter: url('#squiggly-3');
-	}
-	100% {
-		filter: url('#squiggly-4');
-	}
-}
-
-.hello {
-	color: var(--accent2);
-	position: relative;
-}
-
-.hello:after {
-	transform: translateY(-50%) rotate(-2deg);
-    content: '';
-    background: var(--accent);
-    display: block;
-    width: 100%;
-    position: absolute;
-    height: 69%;
-    top: 50%;
-    z-index: -10;
+	opacity: .5;
 }

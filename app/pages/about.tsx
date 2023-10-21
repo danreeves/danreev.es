@@ -22,8 +22,7 @@ export default async function About() {
       </p>
       <p>I live in London but I've worked fully async & remote since 2017.</p>
       <p>
-        This site is currently a server side rendering react site with suspense
-        data loading{" "}
+        This site is currently a streaming server side rendering react site{" "}
         <Link to="https://github.com/danreeves/danreev.es">
           written from scratch
         </Link>{" "}

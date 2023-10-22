@@ -8,23 +8,25 @@ Look at this lil fella:
 
 ![A small image](/img/chonky-pixels/small.jpg)
 
-If you've ever rendered a jpeg on the internet you've probably
-seen something like this:
+If you've ever rendered a jpeg on the internet you've probably seen something
+like this:
 
 ![A blurry scaled image](/img/chonky-pixels/blurry.png)
 
-It's blurry because the browser is interpolating the missing pixels, smearing the
-few pixels over the screen. This works fine for large images or small differences
-in size, but what if I actually want to see those chunky pixels.
+It's blurry because the browser is interpolating the missing pixels, smearing
+the few pixels over the screen. This works fine for large images or small
+differences in size, but what if I actually want to see those chunky pixels.
 
 What I actually want it to look like is this:
 
 ![A pixelated image](/img/chonky-pixels/crunchy.png)
 
-Browsers are making this possible with a new CSS rule: `image-rendering: pixelated;`
+Browsers are making this possible with a new CSS rule:
+`image-rendering: pixelated;`
 
-The browser support for this is pretty good, but not universal. You can check
-it out on [Can I Use](https://caniuse.com/mdn-css_properties_image-rendering_pixelated).
+The browser support for this is pretty good, but not universal. You can check it
+out on
+[Can I Use](https://caniuse.com/mdn-css_properties_image-rendering_pixelated).
 
 ## How it works
 
@@ -42,8 +44,8 @@ What about those poor browsers that don't support it yet? We can't just let them
 have gross stretched out blurry pixels. They want crisp blocks too. Nay, they
 need them.
 
-How about some JavaScript? Sure. Turns out browsers have added a neat little
-API to detect whether a browser supports some CSS.
+How about some JavaScript? Sure. Turns out browsers have added a neat little API
+to detect whether a browser supports some CSS.
 
 ```
 let supportsPixelated =
@@ -54,27 +56,27 @@ let supportsPixelated =
 
 What we're saying here is _if_ the `CSS` object exists _and if_ the `CSS` object
 has a `supports` function on it, we can call it with the CSS property and value
-we want to use. If any of this returns `false` it's safe to say that the
-browser does not support it. If it's true then it does. So now we know if the browser
-supports `image-rendering: pixelated` we can leave it alone if it does and do something
-about it if it doesn't.
+we want to use. If any of this returns `false` it's safe to say that the browser
+does not support it. If it's true then it does. So now we know if the browser
+supports `image-rendering: pixelated` we can leave it alone if it does and do
+something about it if it doesn't.
 
 Turns out the next part is also pretty easy.
 
 ```
-  let img = document.querySelector("img")
-  let canvas = document.createElement("CANVAS")
-  canvas.width = img.width
-  canvas.height = img.height
-  img.parentNode.insertBefore(canvas, img.nextSibling)
-  let ctx = canvas.getContext("2d")
-  ctx.imageSmoothingEnabled = false
-  ctx.drawImage(img, 0, 0, img.width, img.height)
-  img.parentElement.removeChild(img)
+let img = document.querySelector("img")
+let canvas = document.createElement("CANVAS")
+canvas.width = img.width
+canvas.height = img.height
+img.parentNode.insertBefore(canvas, img.nextSibling)
+let ctx = canvas.getContext("2d")
+ctx.imageSmoothingEnabled = false
+ctx.drawImage(img, 0, 0, img.width, img.height)
+img.parentElement.removeChild(img)
 ```
 
-Okay so that was like nine lines of code in a row so let's go through it one
-at a time and figure out what we're doing together.
+Okay so that was like nine lines of code in a row so let's go through it one at
+a time and figure out what we're doing together.
 
 <dl>
 
@@ -175,10 +177,12 @@ And here's how it looks:
 ```
 
 This isn't totally finished. We deleted the image tag without carrying over any
-of the accessibilty like the `alt` attribute. That's okay if it's purely decorative,
-but otherwise you gotta do it. Promise?
+of the accessibilty like the `alt` attribute. That's okay if it's purely
+decorative, but otherwise you gotta do it. Promise?
 
-Cool! Have a <span class="todaything">happy</span> <span class="todayday">Thursday</span>! &mdash; <a href="https://twitter.com/dnrvs">@dnrvs</a>
+Cool! Have a <span class="todaything">happy</span>
+<span class="todayday">Thursday</span>! &mdash;
+<a href="https://twitter.com/dnrvs">@dnrvs</a>
 
 <script>
 let days = [

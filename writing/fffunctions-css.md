@@ -4,56 +4,51 @@ published: 2014-09-26
 
 # fffunction's CSS
 
-This article is in response to some recent posts by [Mark
-Dotto](http://markdotto.com/2014/07/23/githubs-css/), [Lonely
-Planet](http://ianfeather.co.uk/css-at-lonely-planet/), and [Chris
-Coyier](http://codepen.io/chriscoyier/blog/codepens-css). I'm big on optimising
-architectures and workflows, so I found reading how other people are doing it
-pretty helpful. It's also great to validate your own thoughts while learning
-from others.
+This article is in response to some recent posts by
+[Mark Dotto](http://markdotto.com/2014/07/23/githubs-css/),
+[Lonely Planet](http://ianfeather.co.uk/css-at-lonely-planet/), and
+[Chris Coyier](http://codepen.io/chriscoyier/blog/codepens-css). I'm big on
+optimising architectures and workflows, so I found reading how other people are
+doing it pretty helpful. It's also great to validate your own thoughts while
+learning from others.
 
-*This was written for the [fffunction blog](http://blog.fffunction.co/article/functions-css).*
+_This was written for the
+[fffunction blog](http://blog.fffunction.co/article/functions-css)._
 
-* [Quick
-Facts](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#quick-facts)
-* [Preprocessor](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#preprocessor)
-* [Compiler](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#compiler)
-* [Architecture](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#architecture)
-* [Sassaparilla](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#sassaparilla)
-* [File
-Structure](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#file-structure)
-* [Code
-Structure](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#code-structure)
-* [Grid
-System](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#grid-system)
-* [Style Guide Driven
-Development](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#style-guide-driven-development)
-* [Bundles](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#bundles)
-* [Platform](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#platform)
-* [Performance](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#performance)
-* [Prototyping](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#prototyping)
-* [Refactoring](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#refactoring)
-* [The
-Future](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#the-future)
+- [Quick Facts](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#quick-facts)
+- [Preprocessor](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#preprocessor)
+- [Compiler](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#compiler)
+- [Architecture](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#architecture)
+- [Sassaparilla](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#sassaparilla)
+- [File Structure](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#file-structure)
+- [Code Structure](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#code-structure)
+- [Grid System](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#grid-system)
+- [Style Guide Driven Development](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#style-guide-driven-development)
+- [Bundles](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#bundles)
+- [Platform](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#platform)
+- [Performance](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#performance)
+- [Prototyping](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#prototyping)
+- [Refactoring](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#refactoring)
+- [The Future](https://github.com/danreeves/danreev.es/blob/old/_posts/2014-09-26-fffunctions-css.md#the-future)
 
-*****
+---
 
 ## Quick Facts
 
-* We write in Sass
-* We use our own framework: Sassaparilla
-* We have many source files
-* We compile to a single CSS file
-* This files size varies from 15kb to 100kb, but it's usually in the low end
-* Ems are the most commonly used unit, with about half as many uses of px
-* We use style guides/pattern libraries extensively
+- We write in Sass
+- We use our own framework: Sassaparilla
+- We have many source files
+- We compile to a single CSS file
+- This files size varies from 15kb to 100kb, but it's usually in the low end
+- Ems are the most commonly used unit, with about half as many uses of px
+- We use style guides/pattern libraries extensively
 
 ## Preprocessor
 
 fffunction had a brief affair with LESS before I had joined the team, but we now
 use Sass for everything but legacy projects. There isn't much to say here, there
-are lots of good articles explaining [why you should be using
-Sass](http://alistapart.com/article/why-sass).
+are lots of good articles explaining
+[why you should be using Sass](http://alistapart.com/article/why-sass).
 
 ## Compiler
 
@@ -79,16 +74,17 @@ and has made our codebases much more maintainable.
 We use our framework, Sassaparilla, on every project. It's a really great,
 structured, starting point for any project. It's there to make writing all our
 CSS easier, but also to enforce a structure. You can read more about
-[Sassaparilla](http://sass.fffunction.co/) itself on GitHub or our [netmag
-article](http://www.creativebloq.com/web-design/start-web-projects-faster-sassaparilla-11135367).
+[Sassaparilla](http://sass.fffunction.co/) itself on GitHub or our
+[netmag article](http://www.creativebloq.com/web-design/start-web-projects-faster-sassaparilla-11135367).
 
 File Structure
 
 Sassaparilla looks like this:
 
-* `libs` — sassaparilla core scss files
-* `modules` — user created modules
-* `screen.scss` — All imports and some base styling, this gets compiled and minified
+- `libs` — sassaparilla core scss files
+- `modules` — user created modules
+- `screen.scss` — All imports and some base styling, this gets compiled and
+  minified
 
 The `libs` directory is all of Sassaparilla's core files, things like: resets,
 sensible defaults, variables, the grid system and other mixins. These files are
@@ -106,9 +102,8 @@ Code Structure
 
 Obviously we keep our code just as strictly BEM as our file structure. We
 utilise Sass nesting to make this a little easier (to read, at least). We use
-BEM syntax as described by [Harry
-Roberts](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
-
+BEM syntax as described by
+[Harry Roberts](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
 
 ## Grid System
 

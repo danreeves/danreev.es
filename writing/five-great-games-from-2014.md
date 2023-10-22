@@ -9,7 +9,7 @@ about what I liked and disliked. The result is pretty mundane: a listicle.
 
 ### 1. Transistor
 
-*Released: May 20, 2014*
+_Released: May 20, 2014_
 
 ![](https://cdn-images-1.medium.com/max/1600/0*HIjK85gqbsyoYs0o.)
 
@@ -58,7 +58,7 @@ wouldn't have done otherwise.
 
 ### 2. Wolfenstein: The New Order
 
-*Released: May 20, 2014*
+_Released: May 20, 2014_
 
 ![](https://cdn-images-1.medium.com/max/1600/0*O2ikzXQ8oe23YkKl.)
 
@@ -74,11 +74,12 @@ The story was equal parts over the top gunfights, dual wielding machine guns
 killing robot Nazis on the moon, and quiet time, helping a your comrades with
 day to day things and falling in love. This is probably the greatest success of
 the game, and is one of the core philosophies that showed MachineGames knew what
-they were doing when writing the narrative. As [Super Bunnyhop puts so
-well](https://www.youtube.com/watch?v=rCxR__N0_is) quiet time is extremely
-important to narratives as it allows exposition. It was thanks to this that a
-game that might have been a generic (although over the top and fun) shooter
-actually had an emotional story and you could form empathy with the characters.
+they were doing when writing the narrative. As
+[Super Bunnyhop puts so well](https://www.youtube.com/watch?v=rCxR__N0_is) quiet
+time is extremely important to narratives as it allows exposition. It was thanks
+to this that a game that might have been a generic (although over the top and
+fun) shooter actually had an emotional story and you could form empathy with the
+characters.
 
 Another success for this game was level design. This may just be because the
 current state of AAA FPS games is abysmal in this department, with linear
@@ -90,7 +91,7 @@ gun-play with stealth and exploration.
 
 ### 3. Gang Beasts
 
-*Released: 29 Aug, 2014*
+_Released: 29 Aug, 2014_
 
 ![](https://cdn-images-1.medium.com/max/1600/0*Na7H8B-lBRSK36EB.)
 
@@ -109,7 +110,7 @@ With such a simple game there really isn't much more to say.
 
 ### 4. Nidhogg
 
-*Released: 13 Jan, 2014*
+_Released: 13 Jan, 2014_
 
 ![](https://cdn-images-1.medium.com/max/1600/0*OTnSkJAhwbly7V54.)
 
@@ -126,7 +127,7 @@ friends.
 
 ### 5. Divinity: Original Sin
 
-*Released: 30 Jun, 2014*
+_Released: 30 Jun, 2014_
 
 ![](https://cdn-images-1.medium.com/max/1600/0*BYnH2rj1EnspoxGa.)
 
@@ -152,26 +153,26 @@ your own adventures.
 There were lots of great games this year, too many to write about. Here's a list
 of other games I though were great, but not good enough for the top 5.
 
-* Age of Wonders III
-* Insurgency
-* Middle-earth: Shadow of Mordor
-* Luftrausers
-* Secrets of Rætikon
+- Age of Wonders III
+- Insurgency
+- Middle-earth: Shadow of Mordor
+- Luftrausers
+- Secrets of Rætikon
 
 There was also games that didn't release this year but I poured a lot of hours
 into and though they were worth mentioning:
 
-* Nosgoth
-* Nuclear Throne
-* Rising Storm
-* Arma 3
-* Space Engineers
-* Hammerwatch
-* FINAL FANTASY XIV: A Realm Reborn
-* The Stanley Parable
+- Nosgoth
+- Nuclear Throne
+- Rising Storm
+- Arma 3
+- Space Engineers
+- Hammerwatch
+- FINAL FANTASY XIV: A Realm Reborn
+- The Stanley Parable
 
 ### Dishonourable mention
 
 Watch_Dogs. Enough said.
 
-*All images from the respective Steam Store page.*
+_All images from the respective Steam Store page._

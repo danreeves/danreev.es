@@ -13,19 +13,18 @@ such as search. In this post you'll see how I did it.
 I don't believe in reinventing the wheel, so, I went searching for an
 auto-complete library. Enter Typeahead.js.
 
-Typeahead is a [“fast and fully-featured autocomplete
+Typeahead is a
+[“fast and fully-featured autocomplete
 library”](http://twitter.github.io/typeahead.js/) by Twitter. The API is very
 simple and it provides a nice UI to search.
-
 
 This code will turn the targeted `input[type="text"]` into an autocompleting
 search box for the prefetched json file, which we'll come onto later.
 
-*Note that typeahead does have a dependency on jQuery 1.9+.*
+_Note that typeahead does have a dependency on jQuery 1.9+._
 
 This is great but it doesn't actually do anything yet. Luckily, typeahead also
 has built in events to listen for.
-
 
 Now, when an autocomplete option is selected the reader will be redirected to
 the page of that post. Simples.
@@ -36,12 +35,13 @@ In order to search, we'll now need something to actually search.
 
 If you've already made a blog in Jekyll you'll know all about the `site.posts`
 array and how to loop through it getting the data about each post. If you need a
-refresher [here are the docs for the simliar paginator.posts
+refresher
+[here are the docs for the simliar paginator.posts
 array](http://jekyllrb.com/docs/pagination/).
 
-The first thing to understand about Jekyll is that anything that contains [YAML
-front-matter](http://jekyllrb.com/docs/frontmatter/) will be processed by Jekyll
-as a special page.
+The first thing to understand about Jekyll is that anything that contains
+[YAML front-matter](http://jekyllrb.com/docs/frontmatter/) will be processed by
+Jekyll as a special page.
 
 Here's how my `search.json` file looks:
 
@@ -69,8 +69,8 @@ Here's how my `search.json` file looks:
 ```
 
 The first two lines are empty YAML front-matter, to tell Jekyll to process this
-file. Next, I open the array and start looping through my posts with `{% for
-post in site.posts %}`.
+file. Next, I open the array and start looping through my posts with
+`{% for post in site.posts %}`.
 
 The canonical data structure typeahead expects is an object with `value` and
 `tokens` properties. The `value` is a string which represents the underlying
@@ -89,7 +89,7 @@ This allowed me to then loop through each word and add it to the array.
     {% for word in title %}"{{ word }}",{% endfor %}
     {% for word in date %}"{{ word }}",{% endfor %}
 
-*The post.tags are already an array, defined in the post front-matter.*
+_The post.tags are already an array, defined in the post front-matter._
 
 Typeahead also allows extra properties which will be passed along with the
 result; I added the date and a url.

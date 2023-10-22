@@ -4,13 +4,13 @@ published: 2018-02-03
 
 # Per project settings in nvim
 
-I recently started using nvim as my editor, and along with it [ALE (Asynchronous
-Lint Engine)](https://github.com/w0rp/ale) to run my code linters, usually
-eslint.
+I recently started using nvim as my editor, and along with it
+[ALE (Asynchronous Lint Engine)](https://github.com/w0rp/ale) to run my code
+linters, usually eslint.
 
 One of my project uses [xo](https://github.com/sindresorhus/xo) which is a
 preconfigured wrapper around eslint. ALE was detecting the eslint binary but not
-any configuration and so was spouting errors. The solution is to *only* enable
+any configuration and so was spouting errors. The solution is to _only_ enable
 xo on this project.
 
 ## Enabling project specific config files

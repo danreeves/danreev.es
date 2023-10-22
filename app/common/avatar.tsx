@@ -7,6 +7,9 @@ const getGHUser = cache(async () => {
 });
 
 export async function Avatar() {
-  const data = await getGHUser();
+  // const data = await getGHUser();
+  const data = {
+    avatar_url: "https://avatars.githubusercontent.com/u/1973559?v=4",
+  };
   return <img className="avatar" src={data.avatar_url} />;
 }

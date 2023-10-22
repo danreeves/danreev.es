@@ -6,7 +6,6 @@ import {
   useSyncExternalStore,
   cache,
 } from "react";
-import { Wave } from "./wave.tsx";
 
 export const ServerRoute = createContext<string | null>(null);
 
@@ -22,7 +21,7 @@ function subscribeToRoute(notify: () => void) {
   return () => {};
 }
 
-function useRoute(): string {
+export function useRoute(): string {
   const serverRoute = useContext(ServerRoute);
   const route = useSyncExternalStore(
     subscribeToRoute,
@@ -37,15 +36,16 @@ function useRoute(): string {
 }
 
 export function Route({
-  currentPath,
   path,
   children,
 }: {
   path: string;
-  currentPath: string;
   children: ReactElement;
 }) {
-  if (path === currentPath) {
+  const currentPath = useRoute();
+  const pattern = new URLPattern(path, "https://example.com");
+
+  if (pattern.test(new URL(currentPath, "https://example.com"))) {
     return children;
   }
   return null;
@@ -56,14 +56,14 @@ interface LinkProps extends HTMLAttributes<HTMLAnchorElement> {
   children: string;
 }
 export function Link({ to, children, ...rest }: LinkProps) {
-  const isActive = false; //route === to;
-  const className = `${rest.className} ${isActive ? "active" : ""}`;
+  const route = useRoute();
+  const current = route === to;
   const isLocal = !to.startsWith("http");
   return (
     <a
       {...rest}
       href={to}
-      className={className}
+      className={current ? "current" : ""}
       onClick={(event) => {
         if (!isLocal) return;
         event.preventDefault();
@@ -74,7 +74,7 @@ export function Link({ to, children, ...rest }: LinkProps) {
         }
       }}
     >
-      <Wave text={children} hover />
+      {children}
     </a>
   );
 }

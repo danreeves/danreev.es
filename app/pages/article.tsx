@@ -1,6 +1,6 @@
 import { extract } from "https://deno.land/std@0.204.0/front_matter/any.ts";
 import { is, date } from "https://deno.land/x/valibot/mod.ts";
-import { useLang } from "../lang.tsx";
+import { useRoute } from "../common/router.tsx";
 
 type Post = { path: string; published: Date; title: string };
 
@@ -33,16 +33,8 @@ async function getArticles() {
   return files;
 }
 
-export default async function Writing() {
-  const posts = await getArticles();
+export default async function Article() {
+  const route = useRoute();
 
-  return (
-    <ol className="writing-list">
-      {posts.map((post) => (
-        <li key={post.path}>
-          <a href={post.path}>{post.title}</a>
-        </li>
-      ))}
-    </ol>
-  );
+  return <div>{route}</div>;
 }

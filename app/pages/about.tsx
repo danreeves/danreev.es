@@ -22,11 +22,9 @@ export default async function About() {
       </p>
       <p>I live in London but I've worked fully async & remote since 2017.</p>
       <p>
-        This site is currently a streaming server side rendering react site{" "}
-        <Link to="https://github.com/danreeves/danreev.es">
-          written from scratch
-        </Link>{" "}
-        on Deno.{" "}
+        <Link to="https://github.com/danreeves/danreev.es">This site</Link> is
+        currently a streaming server side rendering react site written from
+        scratch on Deno.{" "}
         <img
           src="/img/deno.svg"
           style={{ ...inlineImageStyles, verticalAlign: "bottom" }}
@@ -50,7 +48,7 @@ export default async function About() {
         Outside of programming, I enjoy film photography. You can see my work on{" "}
         <Link to="https://instagram.com/dnrvs">Instagram</Link>.
       </p>
-      <p className="box left">
+      <p className="box ">
         <img
           style={inlineImageStyles}
           src={`https://openweathermap.org/img/wn/${weather._meta.icon}@2x.png`}
@@ -59,9 +57,6 @@ export default async function About() {
         {Math.round(weather.feelsLike)}
         {"°C"}.{" "}
       </p>
-      <a className="box right" href="writing">
-        See latest post {">"}
-      </a>
       <img
         src="https://ghchart.rshah.org/danreeves"
         style={{ width: "100%", marginTop: "1em" }}

@@ -1,4 +1,4 @@
-const SQUIGS = Array.from({ length: 4 }).map((_, i) => i);
+const SQUIGS = Array.from({ length: 5 }).map((_, i) => i);
 
 const style = `
 @keyframes squiggly-anim {
@@ -27,7 +27,7 @@ export function Footer() {
               <filter id={`squiggly-${i}`} key={i}>
                 <feTurbulence
                   id="turbulence"
-                  baseFrequency="0.02"
+                  baseFrequency={`0.0${i}`}
                   numOctaves="3"
                   result="noise"
                   seed={i}
@@ -43,7 +43,7 @@ export function Footer() {
           })}
         </defs>
       </svg>
-      <style dangerouslySetInnerHTML={{ __html: style }} />
+      {/* <style dangerouslySetInnerHTML={{ __html: style }} /> */}
     </>
   );
 }

@@ -1,8 +1,9 @@
 {
   "imports": {
-    "react": "https://esm.sh/react@18.3.0-canary-d803f519e-20231020&dev",
-    "react/": "https://esm.sh/react@18.3.0-canary-d803f519e-20231020&dev/",
-    "react-dom": "https://esm.sh/react-dom@18.3.0-canary-d803f519e-20231020&dev",
-    "react-dom/": "https://esm.sh/react-dom@18.3.0-canary-d803f519e-20231020&dev/"
+    "react": "https://esm.sh/react@18.3.0-canary-d803f519e-20231020",
+    "react/": "https://esm.sh/react@18.3.0-canary-d803f519e-20231020/",
+    "react-dom": "https://esm.sh/react-dom@18.3.0-canary-d803f519e-20231020",
+    "react-dom/": "https://esm.sh/react-dom@18.3.0-canary-d803f519e-20231020/",
+    "rough-notation": "https://esm.sh/v133/rough-notation@0.5.1/es2022/rough-notation.mjs"
   }
 }

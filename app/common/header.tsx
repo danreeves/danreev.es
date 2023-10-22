@@ -9,14 +9,14 @@ export function Header() {
       <header>
         <small className="hello">
           <Wave text="hello, planet." />
+          <Suspense>
+            <Avatar />
+          </Suspense>
         </small>
         <nav>
           <Link to="/">About</Link>
           <Link to="/writing">Writing</Link>
         </nav>
-        <Suspense>
-          <Avatar />
-        </Suspense>
       </header>
     </>
   );

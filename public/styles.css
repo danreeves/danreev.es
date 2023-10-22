@@ -59,13 +59,11 @@ nav {
 }
 
 a {
-	border-bottom: .15em solid var(--accent);
 	color: var(--fg);
-	text-decoration-skip-ink: none;
+	text-decoration: none;
 }
 
 nav a {
-	border-bottom: .15em solid transparent;
 	color: var(--accent);
 }
 
@@ -92,38 +90,27 @@ nav a.active {
 	animation: wave 0.5s steps(3, end) infinite alternate;
 }
 
+.hello {
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+	gap: 10px;
+}
+
 .avatar {
-	height: 50px;
-	width: 50px;
-	position: absolute;
-	bottom: 1em;
-	right: 1em;
-    border-radius: 12px;
+	height: 100px;
+	width: 100px;
+	/* position: absolute; */
+	/* top: 100px; */
+	/* right: 100px; */
+    /* border-radius: 12px; */
+	border-radius: 100%;
     transform: rotate(2deg);
 }
 
 .box {
 	display: block;
-	width: 45%;
-	padding: 2.5%;
-	margin: 2.5%;
-	position: relative;
-	/* background: var(--accent); */
-	/* color: white; */
-	font-family: "felt-tip-woman";
-    border-radius: 0.5em;
-	border-style: solid;
-	border-width: .1em;
-	border-radius: .1em;
-	border-color: var(--fg);
-}
-
-.box.left {
-	float: left;
-}
-
-.box.right {
-	float: right;
+	padding: 1em;
 }
 
 footer {
@@ -133,4 +120,8 @@ footer {
 	margin-top: 1em;
 	margin-bottom: 1em;
 	opacity: .5;
+}
+
+.writing-list li {
+	margin-bottom: .5em;
 }

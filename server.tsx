@@ -44,12 +44,16 @@ serve(async (request: Request): Promise<Response> => {
         type="importmap"
         dangerouslySetInnerHTML={{ __html: importMap }}
       />
-      {/* <script
+      <script
         type="module"
         dangerouslySetInnerHTML={{ __html: clientScript }}
-      /> */}
+      />
       <div id="app">
-        <App path={path} lang={preferredLang} />
+        <ServerRoute.Provider value={path}>
+          <LangProvider lang={preferredLang}>
+            <App />
+          </LangProvider>
+        </ServerRoute.Provider>
       </div>
     </html>
   );

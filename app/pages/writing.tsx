@@ -1,6 +1,5 @@
 import { extract } from "https://deno.land/std@0.204.0/front_matter/any.ts";
 import { is, date } from "https://deno.land/x/valibot/mod.ts";
-import { useLang } from "../lang.tsx";
 
 type Post = { path: string; published: Date; title: string };
 
@@ -11,13 +10,11 @@ async function getArticles() {
 
     const fm = extract(str);
 
-    // console.log(fm);
-
     const published = is(date(), fm.attrs.published)
       ? fm.attrs.published
       : new Date();
 
-    const title = fm?.body?.match(/^#(.+)\n/)?.[1]?.trim() || "";
+    const title = fm?.body?.match(/^#(.+)\r?\n/)?.[1]?.trim() || "";
 
     files.push({
       path: "/writing/" + dirEntry.name.replace(".md", ""),

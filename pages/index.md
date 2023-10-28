@@ -4,7 +4,7 @@ I’m Dan Reeves, Tech Lead on the Frontend team at [Treasure Data](https://trea
 
 I live in London but I've worked fully async & remote since 2017.
 
-I've been heavily involved in the [Vermintide](https://vmf-docs.verminti.de/) and [Darktide](https://darkti.de/modding) modding communities where I write a lot of [lua](https://github.com/danreeves?tab=repositories&q=mods&type=source&language=lua&sort=), and recently a Blender plugin in Python. This site is written in [crystal](https://github.com/danreeves/danreev.es).
+I've been heavily involved in the [Vermintide](https://vmf-docs.verminti.de/) and [Darktide](https://darkti.de/modding) modding communities where I write a lot of [lua](https://github.com/danreeves?tab=repositories&q=mods&type=source&language=lua&sort=). This site is written in [crystal](https://github.com/danreeves/danreev.es).
 
 Before all, I worked on fullstack builds with php (WordPress) and python (Django), prototyping, ux testing, and much more for all variety of clients at [fffunction](https://fffunction.co/).
 

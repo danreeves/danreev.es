@@ -1,4 +1,4 @@
-# Hello
+# Hello, planet
 
 I’m Dan Reeves, Tech Lead on the Frontend team at [Treasure Data](https://treasuredata.com). My day job is mostly React & TypeScript but I get up to a lot else.
 

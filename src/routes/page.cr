@@ -9,12 +9,13 @@ get "/:page" do |env|
   begin
     markdown = File.read("./pages/#{page}.md")
     html = md_to_html(markdown)
+    title = markdown.match(/# (?<title>.+)\n/).not_nil!.named_captures["title"]
   rescue ex
     halt env, status_code: 404, response: fourohfour
   end
   html(
     page_head(
-      "~/#{page}.txt"
+      title || "A page in the notebook"
     ),
     body(
       html

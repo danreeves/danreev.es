@@ -23,11 +23,12 @@ end
 get "/" do |env|
   html(
     page_head(
-      "~/dnrvs.txt"
+      "Hello, planet"
     ),
     body(
       {class: "home"},
       page_content,
+      h2("Notes"),
       ol({class: "writing-list", reversed: ""},
         sorted_list.map do |item|
           front, html, title, slug = item
@@ -49,6 +50,7 @@ get "/writing/:slug" do |env|
   begin
     content = File.read("./writing/#{slug}.md")
     front, markdown = split_frontmatter(content)
+    title = markdown.match(/# (?<title>.+)\n/).not_nil!.named_captures["title"]
     html = md_to_html(markdown)
     content = nil
   rescue ex
@@ -56,12 +58,10 @@ get "/writing/:slug" do |env|
   end
 
   html(
-    page_head("~/dnrvs/#{slug}.md"),
+    page_head(title || "Note..."),
     body(
       p(
-        a({href: "/"}, "~/dnrvs"),
-        " ",
-        "Published: #{front.published}",
+        "#{front.published.to_s("%A %-d %B %Y")}",
       ),
       div({class: "article"}, html),
       footer(nav()),

@@ -12,7 +12,8 @@
     }
   },
   "redirects": {
-    "https://deno.land/x/valibot/mod.ts": "https://deno.land/x/valibot@v0.19.0/mod.ts"
+    "https://deno.land/x/valibot/mod.ts": "https://deno.land/x/valibot@v0.19.0/mod.ts",
+    "https://esm.sh/v128/@types/react@^18/jsx-runtime~.d.ts": "https://esm.sh/v128/@types/react@18.2.38/jsx-runtime~.d.ts"
   },
   "remote": {
     "https://deno.land/std@0.140.0/_util/assert.ts": "e94f2eb37cebd7f199952e242c77654e43333c1ac4c5c700e929ea3aa5489f74",

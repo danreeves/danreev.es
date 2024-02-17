@@ -1,9 +1,4 @@
 import { type PageProps } from "$fresh/server.ts";
-import css from "npm:nue-glow/minified/glow.css";
-
-const glowCss = Deno.readTextFileSync(
-  "./node_modules/nue-glow/minified/glow.css"
-);
 
 export default function App({ Component }: PageProps) {
   return (
@@ -36,12 +31,14 @@ export default function App({ Component }: PageProps) {
       dd { margin-top: 1rem; margin-bottom: 1rem; }
       a { color: #000; }
       .js a { text-decoration: none; }
-      [glow] {
-  --glow-padding: .5em;
-}
+      [glow] { --glow-padding: .5em; }
       `}
         </style>
-        <style>{glowCss}</style>
+        <link
+          rel="stylesheet"
+          href="https://esm.sh/nue-glow@0.1.1/minified/glow.css"
+        />
+
         <script type="module" src="/script.js" />
       </head>
       <body>

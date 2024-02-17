@@ -4,7 +4,7 @@ import { slugify } from "$slugify";
 import { extract } from "https://deno.land/std@0.215.0/front_matter/any.ts";
 import { test } from "https://deno.land/std@0.215.0/front_matter/test.ts";
 import * as valibot from "$valibot";
-import { glow } from "npm:nue-glow";
+import { glow } from "https://esm.sh/nue-glow@0.1.1";
 
 class CustomRenderer extends Renderer {
   heading(text: string, level: 1 | 2 | 3 | 4 | 5 | 6): string {

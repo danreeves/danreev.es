@@ -18,18 +18,19 @@ export default function App({ Component }: PageProps) {
       html {
         font-size: 2rem;
         margin: 1rem;
-        background: white;
+        background: #fbfbfa;
         background-image: radial-gradient(#c1c1c1 1px, transparent 0);
         background-size: 40px 40px;
         background-position: -19px -19px;
         font-family: 'felt-tip-woman';
+        color: #1c201f;
       }
       body { max-width: 95%; width: 45ch; margin-left: auto; margin-right: auto; }
       img { max-width: 100%; }
       h1 { font-weight: 900; font-size: 3rem; line-height: 2.3rem; }
       pre { font-family: monospace !important; font-size: 0.6em; background: white;}
       dd { margin-top: 1rem; margin-bottom: 1rem; }
-      a { color: #000; }
+      a { color: #1c201f; }
       .js a { text-decoration: none; }
       [glow] { --glow-padding: .5em; }
       `}

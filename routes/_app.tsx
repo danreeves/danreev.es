@@ -33,6 +33,11 @@ export default function App({ Component }: PageProps) {
       a { color: #1c201f; }
       .js a { text-decoration: none; }
       [glow] { --glow-padding: .5em; }
+      :not(pre) > code {
+          font-size: 0.75rem;
+          padding: .1rem;
+          background: yellow;
+          box-sizing: border-box;
       `}
         </style>
         <link

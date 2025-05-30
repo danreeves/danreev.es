@@ -26,36 +26,38 @@ Inside your glamor/glamorous project you’ll want to install
 Next you can write your script for generating the necessary data. It should look
 a little something like:
 
-    const generateData = require('inline-style-prefixer/generator');
+```javascript
+const generateData = require('inline-style-prefixer/generator');
 
-    const defaultBrowserSupport = {
-     chrome: 55,
-     android: 5,
-     firefox: 52,
-     ios_saf: 9,
-     safari: 9,
-     ie: 11,
-     ie_mob: 11,
-     edge: 12,
-     opera: 30,
-     op_mini: 12,
-     and_uc: 11,
-     and_chr: 55
-    };
+const defaultBrowserSupport = {
+  chrome: 55,
+  android: 5,
+  firefox: 52,
+  ios_saf: 9,
+  safari: 9,
+  ie: 11,
+  ie_mob: 11,
+  edge: 12,
+  opera: 30,
+  op_mini: 12,
+  and_uc: 11,
+  and_chr: 55
+};
 
-    generateData(defaultBrowserSupport, {
+generateData(defaultBrowserSupport, {
 
-      # Where to save the files
-      staticPath: 'staticBrowserData.js',
-      dynamicPath: 'dynamicBrowserData.js',
+  # Where to save the files
+  staticPath: 'staticBrowserData.js',
+  dynamicPath: 'dynamicBrowserData.js',
 
-      # Output ES5 JS
-      compatibility: true,
-      # Include data for style prefixing the required browsers
-      prefixData: true,
-      # Include the compatibility layer plugins
-      plugins: true,
-    });
+  # Output ES5 JS
+  compatibility: true,
+  # Include data for style prefixing the required browsers
+  prefixData: true,
+  # Include the compatibility layer plugins
+  plugins: true,
+});
+```
 
 When you run this scripts, e.g. `node generate-data.js`, it’ll output two files,
 including the static and dynamic versions of the prefixing data. Only the static
@@ -77,8 +79,8 @@ user-agent before prefixing styles so it only applies the needed ones. This
 comes with added size though, so you might want to opt for the static prefixer
 which applies all of the prefixes on every browser but is much smaller (~3kb vs
 ~8kb). Creating a dynamic prefixer requires both so I’ll use that for
-demonstration and you can [read the
-docs](https://github.com/rofrischmann/inline-style-prefixer/blob/master/docs/api/inline-style-prefixer/createPrefixer.md)
+demonstration and you can
+[read the docs](https://github.com/rofrischmann/inline-style-prefixer/blob/master/docs/api/inline-style-prefixer/createPrefixer.md)
 for more specific information.
 
     import createStaticPrefixer from 'inline-style-prefixer/static/createPrefixer';
@@ -97,8 +99,8 @@ fallback.
 
 ## Using it as a glamor plugin
 
-Glamor has a [simple plugin
-system](https://github.com/threepointone/glamor/blob/master/docs/plugins.md)
+Glamor has a
+[simple plugin system](https://github.com/threepointone/glamor/blob/master/docs/plugins.md)
 that gives the user a lot of power. A plugin is a function which recieves an
 object with a `selector` and a `style` key. In this instances we only care about
 the `style` object.
@@ -123,8 +125,8 @@ Now, in our app we need to integrate our plugin with glamor:
 
     plugins.add(prefixerPlugin);
 
-If you want to [copy glamor
-exactly](https://github.com/threepointone/glamor/blob/667b480d31b3721a905021b26e1290ce92ca2879/src/index.js#L20-L24),
+If you want to
+[copy glamor exactly](https://github.com/threepointone/glamor/blob/667b480d31b3721a905021b26e1290ce92ca2879/src/index.js#L20-L24),
 without duplicating the prefixing it does by default you can clear our the
 plugins automatically added by glamor. Then your code would look something like
 this:

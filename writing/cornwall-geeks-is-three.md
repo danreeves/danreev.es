@@ -12,12 +12,13 @@ to share a little of where I think we’ve come from and where we’re going.
 Working with [fffunction](https://fffunction.co/), I had been to Bristol and
 experienced the great web/tech community up there. I wondered if anything
 existed back home. The groups I could find either seemed defunct or focussed on
-the business or social media. [I put the question to twitter](https://twitter.com/dnrvs/status/477208911083499520) and people had
-similar feelings.
+the business or social media.
+[I put the question to twitter](https://twitter.com/dnrvs/status/477208911083499520)
+and people had similar feelings.
 
 Pretty soon we had a handful of people around a table on a summers evening,
-having drinks, and talking about what they do. It was good fun and [began to be a
-regular occurrence](https://www.meetup.com/Cornwall-Digital/events/189751742/).
+having drinks, and talking about what they do. It was good fun and
+[began to be a regular occurrence](https://www.meetup.com/Cornwall-Digital/events/189751742/).
 
 A few months later I was invited to a new Slack group: Falmouth Geeks. Since I
 was joining from Truro it became Cornwall Geeks. As it was a similar group of
@@ -28,13 +29,13 @@ people with the same goals the meetup changed to share the name not long after.
 ## How things have changed
 
 In the years since we’ve seen an explosion in the tech community in Cornwall.
-[Software Cornwall](https://www.softwarecornwall.org/), [Kernow
-DAT](https://kernowdat.co.uk/), and
+[Software Cornwall](https://www.softwarecornwall.org/),
+[Kernow DAT](https://kernowdat.co.uk/), and
 [Headforwards](https://www.headforwards.com/) in particular have been pushing
 the bar for events and community outreach. The best display of this is the
-tremendous growth show for the region in the [Tech Nation
-Reports](https://www.softwarecornwall.org/tech-nation-report-2017/) for the last
-couple years.
+tremendous growth show for the region in the
+[Tech Nation Reports](https://www.softwarecornwall.org/tech-nation-report-2017/)
+for the last couple years.
 
 Luckily, when someone asks if there’s any meetups going on in Cornwall the
 answer isn’t “Try Plymouth” anymore. (That’s not to say don’t go to Plymouth.
@@ -61,12 +62,12 @@ made the Cornwall Geeks community what it is today:
 [Martin](https://twitter.com/martincoote).
 
 A big shout out to [Belinda](https://twitter.com/belindawaldock) and
-[Lyssa](https://twitter.com/LyssaCrump) for their work with [Software
-Cornwall](https://twitter.com/swcornwall).
-[Tony](https://twitter.com/tonyedwardspz) for his work on [Kernow
-DAT](https://twitter.com/KernowDAT) and [Future
-Sync](https://twitter.com/FutureSyncConf). Our friends up north working on
-[Digital Plymouth](https://twitter.com/DigitalPlymouth).
+[Lyssa](https://twitter.com/LyssaCrump) for their work with
+[Software Cornwall](https://twitter.com/swcornwall).
+[Tony](https://twitter.com/tonyedwardspz) for his work on
+[Kernow DAT](https://twitter.com/KernowDAT) and
+[Future Sync](https://twitter.com/FutureSyncConf). Our friends up north working
+on [Digital Plymouth](https://twitter.com/DigitalPlymouth).
 
 I’m not going to lie and say I enjoy the organisation and admin aspects. I
 really only do what little I do so I have a community to be a part of. I didn’t
@@ -75,14 +76,14 @@ there behind the scenes arranging projectors and speakers, setting up meetups
 and booking rooms. I’m incredibly proud of what we’ve started and hope it keeps
 on growing.
 
-*****
+---
 
 If you want to get involved with Cornwall Geeks you can:
 
-* tweet us: [@CornwallGeeks](https://twitter.com/cornwallgeeks).
-* join the Slack: [join.cornwallgeeks.net](https://join.cornwallgeeks.net/)
-* [attend a meetup](https://www.meetup.com/Cornwall-Digital/)
-* [contact the organisers](https://cornwallgeeks.github.io/organisers/)
+- tweet us: [@CornwallGeeks](https://twitter.com/cornwallgeeks).
+- join the Slack: [join.cornwallgeeks.net](https://join.cornwallgeeks.net/)
+- [attend a meetup](https://www.meetup.com/Cornwall-Digital/)
+- [contact the organisers](https://cornwallgeeks.github.io/organisers/)
 
 We’re always looking for collaborators and contributors who want to give talks
 or show’n’tells at the meetup, help out with our new website, or sponsor an

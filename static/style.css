@@ -1,0 +1,92 @@
+@font-face {
+	font-family: "gbi";
+	src:
+		url("fonts/gbi.woff2") format("woff2"),
+		url("fonts/gbi.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+html {
+	font-size: 2rem;
+	margin: 1rem;
+	background: #fff;
+	font-family: monospace;
+	font-variant: all-small-caps;
+	color: #1c201f;
+}
+body {
+	max-width: 95%;
+	width: 45ch;
+	margin-left: auto;
+	margin-right: auto;
+}
+img {
+	max-width: 100%;
+}
+h1 {
+	font-variant: initial;
+	font-weight: 900;
+	font-size: 3rem;
+	line-height: 2.3rem;
+	font-family: "gbi";
+	color: red;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+h2 {
+	font-family: "gbi";
+	color: red;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+	text-decoration-line: underline;
+	text-decoration-color: black;
+	text-underline-offset: -0.25em;
+	text-decoration-skip-ink: none;
+	text-decoration-thickness: 0.5em;
+}
+pre code {
+	font-family: monospace !important;
+	font-size: 0.5em;
+	background: white;
+	border: 1px solid black;
+	display: block;
+	padding: 0.5rem;
+	line-height: 1;
+	font-variant: initial;
+	overflow-x: scroll;
+}
+dd {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+a {
+	color: #1c201f;
+	text-decoration-color: red;
+}
+a:hover {
+	font-weight: 900;
+}
+:not(pre) > code {
+	font-size: 0.75rem;
+	padding: 0.1rem;
+	background: lime;
+	box-sizing: border-box;
+}
+
+ul {
+	list-style-type: circle;
+}
+
+footer {
+	font-variant: initial;
+	font-size: 0.75rem;
+	color: black;
+	text-align: center;
+	font-family: gbi;
+}

@@ -5,15 +5,16 @@ published: 2017-10-29
 # Automate your dev env with tmux
 
 A side project I’m working on has two commands to start running in development
-mode. `npm run dev:app` which starts a `create-react-app` dev server and `npm
-run dev:server` which starts an express server for proxying external api calls
-and handling OAuth. My usual workflow involves manually opening panes in iTerm2
-and running each command manually, but I thought I could do better.
+mode. `npm run dev:app` which starts a `create-react-app` dev server and
+`npm
+run dev:server` which starts an express server for proxying external api
+calls and handling OAuth. My usual workflow involves manually opening panes in
+iTerm2 and running each command manually, but I thought I could do better.
 
 ## Introducing tmux
 
 `tmux` is a **t**erminal **mu**ltiple**x**er. This basically means it can manage
-*multiple* terminal windows running different programs inside *one* window. To
+_multiple_ terminal windows running different programs inside _one_ window. To
 get it, you can probably install it through your package manager of choice; if
 you’re on mac you can use [homebrew](https://brew.sh/): `brew install tmux`
 
@@ -63,8 +64,3 @@ Nice!
 I’ve also expanded the script slightly to check if a session already exists; if
 it does I kill the session. This means I have one command to run (the shell
 script) and it’ll either start or kill my dev environment.
-
-*****
-
-If you have any `tmux` tips then let me know on Twitter:
-[@dnrvs](https://twitter.com/dnrvs)

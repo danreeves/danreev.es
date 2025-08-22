@@ -1,6 +1,6 @@
 {
 	"tasks": {
-		"dev": "deno run --allow-read --allow-net --allow-env --allow-write --unstable --watch src/server.tsx"
+		"dev": "deno run --env-file --allow-read --allow-net --allow-env --allow-write --unstable --watch src/server.tsx"
 	},
 	"imports": {
 		"@deno/gfm": "jsr:@deno/gfm@^0.11.0",

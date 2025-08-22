@@ -1,3 +1,4 @@
+import { Lastfm } from "../components/Lastfm.tsx";
 import { frontMatter } from "../utils/md.ts";
 import { z } from "zod/v4";
 
@@ -8,7 +9,7 @@ function fileToParsedMd(file: Deno.DirEntry) {
 	return data;
 }
 
-export function Home() {
+export async function Home() {
 	const dir = Array.from(Deno.readDirSync("./writing"));
 	const posts = dir
 		.map(fileToParsedMd)
@@ -25,6 +26,8 @@ export function Home() {
 					<a href="https://treasuredata.com">Treasure Data</a>. I write a lot of
 					React and TypeScript.
 				</p>
+
+				<Lastfm />
 
 				<p>I live in the UK but I've worked remote since 2017.</p>
 

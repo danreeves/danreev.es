@@ -7,7 +7,9 @@
 	font-style: normal;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 }
 
@@ -90,51 +92,3 @@ footer {
 		transform: rotate(360deg);
 	}
 }
-
-.lastfm {
-	border: 2px solid black;
-	width: 300px;
-	float: left;
-	margin-right: 1rem;
-}
-
-.cd {
-	position: relative;
-	border-radius: 50%;
-	overflow: hidden;
-	aspect-ratio: 1;
-	width: calc(100% - 10px);
-	animation: rotate 30s linear infinite;
-	filter: grayscale(100%) contrast(150%);
-	margin: 5px;
-}
-
-.cd img {
-	height: 100%;
-	width: 100%;
-	image-rendering: pixelated;
-}
-.cd .hole {
-	background: white;
-	position: absolute;
-	height: 20%;
-	width: 20%;
-	border-radius: 50%;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.now-playing {
-	background: black;
-	color: white;
-	padding: 5px;
-	display: inline-block;
-	width: 100%;
-	overflow: hidden;
-}
-.now-playing a {
-	color: white;
-	text-decoration: underline;
-}
-.now-playing a:hover {}

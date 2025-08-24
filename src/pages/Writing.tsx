@@ -10,7 +10,10 @@ export default function Post(props: { slug: string }) {
 	return (
 		<>
 			<title>{title}</title>
-			<time datetime={attrs.published.toISOString()}>
+			<time
+				dateTime={attrs.published.toISOString()}
+				className="mb-4 block text-sm"
+			>
 				{attrs.published.toLocaleDateString("en-GB", {
 					weekday: "long",
 					year: "numeric",
@@ -19,7 +22,7 @@ export default function Post(props: { slug: string }) {
 				})}
 			</time>
 			<div
-				class="article"
+				className="prose mb-8 max-w-none"
 				dangerouslySetInnerHTML={{ __html: render(body) }}
 			/>
 		</>

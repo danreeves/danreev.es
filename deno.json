@@ -1,13 +1,19 @@
 {
 	"tasks": {
-		"dev": "deno run --env-file --allow-read --allow-net --allow-env --allow-write --unstable --watch src/server.tsx"
+		"dev-server": "deno run --env-file --allow-read --allow-net --allow-env --allow-write --unstable --watch src/server.tsx",
+		"dev-tailwind": "deno run --allow-env --allow-ffi --allow-sys --allow-read --allow-write npm:@tailwindcss/cli -i ./src/tailwind.css -o ./static/tailwind.css --watch"
 	},
 	"imports": {
 		"@deno/gfm": "jsr:@deno/gfm@^0.11.0",
+		"@libs/xml": "jsr:@libs/xml@^7.0.0",
 		"@sindresorhus/slugify": "npm:@sindresorhus/slugify@^2.2.1",
 		"@std/front-matter": "jsr:@std/front-matter@^1.0.9",
+		"@tailwindcss/cli": "npm:@tailwindcss/cli@^4.1.12",
 		"hono": "jsr:@hono/hono@^4.7.10",
 		"nue-glow": "npm:nue-glow@^0.2.2",
+		"prettier": "npm:prettier@^3.6.2",
+		"prettier-plugin-tailwindcss": "npm:prettier-plugin-tailwindcss@^0.6.14",
+		"tailwindcss": "npm:tailwindcss@^4.1.12",
 		"zod": "npm:zod@^3.25.38"
 	},
 	"compilerOptions": {
@@ -16,5 +22,6 @@
 	},
 	"fmt": {
 		"useTabs": true
-	}
+	},
+	"nodeModulesDir": "auto"
 }

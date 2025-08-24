@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: "gbi";
+	src:
+		url("fonts/gbi.woff2") format("woff2"),
+		url("fonts/gbi.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "rx100";
+	src:
+		url("fonts/rx100.woff2") format("woff2"),
+		url("fonts/rx100.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@theme {
+	--font-gbi: "gbi", sans-serif;
+	--font-rx100: "rx100", sans-serif;
+
+	@keyframes rotate {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	--animate-rotate: rotate 20s linear infinite;
+}
+
+@layer base {
+	html {
+		font-size: 16px;
+	}
+	html::selection {
+		background: yellow;
+		color: black;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-gbi);
+		-webkit-text-stroke: 2px black;
+		color: transparent;
+	}
+	h1 {
+		font-size: var(--text-5xl);
+	}
+	h2 {
+		font-size: var(--text-4xl);
+	}
+	h3 {
+		font-size: var(--text-3xl);
+	}
+	h4 {
+		font-size: var(--text-2xl);
+	}
+	h5 {
+		font-size: var(--text-xl);
+	}
+	h6 {
+		font-size: var(--text-lg);
+	}
+	p {
+		font-family: var(--font-rx100);
+	}
+}
+@layer components {
+	.prose {
+		p,
+		.shiki,
+		img {
+			margin-bottom: --spacing(4);
+		}
+		:not(pre) > code {
+			font-size: 0.75rem;
+			padding: 0.1rem;
+			background: lime;
+			box-sizing: border-box;
+		}
+	}
+}

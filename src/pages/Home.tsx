@@ -1,4 +1,5 @@
 import { Lastfm } from "../components/Lastfm.tsx";
+import { Letterboxd } from "../components/Letterboxd.tsx";
 import { frontMatter } from "../utils/md.ts";
 import { z } from "zod/v4";
 
@@ -18,50 +19,101 @@ export async function Home() {
 	return (
 		<>
 			<title>Hello, planet!</title>
-			<div class="home">
-				<h1 title="Hello, planet">Hello, planet</h1>
+			<div className="mb-8">
+				<h1 title="Hello, planet" className="">
+					Hello, planet
+				</h1>
 
-				<p>
+				<p className="font-rx100 mb-4">
 					I'm Dan Reeves, Frontend Tech Lead at{" "}
-					<a href="https://treasuredata.com">Treasure Data</a>. I write a lot of
-					React and TypeScript.
+					<a
+						href="https://treasuredata.com"
+						className="text-black underline decoration-red-500"
+					>
+						Treasure Data
+					</a>
+					. I write a lot of React and TypeScript.
 				</p>
 
 				<Lastfm />
 
-				<p>I live in the UK but I've worked remote since 2017.</p>
+				<p className="mb-4">
+					I live in the UK but I've worked remote since 2017.
+				</p>
 
-				<p>
+				<p className="mb-4">
 					I've been heavily involved in the{" "}
-					<a href="https://vmf-docs.verminti.de/">Vermintide</a> and{" "}
-					<a href="https://darkti.de/modding">Darktide</a>{" "}
+					<a
+						href="https://vmf-docs.verminti.de/"
+						className="text-black underline decoration-red-500"
+					>
+						Vermintide
+					</a>{" "}
+					and{" "}
+					<a
+						href="https://darkti.de/modding"
+						className="text-black underline decoration-red-500"
+					>
+						Darktide
+					</a>{" "}
 					modding communities where I write a lot of{" "}
-					<a href="https://github.com/danreeves?tab=repositories&q=mods&type=source&language=lua&sort=">
+					<a
+						href="https://github.com/danreeves?tab=repositories&q=mods&type=source&language=lua&sort="
+						className="text-black underline decoration-red-500"
+					>
 						lua
 					</a>
 					.
 				</p>
 
-				<p>
+				<Letterboxd />
+
+				<p className="mb-4">
 					Before all that, I worked on fullstack builds with php (WordPress) and
 					python (Django), prototyping, ux testing, and much more for all
-					variety of clients at <a href="https://fffunction.co/">fffunction</a>.
+					variety of clients at{" "}
+					<a
+						href="https://fffunction.co/"
+						className="text-black underline decoration-red-500"
+					>
+						fffunction
+					</a>
+					.
 				</p>
 
-				<p>
+				<p className="mb-4">
 					Outside of programming, I enjoy film photography. You can see it{" "}
-					<a href="https://dnrvs.photo">here</a>.
+					<a
+						href="https://dnrvs.photo"
+						className="text-black underline decoration-red-500"
+					>
+						here
+					</a>
+					.
 				</p>
 
-				<p>
-					Want to talk? <a href="/contact">Get in touch!</a>
+				<p className="mb-4">
+					Want to talk?{" "}
+					<a
+						href="/contact"
+						className="text-black underline decoration-red-500"
+					>
+						Get in touch!
+					</a>
 				</p>
 			</div>
-			<h2 title="Blog">Blog</h2>
-			<ol reversed>
+			<h2 title="Blog" className="">
+				Blog
+			</h2>
+			<ol reversed className="ml-6 list-decimal">
 				{posts.map((post) => (
 					<li>
-						<a href={`/writing/${post.slug}`}>{post.title}</a>
+						<a
+							href={`/writing/${post.slug}`}
+							className="text-black underline decoration-red-500"
+						>
+							{post.title}
+						</a>
 					</li>
 				))}
 			</ol>

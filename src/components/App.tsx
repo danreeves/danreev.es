@@ -3,7 +3,7 @@ import { Wave } from "./Wave.tsx";
 
 export function App({ children }: PropsWithChildren) {
 	return (
-		<html>
+		<html className="m-4 bg-white font-mono text-black">
 			<head>
 				<meta charset="utf-8" />
 				<meta httpEquiv="x-ui-compatible" content="ie-edge" />
@@ -13,12 +13,12 @@ export function App({ children }: PropsWithChildren) {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 				<link rel="apple-touch-icon" href="/favicon.png" />
-				<link rel="stylesheet" href="/style.css" />
+				<link rel="stylesheet" href="/tailwind.css" />
 				<script type="module" src="/script.js" />
 			</head>
-			<body>
+			<body className="mx-auto max-w-[95%]">
 				{children}
-				<footer>
+				<footer className="font-rx100 mt-4 text-center text-black">
 					<Wave text="< danreev.es © forever >" />
 				</footer>
 			</body>

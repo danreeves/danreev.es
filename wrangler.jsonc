@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "danreev-es",
+  "main": "./src/framework/entry.rsc.tsx",
+  "workers_dev": true,
+  "compatibility_date": "2025-10-01",
+  "compatibility_flags": ["nodejs_als"],
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+    },
+  },
+}

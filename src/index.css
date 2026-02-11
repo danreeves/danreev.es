@@ -1,0 +1,187 @@
+@import url(https://fonts.bunny.net/css?family=cairo-play:200,300,400,500,600,700,800,900);
+
+@import "tailwindcss";
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-Thin.woff2") format("woff2"),
+    url("/fonts/CartographCF-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-ThinItalic.woff2") format("woff2"),
+    url("/fonts/CartographCF-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-ExtraLight.woff2") format("woff2"),
+    url("/fonts/CartographCF-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-ExtraLightItalic.woff2") format("woff2"),
+    url("/fonts/CartographCF-ExtraLightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-Light.woff2") format("woff2"),
+    url("/fonts/CartographCF-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-LightItalic.woff2") format("woff2"),
+    url("/fonts/CartographCF-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-Regular.woff2") format("woff2"),
+    url("/fonts/CartographCF-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-RegularItalic.woff2") format("woff2"),
+    url("/fonts/CartographCF-RegularItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-DemiBold.woff2") format("woff2"),
+    url("/fonts/CartographCF-DemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-DemiBoldItalic.woff2") format("woff2"),
+    url("/fonts/CartographCF-DemiBoldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-Bold.woff2") format("woff2"),
+    url("/fonts/CartographCF-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-BoldItalic.woff2") format("woff2"),
+    url("/fonts/CartographCF-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-ExtraBold.woff2") format("woff2"),
+    url("/fonts/CartographCF-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-ExtraBoldItalic.woff2") format("woff2"),
+    url("/fonts/CartographCF-ExtraBoldItalic.woff") format("woff");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-Heavy.woff2") format("woff2"),
+    url("/fonts/CartographCF-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CartographCF";
+  src:
+    url("/fonts/CartographCF-HeavyItalic.woff2") format("woff2"),
+    url("/fonts/CartographCF-HeavyItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "gbi";
+  src:
+    url("/fonts/gbi.woff2") format("woff2"),
+    url("/fonts/gbi.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-title: "gbi", sans-serif;
+  --font-body: "Cairo Play", sans-serif;
+}
+
+html,
+body {
+  font-size: 24px;
+  anchor-name: --bnuy;
+}
+
+h1 {
+  anchor-name: --bnuy;
+}
+*:hover,
+*:focus {
+  anchor-name: --bnuy;
+}
+
+.my-underline {
+  position-anchor: --bnuy;
+  height: 4px;
+  background: #ff8000;
+  top: anchor(bottom);
+  right: anchor(right);
+  bottom: anchor(bottom);
+  left: anchor(left);
+  position: absolute;
+  transition: all 0.2s;
+}

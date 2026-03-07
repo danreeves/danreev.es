@@ -13,7 +13,7 @@ async function getLatestLastFmTrack() {
     artist: latestTrack.artist["#text"],
     name: latestTrack.name,
     album: latestTrack.album["#text"],
-    image: latestTrack.image.at(-1)["#text"],
+    image: latestTrack.image.at(2)["#text"],
     link: latestTrack.url,
   };
 }
@@ -24,12 +24,12 @@ export async function Lastfm() {
     <div className="border-2 border-black  w-content max-w-1/4">
       <div>
         <Halftone
-          // className="w-full"
           width={512}
           height={512}
           image={latestTrack.image}
           title={`${latestTrack.name} by ${latestTrack.artist}`}
         />
+
         <div></div>
       </div>
       <div className="flex flex-row">

@@ -87,6 +87,27 @@ async function main() {
   }
 }
 
+function onClick(e: MouseEvent) {
+  let link = (e.target as Element).closest("a");
+  if (
+    link &&
+    link instanceof HTMLAnchorElement &&
+    link.href &&
+    (!link.target || link.target === "_self") &&
+    link.origin === location.origin &&
+    !link.hasAttribute("download") &&
+    e.button === 0 && // left clicks only
+    !e.metaKey && // open in new tab (mac)
+    !e.ctrlKey && // open in new tab (windows)
+    !e.altKey && // download
+    !e.shiftKey &&
+    !e.defaultPrevented
+  ) {
+    e.preventDefault();
+    history.pushState(null, "", link.href);
+  }
+}
+
 // a little helper to setup events interception for client side navigation
 function listenNavigation(onNavigation: () => void) {
   window.addEventListener("popstate", onNavigation);
@@ -105,26 +126,6 @@ function listenNavigation(onNavigation: () => void) {
     return res;
   };
 
-  function onClick(e: MouseEvent) {
-    let link = (e.target as Element).closest("a");
-    if (
-      link &&
-      link instanceof HTMLAnchorElement &&
-      link.href &&
-      (!link.target || link.target === "_self") &&
-      link.origin === location.origin &&
-      !link.hasAttribute("download") &&
-      e.button === 0 && // left clicks only
-      !e.metaKey && // open in new tab (mac)
-      !e.ctrlKey && // open in new tab (windows)
-      !e.altKey && // download
-      !e.shiftKey &&
-      !e.defaultPrevented
-    ) {
-      e.preventDefault();
-      history.pushState(null, "", link.href);
-    }
-  }
   document.addEventListener("click", onClick);
 
   return () => {

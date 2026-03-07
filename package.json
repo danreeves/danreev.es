@@ -8,13 +8,17 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "lint": "oxlint",
+    "format": "oxfmt"
   },
   "dependencies": {
     "@paper-design/shaders-react": "^0.0.71",
+    "clsx": "^2.1.1",
     "fast-xml-parser": "^5.3.3",
     "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "react-dom": "^19.2.3",
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.21.0",
@@ -24,6 +28,7 @@
     "@vitejs/plugin-react": "latest",
     "@vitejs/plugin-rsc": "latest",
     "oxfmt": "^0.26.0",
+    "oxlint": "^1.51.0",
     "rsc-html-stream": "^0.0.7",
     "tailwindcss": "^4.1.18",
     "vite": "^7.3.1",

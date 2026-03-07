@@ -5,9 +5,6 @@ interface WaveProps {
 }
 
 export function Wave({ text }: WaveProps) {
-  // Runescape color palette (yellow, red, green, cyan, blue, magenta)
-  const colors = ["#ffff00", "#ff0000", "#00ff00", "#00ffff", "#0000ff", "#ff00ff"];
-
   // Generate keyframes and classes for the wave and color cycling
   const style = `
 	@keyframes wave {
@@ -23,7 +20,7 @@ export function Wave({ text }: WaveProps) {
 	}
 	.rs-wave-char {
 		display: inline-block;
-		animation: wave 1.4s steps(2,end) infinite;
+		animation: wave 2.5s steps(2,end) infinite;
 		will-change: transform;
 	}
 	`;
@@ -31,8 +28,8 @@ export function Wave({ text }: WaveProps) {
   return (
     <>
       <style>{style}</style>
-      <span className="rs-wave italic">
-        {[...Array.from(text)].map((char, i) => (
+      <span className="rs-wave">
+        {Array.from(text).map((char, i) => (
           <span
             key={i}
             className="rs-wave-char"

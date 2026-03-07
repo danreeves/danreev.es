@@ -4,7 +4,6 @@ import { Lastfm } from "./components/Lastfm.tsx";
 import { Link } from "./components/Link.tsx";
 import { Suspense } from "react";
 import z from "zod";
-import { updateServerCounter } from "./action.tsx";
 import { Letterboxd } from "./components/Letterboxd.tsx";
 const mdFiles = Object.entries(import.meta.glob("../writing/*.md", { eager: true }));
 
@@ -14,6 +13,7 @@ const MdFilesSchema = z.array(
     z.object({
       attributes: z.object({
         published: z.string().transform((str) => new Date(str)),
+        archived: z.boolean().default(false),
       }),
       html: z.string(),
     }),
@@ -61,8 +61,13 @@ function extractTitleFromHtml(html: string) {
 
 function App() {
   const posts = MdFilesSchema.parse(mdFiles)
+    .filter(([_, file]) => !file.attributes.archived)
     .toSorted(([_1, a], [_2, b]) => Number(b.attributes.published) - Number(a.attributes.published))
-    .map(([path, md]) => ({ slug: pathToSlug(path), title: extractTitleFromHtml(md.html) }));
+    .map(([path, md]) => ({
+      slug: pathToSlug(path),
+      title: extractTitleFromHtml(md.html),
+      published: md.attributes.published,
+    }));
 
   return (
     <div className="flex flex-row flex-wrap gap-2">
@@ -123,7 +128,9 @@ function App() {
         <ol reversed>
           {posts.map((post) => (
             <li key={post.slug}>
-              <Link href={`/writing/${post.slug}`}>{post.title}</Link>
+              <Link href={`/writing/${post.slug}`}>
+                {post.published.toISOString().split("T")[0]} - {post.title}
+              </Link>
             </li>
           ))}
         </ol>

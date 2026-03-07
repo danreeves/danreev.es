@@ -1,5 +1,3 @@
-@import url(https://fonts.bunny.net/css?family=cairo-play:200,300,400,500,600,700,800,900);
-
 @import "tailwindcss";
 
 @font-face {
@@ -157,31 +155,34 @@
 
 @theme {
   --font-title: "gbi", sans-serif;
-  --font-body: "Cairo Play", sans-serif;
+  --font-body: "MS Gothic", sans-serif;
+
+  --animate-marquee: marquee 62.5s steps(250, end) infinite;
+
+  --animate-marquee-alt: marquee-alt 62.5s steps(250, end) infinite;
+
+  --color-hot: #ff1493;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes marquee-alt {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
 }
 
 html,
 body {
-  font-size: 24px;
-  anchor-name: --bnuy;
-}
-
-h1 {
-  anchor-name: --bnuy;
-}
-*:hover,
-*:focus {
-  anchor-name: --bnuy;
-}
-
-.my-underline {
-  position-anchor: --bnuy;
-  height: 4px;
-  background: #ff8000;
-  top: anchor(bottom);
-  right: anchor(right);
-  bottom: anchor(bottom);
-  left: anchor(left);
-  position: absolute;
-  transition: all 0.2s;
+  font-size: 18px;
 }

@@ -1,5 +1,6 @@
 "use client";
 import { useLayoutEffect } from "react";
+import { cn } from "../utils/cn.ts";
 
 export function Link(props: React.ComponentProps<"a">) {
   useLayoutEffect(() => {
@@ -13,7 +14,7 @@ export function Link(props: React.ComponentProps<"a">) {
   return (
     <a
       {...props}
-      className="text-orange-500 outline-0"
+      className={cn("text-black underline decoration-hot decoration-2 outline-0", props.className)}
       onMouseOver={(event) => {
         const firstLink = document.querySelector("a.first");
         if (firstLink) {

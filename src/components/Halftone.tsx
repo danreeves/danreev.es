@@ -3,10 +3,8 @@ import { HalftoneDots } from "@paper-design/shaders-react";
 export function Halftone(props: React.ComponentProps<typeof HalftoneDots>) {
   return (
     <HalftoneDots
-      size={0.7}
-      inverted={false}
-      colorBack="#141414"
-      colorFront="#ff8000"
+      colorBack="#eee"
+      colorFront="#FF1493"
       originalColors={false}
       type="holes"
       grid="square"

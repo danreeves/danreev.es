@@ -71,54 +71,54 @@ function App() {
     }));
 
   return (
-    <div className="flex flex-row flex-wrap gap-2">
-      <div className="border-2 border-black p-5 w-fit max-w-1/4 flex flex-col gap-2">
-        <title>Hello, planet!</title>
-        <h1 className="font-title text-6xl" title="Hello, planet">
-          Hello, planet
-        </h1>
-        <p>
-          I'm Dan Reeves, Frontend Tech Lead at{" "}
-          <Link href="https://treasuredata.com">Treasure Data</Link>. I write a lot of React and
-          TypeScript.
-        </p>
-        <p>I live in the UK but I've worked remote since 2017.</p>
+    <div className="flex flex-col gap-2 w-200 ml-auto mr-auto">
+      <div>
+        <div className="border-2 border-black p-5  flex flex-col gap-2">
+          <title>Hello, planet!</title>
+          <h1 className="font-title text-6xl" title="Hello, planet">
+            Hello, planet
+          </h1>
+          <p>
+            I'm Dan Reeves, Frontend Tech Lead at{" "}
+            <Link href="https://treasuredata.com">Treasure Data</Link>. I write a lot of React and
+            TypeScript.
+          </p>
+          <p>I live in the UK but I've worked remote since 2017.</p>
 
-        <p>
-          I've been heavily involved in the{" "}
-          <Link href="https://vmf-docs.verminti.de/">Vermintide</Link> and{" "}
-          <Link href="https://darkti.de/modding">Darktide</Link> modding communities where I write a
-          lot of{" "}
-          <Link href="https://github.com/danreeves?tab=repositories&q=mods&type=source&language=lua&sort=">
-            lua
-          </Link>
-          .
-        </p>
-        <p>
-          Before all that, I worked on fullstack builds with php (WordPress) and python (Django),
-          prototyping, ux testing, and much more for all variety of clients at{" "}
-          <Link href="https://fffunction.co/">fffunction</Link>.
-        </p>
+          <p>
+            I've been heavily involved in the{" "}
+            <Link href="https://vmf-docs.verminti.de/">Vermintide</Link> and{" "}
+            <Link href="https://darkti.de/modding">Darktide</Link> modding communities where I write
+            a lot of{" "}
+            <Link href="https://github.com/danreeves?tab=repositories&q=mods&type=source&language=lua&sort=">
+              lua
+            </Link>
+            .
+          </p>
+          <p>
+            Before all that, I worked on fullstack builds with php (WordPress) and python (Django),
+            prototyping, ux testing, and much more for all variety of clients at{" "}
+            <Link href="https://fffunction.co/">fffunction</Link>.
+          </p>
 
-        <p>
-          Outside of programming, I enjoy film photography. You can see it{" "}
-          <Link href="https://dnrvs.photo">here</Link>.
-        </p>
+          <p>
+            Outside of programming, I enjoy film photography. You can see it{" "}
+            <Link href="https://dnrvs.photo">here</Link>.
+          </p>
+          <p>
+            Want to talk? <Link href="/contact">Get in touch!</Link>
+          </p>
+        </div>
       </div>
 
-      <Lastfm />
-
-      <div className="border-2 border-black p-5 w-fit max-w-1/4 flex flex-col gap-2">
-        <p>
-          Want to talk? <Link href="/contact">Get in touch!</Link>
-        </p>
+      <div className="flex flex-row gap-2">
+        <Bsky />
+        <Lastfm />
       </div>
 
       <Letterboxd />
 
-      <Bsky />
-
-      <div className="border-2 border-black p-5 w-fit max-w-1/4 flex flex-col gap-2">
+      <div className="border-2 border-black p-5  flex flex-col gap-2">
         <h2
           className="font-title text-5xl [-webkit-text-stroke:2px_black] text-transparent"
           title="Blog"

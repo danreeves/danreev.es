@@ -66,7 +66,7 @@ async function getLatestBskyPosts(): Promise<Post[]> {
 export async function Bsky() {
   const posts = await getLatestBskyPosts();
   return (
-    <div className="border-2 border-black p-5 w-fit max-w-1/4 flex flex-col gap-2">
+    <div className="border-2 border-black p-5 flex shrink flex-col gap-2">
       <h2
         className="font-title text-5xl [-webkit-text-stroke:2px_black] text-transparent"
         title="Atmosphere"

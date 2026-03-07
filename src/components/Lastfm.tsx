@@ -21,7 +21,10 @@ async function getLatestLastFmTrack() {
 export async function Lastfm() {
   const latestTrack = await getLatestLastFmTrack();
   return (
-    <div className="border-2 border-black  w-content max-w-1/4">
+    <a href={latestTrack.link} className="border-2 border-black  w-content max-w-full relative">
+      <span className="absolute m-5 z-1 text-5xl font-title [-webkit-text-stroke:2px_white] text-transparent">
+        LastFM
+      </span>
       <div>
         <Halftone
           width={512}
@@ -29,15 +32,21 @@ export async function Lastfm() {
           image={latestTrack.image}
           title={`${latestTrack.name} by ${latestTrack.artist}`}
         />
+      </div>
+      <div className="flex flex-col">
+        <div>⏵⏸ [--------------------|-------------------------]</div>
 
-        <div></div>
+        <div>
+          Track: <Wave text={latestTrack.name} />
+        </div>
+
+        <div>
+          Album: <Wave text={latestTrack.album} />
+        </div>
+        <div>
+          Artist: <Wave text={latestTrack.artist} />
+        </div>
       </div>
-      <div className="flex flex-row">
-        ⏵⏸{" "}
-        <Link href={latestTrack.link} target="_blank" rel="noopener noreferrer">
-          <Wave text={`${latestTrack.name} by ${latestTrack.artist}`} />
-        </Link>
-      </div>
-    </div>
+    </a>
   );
 }

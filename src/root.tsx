@@ -5,6 +5,7 @@ import { Link } from "./components/Link.tsx";
 import { Suspense } from "react";
 import z from "zod";
 import { Letterboxd } from "./components/Letterboxd.tsx";
+import { Bsky } from "./components/Bsky.tsx";
 const mdFiles = Object.entries(import.meta.glob("../writing/*.md", { eager: true }));
 
 const MdFilesSchema = z.array(
@@ -71,14 +72,11 @@ function App() {
 
   return (
     <div className="flex flex-row flex-wrap gap-2">
-      <div className="border-2 border-black p-5 w-fit max-w-full">
+      <div className="border-2 border-black p-5 w-fit max-w-1/4 flex flex-col gap-2">
         <title>Hello, planet!</title>
         <h1 className="font-title text-6xl" title="Hello, planet">
           Hello, planet
         </h1>
-      </div>
-
-      <div className="border-2 border-black p-5 w-fit max-w-1/4 flex flex-col gap-2">
         <p>
           I'm Dan Reeves, Frontend Tech Lead at{" "}
           <Link href="https://treasuredata.com">Treasure Data</Link>. I write a lot of React and
@@ -117,6 +115,8 @@ function App() {
       </div>
 
       <Letterboxd />
+
+      <Bsky />
 
       <div className="border-2 border-black p-5 w-fit max-w-1/4 flex flex-col gap-2">
         <h2

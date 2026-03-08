@@ -6,6 +6,8 @@ import { Suspense } from "react";
 import z from "zod";
 import { Letterboxd } from "./components/Letterboxd.tsx";
 import { Bsky } from "./components/Bsky.tsx";
+import { Overwatch } from "./components/Overwatch.tsx";
+
 const mdFiles = Object.entries(import.meta.glob("../writing/*.md", { eager: true }));
 
 const MdFilesSchema = z.array(
@@ -117,6 +119,8 @@ function App() {
       </div>
 
       <Letterboxd />
+
+      <Overwatch />
 
       <div className="border-2 border-black p-5  flex flex-col gap-2">
         <h2

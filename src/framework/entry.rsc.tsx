@@ -17,6 +17,49 @@ export type RscPayload = {
 };
 
 async function handler(request: Request): Promise<Response> {
+  // Image proxy route handler
+  const urlObj = new URL(request.url);
+  if (urlObj.pathname === "/api/proxy-image") {
+    const targetUrl = urlObj.searchParams.get("url");
+    if (!targetUrl) {
+      return new Response("Missing 'url' parameter", { status: 400 });
+    }
+    let remote;
+    try {
+      remote = new URL(targetUrl);
+    } catch {
+      return new Response("Invalid target URL", { status: 400 });
+    }
+    // SECURITY: Only allow certain domains
+    const ALLOWLIST = ["d15f34w2p8l1cc.cloudfront.net", "static.playoverwatch.com", "a.ltrbxd.com"];
+    if (!ALLOWLIST.includes(remote.hostname)) {
+      return new Response("Forbidden domain", { status: 403 });
+    }
+    // Fetch the image
+    let resp;
+    try {
+      resp = await fetch(remote.toString());
+    } catch {
+      return new Response("Failed to fetch remote image", { status: 502 });
+    }
+    const contentType = resp.headers.get("content-type") || "";
+    if (!contentType.startsWith("image/")) {
+      return new Response("URL did not return an image", { status: 415 });
+    }
+    // Set Cloudflare cache headers
+    const headers = new Headers(resp.headers);
+    headers.set(
+      "Cache-Control",
+      "public, s-maxage=86400, max-age=3600, stale-while-revalidate=604800",
+    );
+    headers.set("Access-Control-Allow-Origin", "*");
+    return new Response(resp.body, {
+      status: resp.status,
+      headers,
+    });
+  }
+
+  // ...existing code...
   // differentiate RSC, SSR, action, etc.
   const renderRequest = parseRenderRequest(request);
   request = renderRequest.request;

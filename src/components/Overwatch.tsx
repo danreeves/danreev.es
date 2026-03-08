@@ -63,15 +63,27 @@ export async function Overwatch() {
   const topHeroes = getTopHeroesByWinRate(profile);
   const compRanks = profile.ratings || [];
 
+  // Helper to proxy image URLs if they are external
+  const proxy = (url: string) => {
+    if (
+      url.startsWith("https://d15f34w2p8l1cc.cloudfront.net/") ||
+      url.startsWith("https://static.playoverwatch.com/") ||
+      url.startsWith("https://a.ltrbxd.com/")
+    ) {
+      return `/api/proxy-image?url=${encodeURIComponent(url)}`;
+    }
+    return url;
+  };
+
   return (
     <div className=" p-5 border-2 border-black">
       <div className="flex items-center gap-4 mb-4">
-        <img src={profile.icon} alt="Player Icon" className="w-16 h-16 " />
+        <img src={proxy(profile.icon)} alt="Player Icon" className="w-16 h-16 " />
         <div>
           <div className="text-xl font-bold flex flex-row gap-2 items-center">
             {profile.name}
             <img
-              src={profile.endorsementIcon}
+              src={proxy(profile.endorsementIcon)}
               alt={`Endorsement: ${profile.endorsement}`}
               className="w-6 h-6"
             />
@@ -102,7 +114,11 @@ export async function Overwatch() {
         {compRanks.map((rank) => (
           <div key={rank.role} className="flex items-center gap-2">
             {rank.rankIcon && (
-              <img src={rank.rankIcon} alt={`${rank.group} (${rank.role})`} className="w-8 h-8" />
+              <img
+                src={proxy(rank.rankIcon)}
+                alt={`${rank.group} (${rank.role})`}
+                className="w-8 h-8"
+              />
             )}
             <span className="font-semibold">
               {rank.group} <span className="capitalize">{rank.role}</span>

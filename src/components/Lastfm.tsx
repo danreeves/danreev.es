@@ -1,6 +1,5 @@
 import { Wave } from "./Wave.tsx";
 import { env } from "cloudflare:workers";
-import { Link } from "./Link.tsx";
 import { Halftone } from "./Halftone.tsx";
 
 async function getLatestLastFmTrack() {

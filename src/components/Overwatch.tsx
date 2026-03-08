@@ -51,6 +51,8 @@ function getTopHeroesByWinRate(profile: z.infer<typeof ProfileSchema>) {
   return heroes;
 }
 
+const proxy = (url: string) => `/api/proxy-image?url=${encodeURIComponent(url)}`;
+
 export async function Overwatch() {
   let profile: z.infer<typeof ProfileSchema>;
   try {
@@ -63,20 +65,11 @@ export async function Overwatch() {
   const topHeroes = getTopHeroesByWinRate(profile);
   const compRanks = profile.ratings || [];
 
-  // Helper to proxy image URLs if they are external
-  const proxy = (url: string) => {
-    if (
-      url.startsWith("https://d15f34w2p8l1cc.cloudfront.net/") ||
-      url.startsWith("https://static.playoverwatch.com/") ||
-      url.startsWith("https://a.ltrbxd.com/")
-    ) {
-      return `/api/proxy-image?url=${encodeURIComponent(url)}`;
-    }
-    return url;
-  };
-
   return (
-    <div className=" p-5 border-2 border-black">
+    <a
+      href="https://overwatch.blizzard.com/en-us/career/raindish-2130"
+      className=" p-5 border-2 border-black"
+    >
       <div className="flex items-center gap-4 mb-4">
         <img src={proxy(profile.icon)} alt="Player Icon" className="w-16 h-16 " />
         <div>
@@ -126,6 +119,6 @@ export async function Overwatch() {
           </div>
         ))}
       </div>
-    </div>
+    </a>
   );
 }

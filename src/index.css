@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Dot+Gothic+16&display=swap");
 
 @font-face {
   font-family: "CartographCF";
@@ -155,7 +156,7 @@
 
 @theme {
   --font-title: "gbi", sans-serif;
-  --font-body: "MS Gothic", sans-serif;
+  --font-body: "Dot Gothic 16", "MS Gothic", "Osaka", "Hiragino Kaku Gothic ProN", serif;
 
   --animate-marquee: marquee 62.5s steps(250, end) infinite;
 
@@ -185,4 +186,6 @@
 html,
 body {
   font-size: 18px;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
 }

@@ -31,7 +31,7 @@ async function handler(request: Request): Promise<Response> {
       return new Response("Invalid target URL", { status: 400 });
     }
     // SECURITY: Only allow certain domains
-    const ALLOWLIST = ["d15f34w2p8l1cc.cloudfront.net", "static.playoverwatch.com", "a.ltrbxd.com"];
+    const ALLOWLIST = ["d15f34w2p8l1cc.cloudfront.net", "static.playoverwatch.com", "a.ltrbxd.com", "assets.hardcover.app", "blz-contentstack-images.akamaized.net"];
     if (!ALLOWLIST.includes(remote.hostname)) {
       return new Response("Forbidden domain", { status: 403 });
     }

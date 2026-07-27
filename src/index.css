@@ -1,5 +1,6 @@
+@import url("https://fonts.bunny.net/css?family=Rubik+Burned:400");
+@import url("https://fonts.bunny.net/css?family=Homemade+Apple:400");
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Dot+Gothic+16&display=swap");
 
 @font-face {
   font-family: "CartographCF";
@@ -155,12 +156,16 @@
 }
 
 @theme {
-  --font-title: "gbi", sans-serif;
-  --font-body: "Dot Gothic 16", "MS Gothic", "Osaka", "Hiragino Kaku Gothic ProN", serif;
+  --font-title: "Rubik Burned", sans-serif;
+  --font-body: "Homemade Apple", cursive;
 
   --animate-marquee: marquee 62.5s steps(250, end) infinite;
 
   --animate-marquee-alt: marquee-alt 62.5s steps(250, end) infinite;
+
+  --animate-scan: scan 1.4s steps(20, end) infinite alternate;
+
+  --animate-blink: blink 1s steps(2, end) infinite;
 
   --color-hot: #ff1493;
 
@@ -181,11 +186,28 @@
       transform: translateX(0%);
     }
   }
+
+  @keyframes scan {
+    0% {
+      left: 0%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
 }
 
 html,
 body {
   font-size: 18px;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: auto;
 }

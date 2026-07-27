@@ -14,7 +14,7 @@ export function Link(props: React.ComponentProps<"a">) {
   return (
     <a
       {...props}
-      className={cn("text-black underline decoration-hot decoration-2 outline-0", props.className)}
+      className={cn("text-black  bg-yellow-300 outline-0", props.className)}
       onMouseOver={(event) => {
         const firstLink = document.querySelector("a.first");
         if (firstLink) {

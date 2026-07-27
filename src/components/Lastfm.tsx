@@ -20,30 +20,46 @@ async function getLatestLastFmTrack() {
 export async function Lastfm() {
   const latestTrack = await getLatestLastFmTrack();
   return (
-    <a href={latestTrack.link} className="border-2 border-black  w-content max-w-full relative">
-      <span className="absolute m-5 z-1 text-5xl font-title [-webkit-text-stroke:2px_white] text-transparent">
-        LastFM
-      </span>
-      <div>
+    <a href={latestTrack.link} className="w-full max-w-full relative flex flex-col ">
+      <div className="aspect-square w-full rounded ">
         <Halftone
-          width={512}
-          height={512}
+          width="100%"
+          height="100%"
           image={latestTrack.image}
           title={`${latestTrack.name} by ${latestTrack.artist}`}
+          className="h-full w-full object-cover rounded"
         />
       </div>
-      <div className="flex flex-col">
-        <div>⏵⏸ [--------------------|-------------------------]</div>
-
-        <div>
-          Track: <Wave text={latestTrack.name} />
+      <div className="flex flex-col w-full min-w-0 p-1">
+        <div className="flex items-center gap-1 min-w-0">
+          <span className="shrink-0">⏵⏸</span>
+          <span className="flex min-w-0 flex-1 items-center">
+            <span className="shrink-0">[</span>
+            <span className="relative flex-1 border-t border-dashed border-current">
+              <span className="absolute left-[40%] -top-[0.7em]">|</span>
+            </span>
+            <span className="shrink-0">]</span>
+          </span>
         </div>
 
-        <div>
-          Album: <Wave text={latestTrack.album} />
+        <div className="flex min-w-0 gap-1">
+          <span className="shrink-0">Track:</span>
+          <span className="min-w-0 overflow-hidden">
+            <Wave text={latestTrack.name} />
+          </span>
         </div>
-        <div>
-          Artist: <Wave text={latestTrack.artist} />
+
+        <div className="flex min-w-0 gap-1">
+          <span className="shrink-0">Album:</span>
+          <span className="min-w-0 overflow-hidden">
+            <Wave text={latestTrack.album} />
+          </span>
+        </div>
+        <div className="flex min-w-0 gap-1">
+          <span className="shrink-0">Artist:</span>
+          <span className="min-w-0 overflow-hidden">
+            <Wave text={latestTrack.artist} />
+          </span>
         </div>
       </div>
     </a>

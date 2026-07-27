@@ -1,5 +1,4 @@
 import { XMLParser } from "fast-xml-parser";
-import { Link } from "./Link.tsx";
 
 const parser = new XMLParser({
   ignoreDeclaration: true,
@@ -19,20 +18,20 @@ async function getLatestLetterboxdFilm() {
 export async function Letterboxd() {
   const films = await getLatestLetterboxdFilm();
   return (
-    <div className="inline-block w-full overflow-hidden bg-black p-1 text-white">
+    <div className="inline-block rounded w-full overflow-hidden bg-black p-1 text-white">
       <span className="hidden">Watching on Letterboxd:</span>
-      <div className="relative w-200  flex-row flex ">
+      <div className="relative w-full flex-row flex ">
         <ol className="flex-row gap-8 animate-marquee flex whitespace-nowrap">
           {films.map((film) => (
             <li key={film.link}>
-              <Link
+              <a
                 href={film.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white underline w-auto"
               >
                 {film.title}
-              </Link>
+              </a>
             </li>
           ))}
         </ol>
@@ -42,14 +41,14 @@ export async function Letterboxd() {
         >
           {films.map((film) => (
             <li key={film.link}>
-              <Link
+              <a
                 href={film.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white underline inline"
               >
                 {film.title}
-              </Link>
+              </a>
             </li>
           ))}
         </ol>

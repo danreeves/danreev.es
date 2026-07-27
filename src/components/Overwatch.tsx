@@ -1,9 +1,12 @@
 import z from "zod";
+import { Halftone } from "./Halftone.tsx";
 
 const HeroStatsSchema = z.object({
   timePlayed: z.string().optional(),
   gamesWon: z.number().optional(),
   gamesPlayed: z.number().optional(),
+  winPercentage: z.number().optional(),
+  heroPicture: z.string().optional(),
 });
 
 const TopHeroesSchema = z.record(HeroStatsSchema);
@@ -35,18 +38,32 @@ async function fetchOverwatchProfile() {
   return ProfileSchema.parse(data);
 }
 
+// Heroes with only a handful of games played can show misleading win rates
+// (e.g. 100% from a single win), so we require a minimum sample size.
+const MIN_GAMES_PLAYED = 1;
+
+function parseTimePlayed(timePlayed: string | undefined): number {
+  if (!timePlayed) return 0;
+  const [hours, minutes] = timePlayed.split(":").map(Number);
+  return (hours || 0) * 60 + (minutes || 0);
+}
+
 function getTopHeroesByWinRate(profile: z.infer<typeof ProfileSchema>) {
   const comp = profile.competitiveStats?.topHeroes || {};
   const heroes = Object.entries(comp)
     .map(([hero, data]) => ({
       hero,
-      winPercentage:
-        data.gamesPlayed && data.gamesPlayed > 0
-          ? ((data.gamesWon ?? 0) / data.gamesPlayed) * 100
-          : 0,
+      gamesPlayed: data.gamesPlayed ?? 0,
+      winPercentage: data.winPercentage ?? 0,
+      timePlayed: data.timePlayed,
+      heroPicture: data.heroPicture,
     }))
-    .filter((h) => h.winPercentage > 0)
-    .toSorted((a, b) => b.winPercentage - a.winPercentage)
+    // .filter((h) => h.gamesPlayed >= MIN_GAMES_PLAYED)
+    .toSorted((a, b) => {
+      const aTime = parseTimePlayed(a.timePlayed);
+      const bTime = parseTimePlayed(b.timePlayed);
+      return bTime - aTime;
+    })
     .slice(0, 3);
   return heroes;
 }
@@ -68,56 +85,94 @@ export async function Overwatch() {
   return (
     <a
       href="https://overwatch.blizzard.com/en-us/career/raindish-2130"
-      className=" p-5 border-2 border-black"
+      className="p-5 flex flex-col gap-4 bg-black rounded text-white"
     >
-      <div className="flex items-center gap-4 mb-4">
-        <img src={proxy(profile.icon)} alt="Player Icon" className="w-16 h-16 " />
-        <div>
-          <div className="text-xl font-bold flex flex-row gap-2 items-center">
-            {profile.name}
-            <img
-              src={proxy(profile.endorsementIcon)}
-              alt={`Endorsement: ${profile.endorsement}`}
-              className="w-6 h-6"
-            />
-          </div>
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div className="flex items-center gap-4 min-w-0">
+          <Halftone
+            width="82"
+            height="82"
+            image={proxy(profile.icon)}
+            title="Player Icon"
+            originalColors
+            className="w-16 h-16 rounded"
+          />
+          <div>
+            <div className="text-xl font-bold flex flex-row gap-2 items-center">
+              {profile.name}
+              <img
+                src={proxy(profile.endorsementIcon)}
+                alt={`Endorsement: ${profile.endorsement}`}
+                className="w-6 h-6"
+              />
+            </div>
 
-          <div>{profile.title}</div>
+            <div>{profile.title}</div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              {compRanks.map((rank) => (
+                <div key={rank.role} className="flex items-center gap-1 text-sm">
+                  {rank.rankIcon && (
+                    <img
+                      src={proxy(rank.rankIcon)}
+                      alt={`${rank.group} (${rank.role})`}
+                      className="w-6 h-6"
+                    />
+                  )}
+                  <span className="font-semibold">
+                    {rank.group} <span className="capitalize">{rank.role}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-      <div className="mb-4">
-        <div className="font-semibold mb-2">Top Heroes by Win Rate</div>
-        <ul>
-          {topHeroes.map((h) => {
+
+      <div className="flex flex-col gap-2">
+        <ul className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(14rem,1fr))] gap-3">
+          {topHeroes.map((h, i) => {
             // Add spaces before capital letters (except the first letter)
             const formattedHero = h.hero.replace(/([a-z])([A-Z])/g, "$1 $2");
             return (
-              <li key={h.hero} className="flex justify-between items-center py-1">
-                <span className="capitalize font-medium">{formattedHero}</span>
-                <span>
-                  <span className="text-green-500 font-bold">{h.winPercentage.toFixed(1)}%</span>{" "}
-                  win rate
-                </span>
+              <li key={h.hero} className="border-2 border-black flex flex-row overflow-hidden">
+                {h.heroPicture && (
+                  <Halftone
+                    width="82"
+                    height="164"
+                    image={proxy(h.heroPicture)}
+                    title={formattedHero}
+                    className="rounded w-20 self-stretch object-cover  shrink-0"
+                  />
+                )}
+                <div className="p-3 flex flex-col gap-1 flex-1 min-w-0 relative">
+                  <span className="absolute top-1 right-2 font-title text-4xl opacity-40">
+                    {i + 1}
+                  </span>
+                  <span className="capitalize font-bold text-lg leading-tight">
+                    {formattedHero}
+                  </span>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-hot font-title text-3xl">
+                      {h.winPercentage.toFixed(0)}
+                    </span>
+                    <span className="font-bold">% win rate</span>
+                  </div>
+                  <div className="h-2 w-full border border-black">
+                    <div
+                      className="h-full"
+                      style={{ width: `${Math.min(h.winPercentage, 100)}%` }}
+                    />
+                  </div>
+                  <span className="text-xs opacity-60">
+                    {h.gamesPlayed} games
+                    {h.timePlayed ? ` · ${h.timePlayed} played` : ""}
+                  </span>
+                </div>
               </li>
             );
           })}
         </ul>
-      </div>
-      <div className="flex flex-wrap items-center gap-4 mt-2">
-        {compRanks.map((rank) => (
-          <div key={rank.role} className="flex items-center gap-2">
-            {rank.rankIcon && (
-              <img
-                src={proxy(rank.rankIcon)}
-                alt={`${rank.group} (${rank.role})`}
-                className="w-8 h-8"
-              />
-            )}
-            <span className="font-semibold">
-              {rank.group} <span className="capitalize">{rank.role}</span>
-            </span>
-          </div>
-        ))}
       </div>
     </a>
   );

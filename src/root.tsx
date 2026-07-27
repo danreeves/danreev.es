@@ -1,12 +1,13 @@
 import "./index.css";
-import { Wave } from "./components/Wave.tsx";
 import { Lastfm } from "./components/Lastfm.tsx";
 import { Link } from "./components/Link.tsx";
 import { Suspense } from "react";
 import z from "zod";
 import { Letterboxd } from "./components/Letterboxd.tsx";
 import { Bsky } from "./components/Bsky.tsx";
+import { Hardcover } from "./components/Hardcover.tsx";
 import { Overwatch } from "./components/Overwatch.tsx";
+import { Loading } from "./components/Loading.tsx";
 
 const mdFiles = Object.entries(import.meta.glob("../writing/*.md", { eager: true }));
 
@@ -34,14 +35,12 @@ export function Root() {
         <link rel="apple-touch-icon" href="/favicon.png" />
         <title>danreev.es</title>
       </head>
-      <body className="font-body m-4">
+      <body className="font-body m-4 text-black bg-gradient-to-t from-gray-100 to-white">
         <div className="my-underline" />
-        <Suspense fallback={<div>Loading...</div>}>
-          <App />
-        </Suspense>
+        <App />
 
-        <footer>
-          <Wave text="< danreev.es © forever >" />
+        <footer className="w-full text-4xl font-title max-w-200 mx-auto text-center py-4">
+          This could be anywhere in the world
         </footer>
       </body>
     </html>
@@ -73,11 +72,14 @@ function App() {
     }));
 
   return (
-    <div className="flex flex-col gap-2 w-200 ml-auto mr-auto">
+    <div className=" flex flex-col gap-2 w-full max-w-200 ml-auto mr-auto">
       <div>
-        <div className="border-2 border-black p-5  flex flex-col gap-2">
+        <div className="flex flex-col gap-2">
           <title>Hello, planet!</title>
-          <h1 className="font-title text-6xl" title="Hello, planet">
+          <h1
+            className="font-title text-4xl sm:text-6xl wrap-break-word title-fit"
+            title="Hello, planet"
+          >
             Hello, planet
           </h1>
           <p>
@@ -113,20 +115,33 @@ function App() {
         </div>
       </div>
 
-      <div className="flex flex-row gap-2">
-        <Bsky />
-        <Lastfm />
+      <div className="flex flex-col md:flex-row gap-2 items-stretch">
+        <div className="flex-1 min-w-0 flex">
+          <Suspense fallback={<Loading label="Atmosphere" minHeightClass="min-h-[26rem]" />}>
+            <Bsky />
+          </Suspense>
+        </div>
+        <div className="w-full md:w-80 md:shrink-0 flex">
+          <Suspense fallback={<Loading label="" media />}>
+            <Lastfm />
+          </Suspense>
+        </div>
       </div>
 
-      <Letterboxd />
+      <Suspense fallback={<Loading label="" compact />}>
+        <Letterboxd />
+      </Suspense>
 
-      <Overwatch />
+      <Suspense fallback={<Loading label="" minHeightClass="min-h-[20rem]" />}>
+        <Hardcover />
+      </Suspense>
 
-      <div className="border-2 border-black p-5  flex flex-col gap-2">
-        <h2
-          className="font-title text-5xl [-webkit-text-stroke:2px_black] text-transparent"
-          title="Blog"
-        >
+      <Suspense fallback={<Loading label="" minHeightClass="min-h-[24rem]" />}>
+        <Overwatch />
+      </Suspense>
+
+      <div className="flex flex-col gap-2">
+        <h2 className="font-title text-3xl sm:text-5xl wrap-break-word title-fit" title="Blog">
           Blog
         </h2>
         <ol reversed>

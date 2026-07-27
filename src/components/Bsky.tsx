@@ -72,7 +72,7 @@ export async function Bsky() {
   const posts = await getLatestBskyPosts();
   return (
     <div className="flex flex-col gap-2 w-full min-w-0">
-      <h2 className="font-title text-3xl sm:text-5xl wrap-break-word title-fit" title="Atmosphere">
+      <h2 className="font-title text-3xl sm:text-5xl wrap-break-word " title="Atmosphere">
         Atmosphere
       </h2>
       <ol>

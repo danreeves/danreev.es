@@ -76,10 +76,7 @@ function App() {
       <div>
         <div className="flex flex-col gap-2">
           <title>Hello, planet!</title>
-          <h1
-            className="font-title text-4xl sm:text-6xl wrap-break-word title-fit"
-            title="Hello, planet"
-          >
+          <h1 className="font-title text-4xl sm:text-6xl wrap-break-word " title="Hello, planet">
             Hello, planet
           </h1>
           <p>
@@ -141,7 +138,7 @@ function App() {
       </Suspense>
 
       <div className="flex flex-col gap-2">
-        <h2 className="font-title text-3xl sm:text-5xl wrap-break-word title-fit" title="Blog">
+        <h2 className="font-title text-3xl sm:text-5xl wrap-break-word" title="Blog">
           Blog
         </h2>
         <ol reversed>

@@ -47,7 +47,7 @@ export function Loading({
 
   const body = (
     <>
-      <div className="font-title text-2xl sm:text-4xl uppercase title-fit" title={label}>
+      <div className="font-title text-2xl sm:text-4xl uppercase " title={label}>
         {label}
       </div>
       <ScanBar className="max-w-64" />

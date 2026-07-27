@@ -1,163 +1,10 @@
-@import url("https://fonts.bunny.net/css?family=Rubik+Burned:400");
-@import url("https://fonts.bunny.net/css?family=Homemade+Apple:400");
+@import url(https://fonts.bunny.net/css?family=biz-udgothic:400,700|rubik-spray-paint:400);
+
 @import "tailwindcss";
 
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-Thin.woff2") format("woff2"),
-    url("/fonts/CartographCF-Thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-ThinItalic.woff2") format("woff2"),
-    url("/fonts/CartographCF-ThinItalic.woff") format("woff");
-  font-weight: 100;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-ExtraLight.woff2") format("woff2"),
-    url("/fonts/CartographCF-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-ExtraLightItalic.woff2") format("woff2"),
-    url("/fonts/CartographCF-ExtraLightItalic.woff") format("woff");
-  font-weight: 200;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-Light.woff2") format("woff2"),
-    url("/fonts/CartographCF-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-LightItalic.woff2") format("woff2"),
-    url("/fonts/CartographCF-LightItalic.woff") format("woff");
-  font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-Regular.woff2") format("woff2"),
-    url("/fonts/CartographCF-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-RegularItalic.woff2") format("woff2"),
-    url("/fonts/CartographCF-RegularItalic.woff") format("woff");
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-DemiBold.woff2") format("woff2"),
-    url("/fonts/CartographCF-DemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-DemiBoldItalic.woff2") format("woff2"),
-    url("/fonts/CartographCF-DemiBoldItalic.woff") format("woff");
-  font-weight: 600;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-Bold.woff2") format("woff2"),
-    url("/fonts/CartographCF-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-BoldItalic.woff2") format("woff2"),
-    url("/fonts/CartographCF-BoldItalic.woff") format("woff");
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-ExtraBold.woff2") format("woff2"),
-    url("/fonts/CartographCF-ExtraBold.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-ExtraBoldItalic.woff2") format("woff2"),
-    url("/fonts/CartographCF-ExtraBoldItalic.woff") format("woff");
-  font-weight: 800;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-Heavy.woff2") format("woff2"),
-    url("/fonts/CartographCF-Heavy.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CartographCF";
-  src:
-    url("/fonts/CartographCF-HeavyItalic.woff2") format("woff2"),
-    url("/fonts/CartographCF-HeavyItalic.woff") format("woff");
-  font-weight: 900;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "gbi";
-  src:
-    url("/fonts/gbi.woff2") format("woff2"),
-    url("/fonts/gbi.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 @theme {
-  --font-title: "Rubik Burned", sans-serif;
-  --font-body: "Homemade Apple", cursive;
+  --font-title: "Rubik Spray Paint", sans-serif;
+  --font-body: "BIZ UDGothic", serif;
 
   --animate-marquee: marquee 62.5s steps(250, end) infinite;
 
@@ -167,7 +14,7 @@
 
   --animate-blink: blink 1s steps(2, end) infinite;
 
-  --color-hot: #ff1493;
+  --color-black: #2b2b2b;
 
   @keyframes marquee {
     0% {
@@ -209,5 +56,7 @@
 
 html,
 body {
-  font-size: 18px;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+  font-size: 22px;
 }

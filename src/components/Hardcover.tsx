@@ -43,7 +43,7 @@ export async function Hardcover() {
 
   return (
     <div className="flex flex-col gap-2">
-      <h2 className="font-title text-3xl sm:text-5xl wrap-break-word title-fit" title="Reading">
+      <h2 className="font-title text-3xl sm:text-5xl wrap-break-word " title="Reading">
         Reading
       </h2>
       {books.length === 0 ? (

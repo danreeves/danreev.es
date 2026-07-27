@@ -1,4 +1,5 @@
 import { XMLParser } from "fast-xml-parser";
+import { decode } from "he";
 
 const parser = new XMLParser({
   ignoreDeclaration: true,
@@ -10,7 +11,7 @@ async function getLatestLetterboxdFilm() {
   const rss = parser.parse(xmlText);
 
   return rss.rss.channel.item.slice(0, 6).map((item) => ({
-    title: item.title,
+    title: decode(item.title),
     link: item.link,
   }));
 }

@@ -16,6 +16,7 @@
     "@paper-design/shaders-react": "^0.0.71",
     "clsx": "^2.1.1",
     "fast-xml-parser": "^5.3.3",
+    "he": "^1.2.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "tailwind-merge": "^3.5.0",

@@ -1,15 +1,15 @@
 import z from "zod";
 import { Halftone } from "./Halftone.tsx";
 
-const HeroStatsSchema = z.object({
-  timePlayed: z.string().optional(),
-  gamesWon: z.number().optional(),
-  gamesPlayed: z.number().optional(),
-  winPercentage: z.number().optional(),
-  heroPicture: z.string().optional(),
-});
-
-const TopHeroesSchema = z.record(HeroStatsSchema);
+const HeroStatsSchema = z
+  .object({
+    timePlayed: z.string().optional(),
+    gamesWon: z.number().optional(),
+    gamesPlayed: z.number().optional(),
+    winPercentage: z.number().optional(),
+    heroPicture: z.string().optional(),
+  })
+  .passthrough();
 
 const ProfileSchema = z.object({
   icon: z.string(),
@@ -17,8 +17,16 @@ const ProfileSchema = z.object({
   endorsement: z.number(),
   endorsementIcon: z.string(),
   title: z.string().optional(),
-  quickPlayStats: z.object({ topHeroes: TopHeroesSchema }).optional(),
-  competitiveStats: z.object({ topHeroes: TopHeroesSchema }).optional(),
+  quickPlayStats: z
+    .object({
+      topHeroes: z.unknown(),
+    })
+    .optional(),
+  competitiveStats: z
+    .object({
+      topHeroes: z.unknown(),
+    })
+    .optional(),
   ratings: z
     .array(
       z.object({
@@ -34,13 +42,31 @@ const ProfileSchema = z.object({
 async function fetchOverwatchProfile() {
   const res = await fetch("https://www.owapi.eu/stats/pc/raindish-2130/complete");
   if (!res.ok) throw new Error("Failed to fetch Overwatch profile");
-  const data = await res.json();
-  return ProfileSchema.parse(data);
-}
+  const rawData = await res.json();
+  const parsed = ProfileSchema.parse(rawData);
 
-// Heroes with only a handful of games played can show misleading win rates
-// (e.g. 100% from a single win), so we require a minimum sample size.
-const MIN_GAMES_PLAYED = 1;
+  // Normalize topHeroes: filter out string values and convert to HeroStatsSchema
+  const normalizeTopHeroes = (topHeroes: unknown) => {
+    if (!topHeroes || typeof topHeroes !== "object") return {};
+    const result: Record<string, z.infer<typeof HeroStatsSchema>> = {};
+    for (const [hero, heroData] of Object.entries(topHeroes as Record<string, unknown>)) {
+      if (typeof heroData === "object" && heroData !== null) {
+        result[hero] = HeroStatsSchema.parse(heroData);
+      }
+    }
+    return result;
+  };
+
+  return {
+    ...parsed,
+    quickPlayStats: parsed.quickPlayStats
+      ? { topHeroes: normalizeTopHeroes(parsed.quickPlayStats.topHeroes) }
+      : undefined,
+    competitiveStats: parsed.competitiveStats
+      ? { topHeroes: normalizeTopHeroes(parsed.competitiveStats.topHeroes) }
+      : undefined,
+  };
+}
 
 function parseTimePlayed(timePlayed: string | undefined): number {
   if (!timePlayed) return 0;
@@ -53,12 +79,11 @@ function getTopHeroesByWinRate(profile: z.infer<typeof ProfileSchema>) {
   const heroes = Object.entries(comp)
     .map(([hero, data]) => ({
       hero,
-      gamesPlayed: data.gamesPlayed ?? 0,
-      winPercentage: data.winPercentage ?? 0,
-      timePlayed: data.timePlayed,
-      heroPicture: data.heroPicture,
+      gamesPlayed: typeof data === "object" ? data.gamesPlayed ?? 0 : 0,
+      winPercentage: typeof data === "object" ? data.winPercentage ?? 0 : 0,
+      timePlayed: typeof data === "object" ? data.timePlayed : undefined,
+      heroPicture: typeof data === "object" ? data.heroPicture : data,
     }))
-    // .filter((h) => h.gamesPlayed >= MIN_GAMES_PLAYED)
     .toSorted((a, b) => {
       const aTime = parseTimePlayed(a.timePlayed);
       const bTime = parseTimePlayed(b.timePlayed);

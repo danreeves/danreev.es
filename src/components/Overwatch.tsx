@@ -79,15 +79,14 @@ function getTopHeroesByWinRate(profile: z.infer<typeof ProfileSchema>) {
   const heroes = Object.entries(comp)
     .map(([hero, data]) => ({
       hero,
-      gamesPlayed: typeof data === "object" ? data.gamesPlayed ?? 0 : 0,
-      winPercentage: typeof data === "object" ? data.winPercentage ?? 0 : 0,
+      gamesPlayed: typeof data === "object" ? (data.gamesPlayed ?? 0) : 0,
+      winPercentage: typeof data === "object" ? (data.winPercentage ?? 0) : 0,
       timePlayed: typeof data === "object" ? data.timePlayed : undefined,
       heroPicture: typeof data === "object" ? data.heroPicture : data,
     }))
+    .filter((h) => h.gamesPlayed > 0)
     .toSorted((a, b) => {
-      const aTime = parseTimePlayed(a.timePlayed);
-      const bTime = parseTimePlayed(b.timePlayed);
-      return bTime - aTime;
+      return b.winPercentage - a.winPercentage;
     })
     .slice(0, 3);
   return heroes;
@@ -114,14 +113,16 @@ export async function Overwatch() {
     >
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-4 min-w-0">
-          <Halftone
-            width="82"
-            height="82"
-            image={proxy(profile.icon)}
-            title="Player Icon"
-            originalColors
-            className="w-16 h-16 rounded"
-          />
+          <div className="w-22 h-22">
+            <Halftone
+              width="100%"
+              height="100%"
+              image={proxy(profile.icon)}
+              title="Player Icon"
+              originalColors
+              className="rounded"
+            />
+          </div>
           <div>
             <div className="text-xl font-bold flex flex-row gap-2 items-center">
               {profile.name}
@@ -160,39 +161,24 @@ export async function Overwatch() {
             // Add spaces before capital letters (except the first letter)
             const formattedHero = h.hero.replace(/([a-z])([A-Z])/g, "$1 $2");
             return (
-              <li key={h.hero} className="border-2 border-black flex flex-row overflow-hidden">
+              <li key={h.hero} className="flex overflow-hidden relative">
                 {h.heroPicture && (
                   <Halftone
-                    width="82"
-                    height="164"
+                    width="100%"
+                    height="100%"
                     image={proxy(h.heroPicture)}
                     title={formattedHero}
-                    className="rounded w-20 self-stretch object-cover  shrink-0"
+                    className="rounde aspect-square rounded object-cover shrink-0"
                   />
                 )}
-                <div className="p-3 flex flex-col gap-1 flex-1 min-w-0 relative">
-                  <span className="absolute top-1 right-2 font-title text-4xl opacity-40">
-                    {i + 1}
+                <div className="p-3  absolute top-0 left-0 uppercase font-body italic font-bold text-3xl leading-tight">
+                  {formattedHero}
+                </div>
+                <div className="p-3 absolute bottom-0 right-0 uppercase ">
+                  <span className="text-hot font-body italic text-3xl">
+                    {h.winPercentage.toFixed(0)}%
                   </span>
-                  <span className="capitalize font-bold text-lg leading-tight">
-                    {formattedHero}
-                  </span>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-hot font-title text-3xl">
-                      {h.winPercentage.toFixed(0)}
-                    </span>
-                    <span className="font-bold">% win rate</span>
-                  </div>
-                  <div className="h-2 w-full border border-black">
-                    <div
-                      className="h-full"
-                      style={{ width: `${Math.min(h.winPercentage, 100)}%` }}
-                    />
-                  </div>
-                  <span className="text-xs opacity-60">
-                    {h.gamesPlayed} games
-                    {h.timePlayed ? ` · ${h.timePlayed} played` : ""}
-                  </span>
+                  <span className="font-bold"> win rate</span>
                 </div>
               </li>
             );

@@ -40,7 +40,7 @@ export function Root() {
         <App />
 
         <footer className="w-full text-4xl font-title max-w-200 mx-auto text-center py-4">
-          This could be anywhere in the world
+          This could be anywhere in the world!
         </footer>
       </body>
     </html>

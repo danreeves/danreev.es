@@ -24,7 +24,7 @@ const MdFilesSchema = z.array(
   ]),
 );
 
-export function Root() {
+export function Root({ pathname = "/" }: { pathname?: string }) {
   return (
     <html lang="en">
       <head>
@@ -35,9 +35,9 @@ export function Root() {
         <link rel="apple-touch-icon" href="/favicon.png" />
         <title>danreev.es</title>
       </head>
-      <body className="font-body m-4 text-black bg-gradient-to-t from-gray-100 to-white">
+      <body className="font-body m-4 min-h-screen text-black bg-gradient-to-t from-gray-100 to-white">
         <div className="my-underline" />
-        <App />
+        <App pathname={pathname} />
 
         <footer className="w-full text-4xl font-title max-w-200 mx-auto text-center py-4">
           This could be anywhere in the world!
@@ -61,15 +61,48 @@ function extractTitleFromHtml(html: string) {
   return "Untitled";
 }
 
-function App() {
-  const posts = MdFilesSchema.parse(mdFiles)
+function getPosts() {
+  return MdFilesSchema.parse(mdFiles)
     .filter(([_, file]) => !file.attributes.archived)
     .toSorted(([_1, a], [_2, b]) => Number(b.attributes.published) - Number(a.attributes.published))
     .map(([path, md]) => ({
       slug: pathToSlug(path),
       title: extractTitleFromHtml(md.html),
       published: md.attributes.published,
+      html: md.html,
     }));
+}
+
+function App({ pathname }: { pathname: string }) {
+  const posts = getPosts();
+
+  if (pathname.startsWith("/writing/")) {
+    const slug = decodeURIComponent(pathname.slice("/writing/".length));
+    const post = posts.find((candidate) => candidate.slug === slug);
+
+    if (!post) {
+      return (
+        <main className="flex flex-col gap-2 w-full max-w-200 ml-auto mr-auto">
+          <h1 className="font-title text-4xl sm:text-6xl">Writing not found</h1>
+          <p>
+            <Link href="/">Return home</Link>
+          </p>
+        </main>
+      );
+    }
+
+    return (
+      <main className="flex flex-col gap-4 w-full max-w-200 ml-auto mr-auto">
+        <p>
+          <Link href="/">Back home</Link>
+        </p>
+        <article className="flex flex-col gap-2">
+          <p>{post.published.toISOString().split("T")[0]}</p>
+          <div className="writing-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+        </article>
+      </main>
+    );
+  }
 
   return (
     <div className=" flex flex-col gap-2 w-full max-w-200 ml-auto mr-auto">

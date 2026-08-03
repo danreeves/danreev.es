@@ -109,7 +109,11 @@ async function handler(request: Request): Promise<Response> {
   // we render RSC stream after handling server function request
   // so that new render reflects updated state from server function call
   // to achieve single round trip to mutate and fetch from server.
-  const rscPayload: RscPayload = { root: <Root />, formState, returnValue };
+  const rscPayload: RscPayload = {
+    root: <Root pathname={renderRequest.url.pathname} />,
+    formState,
+    returnValue,
+  };
   const rscOptions = { temporaryReferences };
   const rscStream = renderToReadableStream<RscPayload>(rscPayload, rscOptions);
 

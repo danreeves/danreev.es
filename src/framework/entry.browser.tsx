@@ -12,7 +12,57 @@ import type { RscPayload } from "./entry.rsc";
 import { GlobalErrorBoundary } from "./error-boundary";
 import { createRscRenderRequest } from "./request";
 
+const SCROLL_POSITIONS_KEY = "rsc-scroll-positions";
+const HISTORY_KEY = "__rscKey";
+const rscPayloadCache = new Map<string, RscPayload>();
+
+function createHistoryKey() {
+  return crypto.randomUUID();
+}
+
+function getHistoryKey() {
+  return history.state?.[HISTORY_KEY] as string | undefined;
+}
+
+function saveScrollPosition() {
+  const key = getHistoryKey();
+  if (!key) return;
+
+  try {
+    const positions = JSON.parse(sessionStorage.getItem(SCROLL_POSITIONS_KEY) || "{}");
+    positions[key] = [window.scrollX, window.scrollY];
+    sessionStorage.setItem(SCROLL_POSITIONS_KEY, JSON.stringify(positions));
+  } catch {
+    // Scroll restoration is best effort when sessionStorage is unavailable.
+  }
+}
+
+function restoreScrollPosition() {
+  const key = getHistoryKey();
+  let position: [number, number] = [0, 0];
+
+  try {
+    const positions = JSON.parse(sessionStorage.getItem(SCROLL_POSITIONS_KEY) || "{}");
+    position = positions[key] || position;
+  } catch {
+    // Scroll restoration is best effort when sessionStorage is unavailable.
+  }
+
+  window.scrollTo(...position);
+}
+
+function prepareHistory() {
+  history.scrollRestoration = "manual";
+  if (!getHistoryKey()) {
+    history.replaceState({ ...history.state, [HISTORY_KEY]: createHistoryKey() }, "", location.href);
+  }
+  window.addEventListener("scroll", saveScrollPosition, { passive: true });
+  saveScrollPosition();
+}
+
 async function main() {
+  prepareHistory();
+
   // stash `setPayload` function to trigger re-rendering
   // from outside of `BrowserRoot` component (e.g. server function call, navigation, hmr)
   let setPayload: (v: RscPayload) => void;
@@ -22,6 +72,7 @@ async function main() {
     // initial RSC stream is injected in SSR stream as <script>...FLIGHT_DATA...</script>
     rscStream,
   );
+  rscPayloadCache.set(window.location.href, initialPayload);
 
   // browser root component to (re-)render RSC payload as state
   function BrowserRoot() {
@@ -33,7 +84,10 @@ async function main() {
 
     // re-fetch/render on client side navigation
     React.useEffect(() => {
-      return listenNavigation(() => fetchRscPayload());
+      return listenNavigation(() => {
+        restoreScrollPosition();
+        fetchRscPayload();
+      });
     }, []);
 
     return payload.root;
@@ -41,9 +95,19 @@ async function main() {
 
   // re-fetch RSC and trigger re-rendering
   async function fetchRscPayload() {
-    const renderRequest = createRscRenderRequest(window.location.href);
+    const url = window.location.href;
+    const cachedPayload = rscPayloadCache.get(url);
+    if (cachedPayload) {
+      setPayload(cachedPayload);
+      requestAnimationFrame(restoreScrollPosition);
+      return;
+    }
+
+    const renderRequest = createRscRenderRequest(url);
     const payload = await createFromFetch<RscPayload>(fetch(renderRequest));
+    rscPayloadCache.set(url, payload);
     setPayload(payload);
+    requestAnimationFrame(restoreScrollPosition);
   }
 
   // register a handler which will be internally called by React
@@ -104,7 +168,8 @@ function onClick(e: MouseEvent) {
     !e.defaultPrevented
   ) {
     e.preventDefault();
-    history.pushState(null, "", link.href);
+    saveScrollPosition();
+    history.pushState({ [HISTORY_KEY]: createHistoryKey() }, "", link.href);
   }
 }
 

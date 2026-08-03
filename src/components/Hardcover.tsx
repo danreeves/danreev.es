@@ -35,11 +35,22 @@ async function getCurrentlyReading() {
   });
 
   const data = await res.json();
-  return data.data?.me?.[0]?.user_books || [];
+  if (!res.ok || data.errors?.length) {
+    throw new Error(data.errors?.[0]?.message || `Hardcover request failed (${res.status})`);
+  }
+
+  const me = Array.isArray(data.data?.me) ? data.data.me[0] : data.data?.me;
+  return me?.user_books || [];
 }
 
 export async function Hardcover() {
-  const books = await getCurrentlyReading();
+  let books;
+  try {
+    books = await getCurrentlyReading();
+  } catch (error) {
+    console.error(error);
+    books = [];
+  }
 
   return (
     <div className="flex flex-col gap-2">

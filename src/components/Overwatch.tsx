@@ -68,26 +68,22 @@ async function fetchOverwatchProfile() {
   };
 }
 
-function parseTimePlayed(timePlayed: string | undefined): number {
-  if (!timePlayed) return 0;
-  const [hours, minutes] = timePlayed.split(":").map(Number);
-  return (hours || 0) * 60 + (minutes || 0);
-}
-
-function getTopHeroesByWinRate(profile: z.infer<typeof ProfileSchema>) {
+function getTopHeroesByGamesPlayed(profile: z.infer<typeof ProfileSchema>) {
   const comp = profile.competitiveStats?.topHeroes || {};
   const heroes = Object.entries(comp)
-    .map(([hero, data]) => ({
-      hero,
-      gamesPlayed: typeof data === "object" ? (data.gamesPlayed ?? 0) : 0,
-      winPercentage: typeof data === "object" ? (data.winPercentage ?? 0) : 0,
-      timePlayed: typeof data === "object" ? data.timePlayed : undefined,
-      heroPicture: typeof data === "object" ? data.heroPicture : data,
-    }))
-    .filter((h) => h.gamesPlayed > 0)
-    .toSorted((a, b) => {
-      return b.winPercentage - a.winPercentage;
+    .map(([hero, data]) => {
+      const gamesPlayed = typeof data === "object" ? (data.gamesPlayed ?? 0) : 0;
+      const winPercentage = typeof data === "object" ? (data.winPercentage ?? 0) : 0;
+      return {
+        hero,
+        gamesPlayed,
+        winPercentage,
+        timePlayed: typeof data === "object" ? data.timePlayed : undefined,
+        heroPicture: typeof data === "object" ? data.heroPicture : data,
+      };
     })
+    .filter((h) => h.gamesPlayed > 0)
+    .toSorted((a, b) => b.gamesPlayed - a.gamesPlayed)
     .slice(0, 3);
   return heroes;
 }
@@ -103,7 +99,7 @@ export async function Overwatch() {
     return <div>Error: {e.message}</div>;
   }
 
-  const topHeroes = getTopHeroesByWinRate(profile);
+  const topHeroes = getTopHeroesByGamesPlayed(profile);
   const compRanks = profile.ratings || [];
 
   return (
@@ -156,8 +152,9 @@ export async function Overwatch() {
       </div>
 
       <div className="flex flex-col gap-2">
+        <h2 className="font-title text-2xl">Most played competitive characters</h2>
         <ul className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(14rem,1fr))] gap-3">
-          {topHeroes.map((h, i) => {
+          {topHeroes.map((h) => {
             // Add spaces before capital letters (except the first letter)
             const formattedHero = h.hero.replace(/([a-z])([A-Z])/g, "$1 $2");
             return (
@@ -174,7 +171,8 @@ export async function Overwatch() {
                 <div className="p-3  absolute top-0 left-0 uppercase font-body italic font-bold text-3xl leading-tight">
                   {formattedHero}
                 </div>
-                <div className="p-3 absolute bottom-0 right-0 uppercase ">
+                <div className="p-3 absolute bottom-0 right-0 uppercase text-right">
+                  <div className="font-bold">{h.gamesPlayed} games played</div>
                   <span className="text-hot font-body italic text-3xl">
                     {h.winPercentage.toFixed(0)}%
                   </span>

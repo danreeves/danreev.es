@@ -152,7 +152,6 @@ export async function Overwatch() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <h2 className="font-title text-2xl">Most played competitive characters</h2>
         <ul className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(14rem,1fr))] gap-3">
           {topHeroes.map((h) => {
             // Add spaces before capital letters (except the first letter)

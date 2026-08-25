@@ -1,4 +1,5 @@
 import { Lastfm } from "../components/Lastfm.tsx";
+import { Overwatch } from "../components/Overwatch.tsx";
 import { frontMatter } from "../utils/md.ts";
 import { z } from "zod/v4";
 
@@ -28,6 +29,8 @@ export async function Home() {
 				</p>
 
 				<Lastfm />
+
+				<Overwatch />
 
 				<p>I live in the UK but I've worked remote since 2017.</p>
 

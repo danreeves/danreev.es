@@ -138,3 +138,41 @@ footer {
 	text-decoration: underline;
 }
 .now-playing a:hover {}
+
+.overwatch {
+	border: 2px solid black;
+	width: 300px;
+	float: left;
+	margin-right: 1rem;
+	padding: 0.5rem;
+}
+
+.overwatch-header {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.overwatch-icon {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+}
+
+.overwatch-ratings {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.overwatch-rating {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.overwatch-rating img {
+	width: 1.5rem;
+	height: 1.5rem;
+}

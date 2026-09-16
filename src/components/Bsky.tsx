@@ -49,7 +49,8 @@ async function getLatestBskyPosts(): Promise<Post[]> {
   return data.feed
     .filter((item: BskyPost) => {
       const isRepost = item.reason?.$type === "app.bsky.feed.defs#reasonRepost";
-      return !isRepost;
+      const isReply = !!item.post.record.reply;
+      return !isRepost && !isReply;
     })
     .slice(0, POST_LIMIT)
     .map((item: BskyPost) => {

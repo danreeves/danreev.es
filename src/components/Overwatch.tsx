@@ -36,7 +36,7 @@ const ProfileSchema = z.object({
         rankIcon: z.string().optional(),
       }),
     )
-    .optional(),
+    .nullish(),
 });
 
 async function fetchOverwatchProfile() {

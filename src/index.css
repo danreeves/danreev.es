@@ -1,0 +1,137 @@
+@import url(https://fonts.bunny.net/css?family=biz-udgothic:400,700|rubik-spray-paint:400);
+
+@import "tailwindcss";
+
+@theme {
+  --font-title: "Rubik Spray Paint", sans-serif;
+  --font-body: "BIZ UDGothic", serif;
+
+  --animate-marquee: marquee 62.5s steps(250, end) infinite;
+
+  --animate-marquee-alt: marquee-alt 62.5s steps(250, end) infinite;
+
+  --animate-scan: scan 1.4s steps(20, end) infinite alternate;
+
+  --animate-blink: blink 1s steps(2, end) infinite;
+
+  --color-black: #2b2b2b;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes marquee-alt {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes scan {
+    0% {
+      left: 0%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+html,
+body {
+  font-size: 22px;
+}
+
+.writing-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.writing-content h1,
+.writing-content h2,
+.writing-content h3 {
+  font-family: var(--font-title);
+  line-height: 1.1;
+}
+
+.writing-content h1 {
+  font-size: 2.25rem;
+}
+
+.writing-content h2 {
+  font-size: 1.75rem;
+}
+
+.writing-content h3 {
+  font-size: 1.35rem;
+}
+
+.writing-content a {
+  color: var(--color-black);
+  background: #fef08a;
+}
+
+.writing-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.writing-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+  background: #e5e7eb;
+  font-size: 0.8em;
+}
+
+.writing-content ul,
+.writing-content ol {
+  padding-left: 1.5rem;
+}
+
+.writing-content ul {
+  list-style: disc;
+}
+
+.writing-content ol {
+  list-style: decimal;
+}
+
+.writing-content blockquote {
+  border-left: 0.25rem solid #facc15;
+  padding-left: 1rem;
+  font-style: italic;
+}
+
+.writing-content hr {
+  width: 100%;
+  border-top: 1px solid currentColor;
+}
+
+.writing-content dl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.writing-content dt {
+  font-weight: bold;
+}

@@ -1,0 +1,40 @@
+{
+  "name": "@vitejs/plugin-rsc-examples-starter-cf-single",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "wrangler deploy",
+    "lint": "oxlint",
+    "format": "oxfmt"
+  },
+  "dependencies": {
+    "@paper-design/shaders-react": "^0.0.71",
+    "clsx": "^2.1.1",
+    "fast-xml-parser": "^5.3.3",
+    "he": "^1.2.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tailwind-merge": "^3.5.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.21.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.0.0",
+    "@vitejs/plugin-rsc": "^0.5.21",
+    "oxfmt": "^0.26.0",
+    "oxlint": "^1.51.0",
+    "rsc-html-stream": "^0.0.7",
+    "tailwindcss": "^4.1.18",
+    "vite": "^7.3.1",
+    "vite-plugin-markdown": "^2.2.0",
+    "wrangler": "^4.59.2"
+  }
+}

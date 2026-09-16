@@ -48,9 +48,7 @@ How about some JavaScript? Sure. Turns out browsers have added a neat little API
 to detect whether a browser supports some CSS.
 
 ```js
-let supportsPixelated = CSS &&
-	CSS.supports &&
-	CSS.supports("image-rendering", "pixelated");
+let supportsPixelated = CSS && CSS.supports && CSS.supports("image-rendering", "pixelated");
 ```
 
 What we're saying here is _if_ the `CSS` object exists _and if_ the `CSS` object

@@ -1,5 +1,6 @@
 ---
 published: 2018-07-05
+archived: true
 ---
 
 # On thinking you're no good and knowing better
